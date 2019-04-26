@@ -22,9 +22,9 @@
         android:supportsRtl="false"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,InnerclassSeparator">
-        <activity android:name=".Pages.MovieInfo">
-
-        </activity>
+        <activity android:name=".m"></activity>
+        <activity android:name=".Pages.SerialInfo" />
+        <activity android:name=".Pages.MovieInfo" />
         <activity
             android:name=".MainActivity"
             android:windowSoftInputMode="stateHidden">

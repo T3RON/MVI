@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.androidnetworking.AndroidNetworking;
@@ -39,6 +40,7 @@ import ir.mseif.app.com.movie.Adapters.SeriesList_Adapter;
 import ir.mseif.app.com.movie.Model.Movie_List;
 import ir.mseif.app.com.movie.Model.Series_List;
 import ir.mseif.app.com.movie.Pages.MovieInfo;
+import ir.mseif.app.com.movie.Pages.SerialInfo;
 import ir.mseif.app.com.movie.Utils.Global;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -54,6 +56,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @BindView(R.id.rcy_trailer) RecyclerView  rcy_trailer;
     @BindView(R.id.nav_view) RtlNavigationView  nav_view;
     @BindView(R.id.drawer_layout) DrawerLayout  drawer;
+    @BindView(R.id.btn_more_newFilm) Button  button;
+    @BindView(R.id.btn_more_newSerial) Button  button_1;
+    @BindView(R.id.btn_more_newTrailer) Button  button_2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -139,7 +145,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         int id = item.getItemId();
 
         if (id == R.id.nav_home) {
-            Toast.makeText(this, "CAMERA", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getApplicationContext(), MovieInfo.class);
+            startActivity(intent);
         } else if (id == R.id.nav_category) {
             Toast.makeText(this, "GALLERY", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_tv_show) {
