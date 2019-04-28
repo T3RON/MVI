@@ -2,8 +2,12 @@ package ir.mseif.app.com.movie;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.PorterDuff;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.NavigationView;
+import android.support.v4.content.ContextCompat;
+import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.DefaultItemAnimator;
@@ -14,8 +18,10 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,8 +43,12 @@ import butterknife.ButterKnife;
 import ir.basalam.rtlnavigationview.RtlNavigationView;
 import ir.mseif.app.com.movie.Adapters.MovieList_Adapter;
 import ir.mseif.app.com.movie.Adapters.SeriesList_Adapter;
+import ir.mseif.app.com.movie.Adapters.SliderList_Adapter;
+import ir.mseif.app.com.movie.Adapters.TrailerList_Adapter;
 import ir.mseif.app.com.movie.Model.Movie_List;
 import ir.mseif.app.com.movie.Model.Series_List;
+import ir.mseif.app.com.movie.Model.Slider_List;
+import ir.mseif.app.com.movie.Model.Trailer_List;
 import ir.mseif.app.com.movie.Pages.MovieInfo;
 import ir.mseif.app.com.movie.Pages.SerialInfo;
 import ir.mseif.app.com.movie.Utils.Global;
@@ -47,6 +57,10 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     private static final String TAG = "ReadAllActivity";
+
+    private SliderList_Adapter sliderList_adapter;
+    private Runnable runnable = null;
+    private Handler handler = new Handler();
 
 
 
@@ -59,6 +73,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @BindView(R.id.btn_more_newFilm) Button  button;
     @BindView(R.id.btn_more_newSerial) Button  button_1;
     @BindView(R.id.btn_more_newTrailer) Button  button_2;
+    @BindView(R.id.layout_dots) LinearLayout  layout_dots;
+    @BindView(R.id.pager) ViewPager viewPager;
+
+
+    ArrayList<String> slider_images = new ArrayList<>();
+    ArrayList<String> slider_titles = new ArrayList<>();
+    ArrayList<String> slider_text = new ArrayList<>();
+
 
 
     @Override
@@ -82,6 +104,9 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
         getMovie();
         getSeries();
+        getTrailer();
+        getSlider();
+        initComponent();
 
     }
 
@@ -94,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
     public void getMovie(){
-        AndroidNetworking.get("http://10.0.2.2:8080/movie/api/Apimovie/all")
+        AndroidNetworking.get(Global.BASE_URL+"Apimovie/all")
                 .setTag(this)
                 .setPriority(Priority.LOW)
                 .build()
@@ -114,7 +139,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 });
     }
     public void getSeries(){
-        AndroidNetworking.get("http://10.0.2.2:8080/movie/api/Apiseries/all")
+        AndroidNetworking.get(Global.BASE_URL+"Apiseries/all")
                 .setTag(this)
                 .setPriority(Priority.LOW)
                 .build()
@@ -132,6 +157,29 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                         // handle error
                     }
                 });
+    }
+    public void getTrailer(){
+        AndroidNetworking.get(Global.BASE_URL+"Apitriler/all")
+                .setTag(this)
+                .setPriority(Priority.LOW)
+                .build()
+                .getAsObjectList(Trailer_List.class, new ParsedRequestListener<List<Trailer_List>>() {
+                    @Override
+                    public void onResponse(List<Trailer_List> trailer_lists) {
+                        LinearLayoutManager linearLayoutManager_niyazmandi = new LinearLayoutManager(Global.context,LinearLayoutManager.HORIZONTAL,true);
+                        rcy_trailer.setLayoutManager(linearLayoutManager_niyazmandi);
+                        rcy_trailer.setItemAnimator(new DefaultItemAnimator());
+                        TrailerList_Adapter adapter = new TrailerList_Adapter(trailer_lists);
+                        rcy_trailer.setAdapter(adapter);
+                    }
+                    @Override
+                    public void onError(ANError anError) {
+                        // handle error
+                    }
+                });
+    }
+    public void getSlider(){
+
     }
 
 
@@ -178,6 +226,88 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else {
             super.onBackPressed();
         }
+    }
+
+
+    // Slider Component
+    private void initComponent() {
+        sliderList_adapter = new SliderList_Adapter(this, new ArrayList<Slider_List>());
+
+        AndroidNetworking.get(Global.BASE_URL+"Apisliders/all")
+                .setTag(this)
+                .setPriority(Priority.LOW)
+                .build()
+                .getAsObjectList(Slider_List.class, new ParsedRequestListener<List<Slider_List>>() {
+                    @Override
+                    public void onResponse(final List<Slider_List> slider_lists) {
+
+                        sliderList_adapter.setItems(slider_lists);
+                        viewPager.setAdapter(sliderList_adapter);
+
+                        // displaying selected image first
+                        viewPager.setCurrentItem(0);
+                        addBottomDots(layout_dots, sliderList_adapter.getCount(), 0);
+                        ((TextView) findViewById(R.id.title)).setText(slider_lists.get(0).getSliders_title());
+                        ((TextView) findViewById(R.id.brief)).setText(slider_lists.get(0).getSliders_type());
+                        viewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+                            @Override
+                            public void onPageScrolled(int pos, float positionOffset, int positionOffsetPixels) {
+                            }
+
+                            @Override
+                            public void onPageSelected(int pos) {
+                                ((TextView) findViewById(R.id.title)).setText(slider_lists.get(pos).getSliders_title());
+                                ((TextView) findViewById(R.id.brief)).setText(slider_lists.get(pos).getSliders_type());
+                                addBottomDots(layout_dots, sliderList_adapter.getCount(), pos);
+                            }
+
+                            @Override
+                            public void onPageScrollStateChanged(int state) {
+                            }
+                        });
+
+                        startAutoSlider(sliderList_adapter.getCount());
+                    }
+                    @Override
+                    public void onError(ANError anError) {
+                        // handle error
+                    }
+                });
+
+
+    }
+    private void addBottomDots(LinearLayout layout_dots, int size, int current) {
+        ImageView[] dots = new ImageView[size];
+
+        layout_dots.removeAllViews();
+        for (int i = 0; i < dots.length; i++) {
+            dots[i] = new ImageView(this);
+            int width_height = 15;
+            LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(new ViewGroup.LayoutParams(width_height, width_height));
+            params.setMargins(10, 0, 10, 0);
+            dots[i].setLayoutParams(params);
+            dots[i].setImageResource(R.drawable.shape_circle_outline);
+            dots[i].setColorFilter(ContextCompat.getColor(this, R.color.colorPrimaryDark), PorterDuff.Mode.SRC_ATOP);
+            layout_dots.addView(dots[i]);
+        }
+
+        if (dots.length > 0) {
+            dots[current].setImageResource(R.drawable.shape_circle);
+            dots[current].setColorFilter(ContextCompat.getColor(this, R.color.colorPrimaryDark), PorterDuff.Mode.SRC_ATOP);
+        }
+    }
+    private void startAutoSlider(final int count) {
+        runnable = new Runnable() {
+            @Override
+            public void run() {
+                int pos = viewPager.getCurrentItem();
+                pos = pos + 1;
+                if (pos >= count) pos = 0;
+                viewPager.setCurrentItem(pos);
+                handler.postDelayed(runnable, 5000);
+            }
+        };
+        handler.postDelayed(runnable, 5000);
     }
 
 

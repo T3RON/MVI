@@ -6,11 +6,6 @@
     android:orientation="vertical"
     android:background="#f4f4f4">
 
-    <iammert.com.expandablelib.ExpandableLayout
-        android:id="@+id/lvExp"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:parentLayout="@layout/layout_parent"
-        app:childLayout="@layout/layout_child"/>
+
 
 </LinearLayout>

@@ -3,7 +3,6 @@ package ir.mseif.app.com.movie.Pages;
 import android.content.Context;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.TabLayout;
-import android.support.v4.view.ViewPager;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,7 +18,7 @@ import android.widget.Toast;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ir.basalam.rtlnavigationview.RtlNavigationView;
-import ir.mseif.app.com.movie.Adapters.TabAdapter;
+import ir.mseif.app.com.movie.Adapters.Movie_TabAdapter;
 import ir.mseif.app.com.movie.R;
 import ir.mseif.app.com.movie.Utils.Global;
 import ir.mseif.app.com.movie.Utils.WrapContentViewPager;
@@ -79,10 +78,10 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
 
 
         //Creating our pager adapter
-        TabAdapter tabAdapter = new TabAdapter(getSupportFragmentManager(), tbLayout.getTabCount());
+        Movie_TabAdapter movieTabAdapter = new Movie_TabAdapter(getSupportFragmentManager(), tbLayout.getTabCount());
 
         //Adding adapter to pager
-        vPager.setAdapter(tabAdapter);
+        vPager.setAdapter(movieTabAdapter);
 
         //Adding onTabSelectedListener to swipe views
         tbLayout.addOnTabSelectedListener(this);

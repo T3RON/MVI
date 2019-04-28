@@ -5,4 +5,6 @@
     <color name="colorAccent">#E09705</color>
     <color name="colorBlack">#262525</color>
     <color name="BtnSearch">#D13131</color>
+    <color name="item_pressed">#8f8f8f</color>
+    <color name="white">#fff</color>
 </resources>
