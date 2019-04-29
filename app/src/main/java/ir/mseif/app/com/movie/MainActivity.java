@@ -105,7 +105,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         getMovie();
         getSeries();
         getTrailer();
-        getSlider();
         initComponent();
 
     }
@@ -178,9 +177,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                     }
                 });
     }
-    public void getSlider(){
 
-    }
 
 
 
