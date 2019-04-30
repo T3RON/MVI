@@ -41,6 +41,7 @@ import ir.mseif.app.com.movie.Model.Movie_List;
 import ir.mseif.app.com.movie.Model.Series_List;
 import ir.mseif.app.com.movie.Pages.MovieInfo;
 import ir.mseif.app.com.movie.Pages.SerialInfo;
+import ir.mseif.app.com.movie.Pages.Trailer;
 import ir.mseif.app.com.movie.Utils.Global;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -99,7 +100,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         button_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), m.class);
+                Intent intent = new Intent(getApplicationContext(), Trailer.class);
                 startActivity(intent);
             }
         });

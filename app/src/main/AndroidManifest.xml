@@ -22,7 +22,8 @@
         android:supportsRtl="false"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,InnerclassSeparator">
-        <activity android:name=".Pages.Serial_Episode"></activity>
+        <activity android:name=".Pages.Trailer"></activity>
+        <activity android:name=".Pages.Serial_Episode" />
         <activity android:name=".Pages.Serial_Season" />
         <activity android:name=".m" />
         <activity android:name=".Pages.SerialInfo" />
