@@ -12,20 +12,14 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.ExpandableListView;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ir.basalam.rtlnavigationview.RtlNavigationView;
-import ir.mseif.app.com.movie.Adapters.TabAdapter;
-import ir.mseif.app.com.movie.Adapters.TabAdapter2;
+import ir.mseif.app.com.movie.Adapters.Series_TabAdapter;
 import ir.mseif.app.com.movie.R;
 import ir.mseif.app.com.movie.Utils.Global;
 import ir.mseif.app.com.movie.Utils.WrapContentViewPager;
@@ -88,10 +82,10 @@ public class SerialInfo extends AppCompatActivity implements NavigationView.OnNa
 
 
         //Creating our pager adapter
-        TabAdapter2 tabAdapter2 = new TabAdapter2(getSupportFragmentManager(), tbLayout.getTabCount());
+        Series_TabAdapter seriesTabAdapter = new Series_TabAdapter(getSupportFragmentManager(), tbLayout.getTabCount());
 
         //Adding adapter to pager
-        vPager.setAdapter(tabAdapter2);
+        vPager.setAdapter(seriesTabAdapter);
 
         //Adding onTabSelectedListener to swipe views
         tbLayout.addOnTabSelectedListener(this);

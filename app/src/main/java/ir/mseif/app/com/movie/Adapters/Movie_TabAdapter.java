@@ -9,11 +9,11 @@ import ir.mseif.app.com.movie.Fragments.CommentsFragment;
 import ir.mseif.app.com.movie.Fragments.LinkFragment;
 
 
-public class TabAdapter extends FragmentStatePagerAdapter {
+public class Movie_TabAdapter extends FragmentStatePagerAdapter {
 
     int tabCount;
 
-    public TabAdapter(FragmentManager fm, int tabCount) {
+    public Movie_TabAdapter(FragmentManager fm, int tabCount) {
         super(fm);
         this.tabCount= tabCount;
 

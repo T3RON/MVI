@@ -14,6 +14,9 @@ public class Global extends Application {
     @SuppressLint("StaticFieldLeak")
     public static Context context;
     public static Typeface ira ;
+    public static String BASE_URL = "http://10.0.2.2:8080/movie/api/";
+    public static String BASE_URL_UPLOADS = "http://10.0.2.2:8080/movie/uploads/";
+
     @Override
     public void onCreate() {
         super.onCreate();

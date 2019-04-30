@@ -8,11 +8,11 @@ import ir.mseif.app.com.movie.Fragments.CastFragment;
 import ir.mseif.app.com.movie.Fragments.CommentsFragment;
 import ir.mseif.app.com.movie.Fragments.LinkFragmetSerial;
 
-public class TabAdapter2 extends FragmentStatePagerAdapter {
+public class Series_TabAdapter extends FragmentStatePagerAdapter {
 
     int tabCount;
 
-    public TabAdapter2(FragmentManager fm, int tabCount) {
+    public Series_TabAdapter(FragmentManager fm, int tabCount) {
         super(fm);
         this.tabCount= tabCount;
 

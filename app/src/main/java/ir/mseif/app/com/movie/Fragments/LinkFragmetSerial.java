@@ -20,4 +20,9 @@ public class LinkFragmetSerial extends Fragment {
         return inflater.inflate(R.layout.fragment_link_serial, container, false);
     }
 
+        @Override
+        public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        // get the listview
+
+    }
 }
