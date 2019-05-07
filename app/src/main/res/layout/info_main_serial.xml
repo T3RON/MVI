@@ -22,9 +22,6 @@
             layout="@layout/info_two" />
 
         <include
-            layout="@layout/info_three" />
-
-        <include
             layout="@layout/info_four" />
 
 

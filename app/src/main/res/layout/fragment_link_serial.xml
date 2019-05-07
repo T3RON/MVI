@@ -7,5 +7,10 @@
     android:background="#f4f4f4">
 
 
+    <include layout="@layout/rcy_season_link"/>
+    <include layout="@layout/rcy_season_link"/>
+    <include layout="@layout/rcy_season_link"/>
+    <include layout="@layout/rcy_season_link"/>
+    <include layout="@layout/rcy_season_link"/>
 
 </LinearLayout>

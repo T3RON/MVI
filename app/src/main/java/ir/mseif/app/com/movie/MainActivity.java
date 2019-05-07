@@ -51,6 +51,7 @@ import ir.mseif.app.com.movie.Model.Slider_List;
 import ir.mseif.app.com.movie.Model.Trailer_List;
 import ir.mseif.app.com.movie.Pages.MovieInfo;
 import ir.mseif.app.com.movie.Pages.SerialInfo;
+import ir.mseif.app.com.movie.Pages.Trailer;
 import ir.mseif.app.com.movie.Utils.Global;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
@@ -99,9 +100,32 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             }
         });
 
+    
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), MovieInfo.class);
+                startActivity(intent);
+            }
+        });
 
 
+        button_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), SerialInfo.class);
+                startActivity(intent);
+            }
+        });
 
+
+        button_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Trailer.class);
+                startActivity(intent);
+            }
+        });
         getMovie();
         getSeries();
         getTrailer();

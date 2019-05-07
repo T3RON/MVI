@@ -6,12 +6,9 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-
 import ir.mseif.app.com.movie.R;
 
 public class LinkFragmetSerial extends Fragment {
-
-
 
 
     //Overriden method onCreateView
@@ -28,5 +25,4 @@ public class LinkFragmetSerial extends Fragment {
         // get the listview
 
     }
-
 }
