@@ -7,4 +7,19 @@
     <color name="BtnSearch">#D13131</color>
     <color name="item_pressed">#8f8f8f</color>
     <color name="white">#fff</color>
+
+    <color name="season_back">#1f1e23</color>
+    <color name="episode_number">#fe9201</color>
+    <color name="season_orange_name">#ff9412</color>
+    <color name="season_line">#366c90</color>
+    <color name="season_mid">#25262a</color>
+
+
+    <color name="comment_etx">#363640</color>
+    <color name="comment_answer">#1b1a19</color>
+    <color name="comment_txt">#cfcfcf</color>
+    <color name="comment_txt_back">#313131</color>
+    <color name="comment_date">#7b7b7b</color>
+    <color name="comment_answer_back">#383838</color>
+    <color name="comment_etx_hint">#959595</color>
 </resources>

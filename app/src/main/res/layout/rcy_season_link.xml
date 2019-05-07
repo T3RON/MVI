@@ -9,42 +9,82 @@
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="50dp"
+        android:background="@color/season_back">
+
+        <View
+            android:id="@+id/season_circle"
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/season_circle"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/textView22"
-            android:layout_width="0dp"
-            android:layout_height="50dp"
-            android:background="@drawable/btn_link_style"
-            android:text="دانلود"
-            android:textColor="#fff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
             android:onClick="view_1"
+            android:text="فصل اول"
+            android:textColor="#E09705"
+            android:textStyle="bold"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/season_circle"
             app:layout_constraintTop_toTopOf="parent" />
 
         <View
-            android:id="@+id/view5"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/btn_sub_style"
-            android:text="زیرنویس"
-            android:textColor="#fff"
+            android:id="@+id/season_min"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="8dp"
+            android:background="@color/season_mid"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/textView22"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="@+id/season_number_black"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/season_number_black"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/season_number"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <View
-            android:id="@+id/view7"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:background="@drawable/btn_sub_style"
-            android:text="زیرنویس"
+
+        <TextView
+            android:id="@+id/textView23"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="۲۳"
             android:textColor="#fff"
+            app:layout_constraintBottom_toBottomOf="@+id/season_number_black"
+            app:layout_constraintEnd_toEndOf="@+id/season_number_black"
+            app:layout_constraintStart_toStartOf="@+id/season_number_black"
+            app:layout_constraintTop_toTopOf="@+id/season_number_black" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/season_line"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintStart_toStartOf="parent" />
+
     </android.support.constraint.ConstraintLayout>
 
 </LinearLayout>
