@@ -49,7 +49,11 @@ import ir.mseif.app.com.movie.Model.Movie_List;
 import ir.mseif.app.com.movie.Model.Series_List;
 import ir.mseif.app.com.movie.Model.Slider_List;
 import ir.mseif.app.com.movie.Model.Trailer_List;
+import ir.mseif.app.com.movie.Pages.Cast_Info;
+import ir.mseif.app.com.movie.Pages.Favourite;
+import ir.mseif.app.com.movie.Pages.History_page;
 import ir.mseif.app.com.movie.Pages.MovieInfo;
+import ir.mseif.app.com.movie.Pages.Request;
 import ir.mseif.app.com.movie.Pages.SerialInfo;
 import ir.mseif.app.com.movie.Pages.Trailer;
 import ir.mseif.app.com.movie.Utils.Global;
@@ -122,7 +126,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         button_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Trailer.class);
+                Intent intent = new Intent(getApplicationContext(), Cast_Info.class);
                 startActivity(intent);
             }
         });
@@ -221,11 +225,14 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         } else if (id == R.id.nav_tv_show) {
             Toast.makeText(this, "SLIDESHOW", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_download) {
-            Toast.makeText(this, "MANAGE", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getApplicationContext(), History_page.class);
+            startActivity(intent);
         } else if (id == R.id.nav_fav) {
-            Toast.makeText(this, "SHARE", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getApplicationContext(), Favourite.class);
+            startActivity(intent);
         } else if (id == R.id.nav_request) {
-            Toast.makeText(this, "SEND", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getApplicationContext(), Request.class);
+            startActivity(intent);
         } else if (id == R.id.nav_support) {
             Toast.makeText(this, "SEND", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.ic_exit) {

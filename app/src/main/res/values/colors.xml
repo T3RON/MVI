@@ -3,7 +3,7 @@
     <color name="colorPrimary">#008577</color>
     <color name="colorPrimaryDark">#E09705</color>
     <color name="colorAccent">#E09705</color>
-    <color name="colorBlack">#262525</color>
+    <color name="colorBack">#262525</color>
     <color name="BtnSearch">#D13131</color>
     <color name="item_pressed">#8f8f8f</color>
     <color name="white">#fff</color>
@@ -20,6 +20,10 @@
     <color name="comment_txt">#cfcfcf</color>
     <color name="comment_txt_back">#313131</color>
     <color name="comment_date">#7b7b7b</color>
-    <color name="comment_answer_back">#383838</color>
+    <color name="comment_answer_back">#363640</color>
     <color name="comment_etx_hint">#959595</color>
+
+    <color name="episode_blue">#3cc6f8</color>
+
+    <color name="info_cast">#1a1a1a</color>
 </resources>

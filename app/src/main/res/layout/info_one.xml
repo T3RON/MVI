@@ -199,7 +199,7 @@
                     android:paddingTop="1dp"
                     android:paddingRight="20dp"
                     android:paddingBottom="1dp"
-                    android:text="سریال"
+                    android:text="فیلم"
                     android:textColor="#fff"
                     android:textSize="14sp"
                     android:textStyle="bold"

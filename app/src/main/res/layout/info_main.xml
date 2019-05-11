@@ -12,8 +12,8 @@
         android:orientation="vertical">
 
 
-        <include
-            layout="@layout/toolbar" />
+        <!--<include-->
+            <!--layout="@layout/toolbar" />-->
 
         <include
             layout="@layout/info_one" />
@@ -24,8 +24,8 @@
         <include
             layout="@layout/info_three" />
 
-        <include
-            layout="@layout/info_four" />
+        <!--<include-->
+            <!--layout="@layout/info_four" />-->
 
 
 
