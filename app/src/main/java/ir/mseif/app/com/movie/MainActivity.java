@@ -53,6 +53,7 @@ import ir.mseif.app.com.movie.Pages.Cast_Info;
 import ir.mseif.app.com.movie.Pages.Favourite;
 import ir.mseif.app.com.movie.Pages.History_page;
 import ir.mseif.app.com.movie.Pages.MovieInfo;
+import ir.mseif.app.com.movie.Pages.News_Page;
 import ir.mseif.app.com.movie.Pages.Request;
 import ir.mseif.app.com.movie.Pages.SerialInfo;
 import ir.mseif.app.com.movie.Pages.Trailer;
@@ -78,6 +79,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     @BindView(R.id.btn_more_newFilm) Button  button;
     @BindView(R.id.btn_more_newSerial) Button  button_1;
     @BindView(R.id.btn_more_newTrailer) Button  button_2;
+    @BindView(R.id.button6) Button  button6;
     @BindView(R.id.layout_dots) LinearLayout  layout_dots;
     @BindView(R.id.pager) ViewPager viewPager;
 
@@ -127,6 +129,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), Cast_Info.class);
+                startActivity(intent);
+            }
+        });
+
+
+        button6.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), News_Page.class);
                 startActivity(intent);
             }
         });

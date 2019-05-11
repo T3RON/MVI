@@ -29,4 +29,6 @@
 
     <color name="request_etx">#18191e</color>
     <color name="request_rcy">#161616</color>
+
+    <color name="news_border">#fdfdfd</color>
 </resources>
