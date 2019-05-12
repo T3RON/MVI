@@ -7,7 +7,7 @@ import android.view.View;
 
 import ir.mseif.app.com.movie.R;
 
-public class Serial_Season extends AppCompatActivity {
+public class Serial_Episodes extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,8 +16,8 @@ public class Serial_Season extends AppCompatActivity {
     }
 
 
-    public void view_2(View view) {
-        Intent intent = new Intent(getApplicationContext(), Serial_Episode.class);
+    public void go_to_episode_link(View view) {
+        Intent intent = new Intent(getApplicationContext(), Serial_Episode_Link.class);
         startActivity(intent);
     }
 }

@@ -10,7 +10,7 @@
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:onClick="go_to_episode"
+        android:onClick="go_to_episode_link"
         android:background="@color/season_back">
 
         <View
@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
-            android:text="فصل اول"
+            android:text="قسمت اول"
             android:textColor="#E09705"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/season_circle"

@@ -62,7 +62,7 @@
             android:background="#14141C">
 
             <ImageView
-                android:id="@+id/imageView2"
+                android:id="@+id/imageView22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -86,7 +86,7 @@
                 android:text="جایزه گلــدن گلـــوب بهترین فیلم خارجی‌زبان"
                 android:textColor="#BFBEC8"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/imageView2"
+                app:layout_constraintEnd_toStartOf="@+id/imageView22"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
         </android.support.constraint.ConstraintLayout>

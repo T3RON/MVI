@@ -10,8 +10,6 @@
     android:fitsSystemWindows="true">
 
     <RelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/container"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
@@ -29,7 +27,29 @@
                 android:scrollbars="none"
                 android:scrollingCache="true">
 
-                <include layout="@layout/info_main" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <include
+                        layout="@layout/info_one" />
+                    <include
+                        layout="@layout/info_two" />
+                    <include
+                        layout="@layout/info_three" />
+                    <include
+                        layout="@layout/fragment_link" />
+                    <include
+                        layout="@layout/fragment_cast" />
+                    <include
+                        layout="@layout/fragment_comments" />
+
+
+                </LinearLayout>
+
+
+
 
 
             </android.support.v4.widget.NestedScrollView>

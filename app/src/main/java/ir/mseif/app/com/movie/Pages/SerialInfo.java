@@ -25,14 +25,14 @@ import ir.mseif.app.com.movie.Utils.Global;
 import ir.mseif.app.com.movie.Utils.WrapContentViewPager;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class SerialInfo extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener,  TabLayout.OnTabSelectedListener{
+public class SerialInfo extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-    @BindView(R.id.btn_menu)
-    ImageView btn_menu;
-
-    @BindView(R.id.tab_layout) TabLayout tbLayout;
-    @BindView(R.id.view_pager)
-    WrapContentViewPager vPager;
+//    @BindView(R.id.btn_menu)
+//    ImageView btn_menu;
+//
+//    @BindView(R.id.tab_layout) TabLayout tbLayout;
+//    @BindView(R.id.view_pager)
+//    WrapContentViewPager vPager;
 
 
 
@@ -48,65 +48,65 @@ public class SerialInfo extends AppCompatActivity implements NavigationView.OnNa
         nav_view.setNavigationItemSelectedListener(this);
         nav_view.setTypeface(Global.ira);
 
-        btn_menu.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DrawerLayout drawer = findViewById(R.id.drawer_layout);
-
-                drawer.openDrawer(Gravity.RIGHT);
-
-            }
-        });
-
-
+//        btn_menu.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                DrawerLayout drawer = findViewById(R.id.drawer_layout);
+//
+//                drawer.openDrawer(Gravity.RIGHT);
+//
+//            }
+//        });
 
 
 
 
-        //Adding the tabs using addTab() method
-        tbLayout.addTab(tbLayout.newTab().setText("نظـرات"));
-        tbLayout.addTab(tbLayout.newTab().setText("عوامل"));
-        tbLayout.addTab(tbLayout.newTab().setText("بخش دانلـود"));
-        tbLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-
-//        TabLayout.Tab tab = tbLayout.getTabAt(2);
-//        tab.select();
-
-        for (int i = 0; i < tbLayout.getTabCount(); i++) {
-            //noinspection ConstantConditions
-            TextView tv = (TextView) LayoutInflater.from(this).inflate(R.layout.text_tab_layout,null);
-            tv.setTypeface(Global.ira);
-            tbLayout.getTabAt(i).setCustomView(tv);
-        }
-
-
-
-        //Creating our pager adapter
-        Series_TabAdapter seriesTabAdapter = new Series_TabAdapter(getSupportFragmentManager(), tbLayout.getTabCount());
-
-        //Adding adapter to pager
-        vPager.setAdapter(seriesTabAdapter);
-
-        //Adding onTabSelectedListener to swipe views
-        tbLayout.addOnTabSelectedListener(this);
+//
+//
+//        //Adding the tabs using addTab() method
+//        tbLayout.addTab(tbLayout.newTab().setText("نظـرات"));
+//        tbLayout.addTab(tbLayout.newTab().setText("عوامل"));
+//        tbLayout.addTab(tbLayout.newTab().setText("بخش دانلـود"));
+//        tbLayout.setTabGravity(TabLayout.GRAVITY_FILL);
+//
+////        TabLayout.Tab tab = tbLayout.getTabAt(2);
+////        tab.select();
+//
+//        for (int i = 0; i < tbLayout.getTabCount(); i++) {
+//            //noinspection ConstantConditions
+//            TextView tv = (TextView) LayoutInflater.from(this).inflate(R.layout.text_tab_layout,null);
+//            tv.setTypeface(Global.ira);
+//            tbLayout.getTabAt(i).setCustomView(tv);
+//        }
+//
+//
+//
+//        //Creating our pager adapter
+//        Series_TabAdapter seriesTabAdapter = new Series_TabAdapter(getSupportFragmentManager(), tbLayout.getTabCount());
+//
+//        //Adding adapter to pager
+//        vPager.setAdapter(seriesTabAdapter);
+//
+//        //Adding onTabSelectedListener to swipe views
+//        tbLayout.addOnTabSelectedListener(this);
 
 
 
     }
 
-    @Override
-    public void onTabSelected(TabLayout.Tab tab) {
-        vPager.setCurrentItem(tab.getPosition());
-        Log.i("mseif",tab.getPosition() + "");
-    }
-
-    @Override
-    public void onTabUnselected(TabLayout.Tab tab) {
-    }
-
-    @Override
-    public void onTabReselected(TabLayout.Tab tab) {
-    }
+//    @Override
+//    public void onTabSelected(TabLayout.Tab tab) {
+//        vPager.setCurrentItem(tab.getPosition());
+//        Log.i("mseif",tab.getPosition() + "");
+//    }
+//
+//    @Override
+//    public void onTabUnselected(TabLayout.Tab tab) {
+//    }
+//
+//    @Override
+//    public void onTabReselected(TabLayout.Tab tab) {
+//    }
 
     // Font Calligraphy
     @Override
@@ -154,8 +154,8 @@ public class SerialInfo extends AppCompatActivity implements NavigationView.OnNa
         }
     }
 
-    public void view_1(View view){
-        Intent intent = new Intent(getApplicationContext(), Serial_Season.class);
+    public void go_to_episode(View view){
+        Intent intent = new Intent(getApplicationContext(), Serial_Episodes.class);
         startActivity(intent);
     }
 
