@@ -50,6 +50,7 @@
                 android:background="@drawable/btn_comment_style"
                 android:onClick="comment"
                 android:text="ارسال نظر"
+                android:textSize="13sp"
                 android:textColor="#fff"
                 app:layout_constraintBottom_toBottomOf="@+id/constraintLayout15"
                 app:layout_constraintStart_toStartOf="parent"

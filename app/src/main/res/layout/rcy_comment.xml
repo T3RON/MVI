@@ -49,11 +49,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1397/02/01"
+            android:textSize="11sp"
             android:textColor="@color/comment_date"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/cardview22"
             app:layout_constraintStart_toStartOf="@+id/cardview22"
-            app:layout_constraintTop_toBottomOf="@+id/cardview22" />
+            app:layout_constraintTop_toBottomOf="@+id/cardview22"
+            tools:ignore="SmallSp" />
 
         <TextView
             android:id="@+id/textView29"
@@ -64,6 +66,7 @@
             android:layout_marginEnd="8dp"
             android:text="بیست سال پس از حوادث فیلم آسمان آهنین، زمین توسط یک جنگ هسته ای ویران شده اما پایگاهی در عمق زمین که نازی ها در آن مخفی شده اند در امان مانده و حالا آن ها قصد دارند دوباره بازگردند و جهان را تسخیر کنن..."
             android:textColor="@color/comment_txt"
+            android:textSize="13sp"
             app:layout_constraintEnd_toStartOf="@+id/cardview22"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />

@@ -97,6 +97,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:text="ارتقاع حساب"
+                android:textSize="13sp"
                 android:textColor="#E09705"
                 app:layout_constraintBottom_toBottomOf="@+id/imageView12"
                 app:layout_constraintEnd_toStartOf="@+id/imageView12"
@@ -135,13 +136,14 @@
 
             <TextView
                 android:id="@+id/textView60"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="24dp"
-                android:layout_marginEnd="16dp"
+                android:layout_marginEnd="8dp"
                 android:text="با خرید کاربری ویژه می توانید از تمامی امکانات اپلیکیشن بهره مند شوید"
                 android:textColor="#fff"
+                android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/view11" />
@@ -171,7 +173,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
-                        android:background="@color/request_etx"
+                        android:background="@drawable/btn_comment_style"
                         app:layout_constraintBottom_toTopOf="@+id/constraintLayout29"
                         app:layout_constraintEnd_toStartOf="@+id/constraintLayout28"
                         app:layout_constraintHorizontal_bias="0.5"
@@ -183,6 +185,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:text="ماهه"
                             android:textColor="#E09705"
                             android:textSize="15sp"
@@ -234,7 +237,7 @@
                             app:layout_constraintEnd_toStartOf="@+id/textView65"
                             app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/textView63" />
+                            app:layout_constraintTop_toBottomOf="@+id/textView64" />
                     </android.support.constraint.ConstraintLayout>
 
                     <android.support.constraint.ConstraintLayout
@@ -243,7 +246,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
-                        android:background="@color/request_etx"
+                        android:background="@drawable/btn_comment_style"
                         app:layout_constraintBottom_toTopOf="@+id/constraintLayout30"
                         app:layout_constraintEnd_toStartOf="@+id/constraintLayout27"
                         app:layout_constraintHorizontal_bias="0.5"
@@ -255,6 +258,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:text="ماهه"
                             android:textColor="#E09705"
                             android:textSize="15sp"
@@ -290,7 +294,7 @@
                             app:layout_constraintEnd_toStartOf="@+id/textView74"
                             app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/textView71"
+                            app:layout_constraintTop_toBottomOf="@+id/textView72"
                             app:layout_constraintVertical_bias="1.0" />
 
                         <TextView
@@ -317,7 +321,7 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
-                        android:background="@color/request_etx"
+                        android:background="@drawable/btn_comment_style"
                         app:layout_constraintBottom_toTopOf="@+id/constraintLayout31"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
@@ -329,6 +333,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:text="ماهه"
                             android:textColor="#E09705"
                             android:textSize="15sp"
@@ -364,7 +369,7 @@
                             app:layout_constraintEnd_toStartOf="@+id/textView70"
                             app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/textView67" />
+                            app:layout_constraintTop_toBottomOf="@+id/textView68" />
 
                         <TextView
                             android:id="@+id/textView70"
@@ -390,7 +395,7 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"
-                        android:background="@color/request_etx"
+                        android:background="@drawable/btn_comment_style"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/constraintLayout30"
                         app:layout_constraintHorizontal_bias="0.5"
@@ -402,6 +407,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:text="ماهه"
                             android:textColor="#E09705"
                             android:textSize="15sp"
@@ -437,7 +443,7 @@
                             app:layout_constraintEnd_toStartOf="@+id/textView78"
                             app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/textView75" />
+                            app:layout_constraintTop_toBottomOf="@+id/textView76" />
 
                         <TextView
                             android:id="@+id/textView78"
@@ -463,7 +469,7 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
                         android:layout_marginBottom="8dp"
-                        android:background="@color/request_etx"
+                        android:background="@drawable/btn_comment_style"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/constraintLayout31"
                         app:layout_constraintHorizontal_bias="0.5"
@@ -475,6 +481,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:text="ماهه"
                             android:textColor="#E09705"
                             android:textSize="15sp"
@@ -510,7 +517,7 @@
                             app:layout_constraintEnd_toStartOf="@+id/textView82"
                             app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/textView79" />
+                            app:layout_constraintTop_toBottomOf="@+id/textView80" />
 
                         <TextView
                             android:id="@+id/textView82"
@@ -537,7 +544,7 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
                         android:layout_marginBottom="8dp"
-                        android:background="@color/request_etx"
+                        android:background="@drawable/btn_comment_style"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
@@ -549,6 +556,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
                             android:text="ماهه"
                             android:textColor="#E09705"
                             android:textSize="15sp"
@@ -584,7 +592,7 @@
                             app:layout_constraintEnd_toStartOf="@+id/textView86"
                             app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/textView83" />
+                            app:layout_constraintTop_toBottomOf="@+id/textView84" />
 
                         <TextView
                             android:id="@+id/textView86"
@@ -622,7 +630,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -630,11 +637,12 @@
 
                 <TextView
                     android:id="@+id/textView61"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="8dp"
+                    android:layout_marginEnd="16dp"
                     android:text="مبلغ شارژ کیف پول :"
                     android:textColor="#fff"
+                    android:textSize="13sp"
                     app:layout_constraintBottom_toBottomOf="@+id/editText7"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -647,13 +655,14 @@
                     android:layout_height="40dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:background="@color/request_etx"
+                    android:background="@drawable/btn_comment_style"
                     android:ems="10"
                     android:gravity="center"
                     android:paddingLeft="8dp"
                     android:paddingRight="8dp"
                     android:text="2500"
                     android:textColor="#E09705"
+                    android:textSize="13sp"
                     app:layout_constraintEnd_toStartOf="@+id/textView61"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toEndOf="@+id/textView62"
@@ -667,6 +676,7 @@
                     android:gravity="center"
                     android:text="تومان"
                     android:textColor="#fff"
+                    android:textSize="13sp"
                     app:layout_constraintBottom_toBottomOf="@+id/editText7"
                     app:layout_constraintEnd_toStartOf="@+id/editText7"
                     app:layout_constraintHorizontal_bias="0.5"
@@ -708,6 +718,7 @@
                     android:paddingRight="24dp"
                     android:text="پرداخت"
                     android:textColor="@color/colorBack"
+                    android:textSize="14sp"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/editText8" />

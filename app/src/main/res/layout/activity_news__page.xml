@@ -63,6 +63,7 @@
                                 android:layout_marginStart="8dp"
                                 android:layout_marginBottom="8dp"
                                 android:text="مشاهده اطلاعات بیشتر"
+                                android:textSize="13sp"
                                 android:textColor="#E09705"
                                 app:layout_constraintBottom_toBottomOf="@+id/imageView"
                                 app:layout_constraintStart_toEndOf="@+id/imageView"
@@ -100,6 +101,7 @@
                                 android:layout_marginStart="8dp"
                                 android:layout_marginTop="8dp"
                                 android:layout_marginEnd="160dp"
+                                android:textSize="14sp"
                                 android:text="فصل هشتم Game of Thrones: بررسی قسمت چهارم – مصائب مادر اژدها"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
@@ -111,8 +113,10 @@
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
                                 android:text="1397/02/01"
+                                android:textSize="11sp"
                                 app:layout_constraintEnd_toEndOf="@+id/textView56"
-                                app:layout_constraintTop_toBottomOf="@+id/textView56" />
+                                app:layout_constraintTop_toBottomOf="@+id/textView56"
+                                tools:ignore="SmallSp" />
 
                             <TextView
                                 android:id="@+id/textView58"
@@ -122,6 +126,7 @@
                                 android:layout_marginTop="8dp"
                                 android:layout_marginEnd="8dp"
                                 android:layout_marginBottom="8dp"
+                                android:textSize="13sp"
                                 android:text="در اپیزود چهارم از فصل هشتم «بازی تاج‌وتخت» (Game of Thrones) تحت عنوان «آخرین استارک‌ها» (The Last of the Starks) سرانجام به پایان بازی نزدیک شدیم و دانستیم که منازعاتی که در دل دو اپیزود آخر سریال گنجانده می‌شود میان مردگان و زندگان نخواهد بود، هرچند که در روزهای گذشته فرضیات جالبی در این باره شنیده بودیم. اما «نایت کینگ» بر خلاف پیش‌بینی‌های برخی از هواداران در این اپیزود ظاهر نشد و شورانرهای سریال تصمیم گرفتند بیش از این بر روی وایت‌واکرها، انگیزه‌ها و تهدید اگزیستانسیال آنان برای وستروس وقت صرف نکنند و این‌گونه «نایت کینگ» در میانه‌ی فصل پایانی تسلیم شد. پس از هفت فصل مقدمه‌چینی برای «نبرد بزرگ»، «بازی تاج‌وتخت» اکنون پافشاری می‌کند که این «نبرد آخر» دنریس است که اهمیت دارد. با برطرف شدن تهدید وایت واکرها، سریال نیمی از فصل را به درگیری‌هایی که میان انسان‌ها به وجود می‌آید، خیانت‌های آن‌ها و دیگر روایت‌هایی اختصاص خواهد داد که ربطی به مشتی زامبی گرافیکی ندارد. یا همان‌گونه که تیریون لنیستر می‌گوید: «شاید آن‌ها را شکست داده باشیم، اما ستیزه‌جویی‌های خود ما هنوز ادامه دارد.»  اشتباهات دور از انتظار تیریون در اپیزودهای اخیر به اعتقاد بسیاری برای ایجاد توازن میان نبرد سرسی و دنریس به داستان اضافه شده بود. او در «نبرد وینترفل» به جز گفتگویی کوتاه با سانسا فرقی با دیگر افرادی که دلواپسانه انتظار می‌کشیدند نداشت. اما با نیست شدن «نایت کینگ» فرصتی دست داد تا دوباره پس از چند فصل هنر سخن‌وری او را شاهد باشیم. در گفتگوی تیریون با واریس در راه دراگون‌استون و قلعه، به سؤالاتی کلیدی پرداخته شد که سریال مدت‌ها بود از طرح کردنشان طفره می‌رفت. اینکه یک حاکم چه دینی به مردمش دارد و مردم چه انتظاری از او باید داشته باشند؟ آیا رهبری یک زن را تنها در خیال باید تصور کرد؟  اگرچه نبرد برای «تخت آهنین» میان سرسی و دنریس شکل می‌گیرد و در کانون توجه قرار دارد، اما نه این مواجهه پایان ماجرا خواهد بود و نه تنشی که میان جان و دنریس به وجود آمده. در دل تمامی این کشمکش‌ها، ناسازگاری مهم‌تری وجود دارد که بخش‌های پایانی «بازی تاج‌وتخت» را تعریف می‌کند: دنریس علیه همه."
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
@@ -211,6 +216,7 @@
                                 android:background="@drawable/btn_comment_style"
                                 android:onClick="comment"
                                 android:text="ارسال نظر"
+                                android:textSize="13sp"
                                 android:textColor="#fff"
                                 app:layout_constraintBottom_toBottomOf="@+id/constraintLayout15"
                                 app:layout_constraintStart_toStartOf="parent"
