@@ -24,11 +24,11 @@ public class Global extends Application {
         AndroidNetworking.initialize(getApplicationContext());
 
         ira = Typeface.createFromAsset(getAssets(),
-                "fonts/ira.ttf");
+                "fonts/IRYekan.ttf");
 
 
         CalligraphyConfig.initDefault(new CalligraphyConfig.Builder()
-                .setDefaultFontPath("fonts/ira.ttf")
+                .setDefaultFontPath("fonts/IRYekan.ttf")
                 .setFontAttrId(R.attr.fontPath).build());
     }
 }

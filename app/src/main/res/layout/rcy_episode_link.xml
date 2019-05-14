@@ -34,8 +34,8 @@
             android:layout_marginEnd="8dp"
             android:gravity="right"
             android:text="720 P Bluray"
-            android:textSize="14sp"
             android:textColor="#fff"
+            android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView6"
             app:layout_constraintEnd_toStartOf="@+id/imageView6"
             app:layout_constraintTop_toTopOf="@+id/imageView6" />
@@ -47,7 +47,8 @@
             android:layout_marginStart="8dp"
             android:gravity="right"
             android:text="shAaning"
-            android:textSize="13sp"
+            android:textSize="11sp"
+            tools:ignore="SmallSp"
             android:textColor="#E09705"
             app:layout_constraintBottom_toBottomOf="@+id/txt_link_encoder"
             app:layout_constraintStart_toEndOf="@+id/txt_link_encoder"
@@ -60,7 +61,7 @@
             android:layout_marginStart="8dp"
             android:gravity="right"
             android:text="Encoder"
-            android:textSize="13sp"
+            android:textSize="12sp"
             android:textColor="#fff"
             app:layout_constraintBottom_toBottomOf="@+id/txt_link_quality"
             app:layout_constraintStart_toStartOf="parent"
@@ -68,7 +69,7 @@
 
         <android.support.constraint.ConstraintLayout
             android:id="@+id/constraintLayout21"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="4dp"
@@ -84,80 +85,74 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
                 android:layout_marginBottom="8dp"
                 android:gravity="right"
                 android:text="۲۷۰ MB"
-                android:textSize="13sp"
                 android:textColor="@color/episode_blue"
+                android:textSize="11sp"
+                tools:ignore="SmallSp"
                 app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/textView8"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
-                android:gravity="right"
-                android:text="حجم :"
-                android:textSize="13sp"
-                android:textColor="@color/episode_blue"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/textView9"
-                app:layout_constraintTop_toTopOf="parent" />
         </android.support.constraint.ConstraintLayout>
 
         <Button
             android:id="@+id/button3"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="25dp"
             android:layout_marginStart="4dp"
             android:background="@drawable/btn_link_style"
             android:text="دانلود"
-            android:textSize="13sp"
             android:textColor="#fff"
+            android:textSize="11sp"
             app:layout_constraintBottom_toBottomOf="@+id/button2"
             app:layout_constraintEnd_toStartOf="@+id/button2"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/button2" />
+            app:layout_constraintTop_toTopOf="@+id/button2"
+            tools:ignore="SmallSp" />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="25dp"
             android:layout_marginStart="4dp"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="8dp"
+            android:paddingBottom="4dp"
             android:background="@drawable/btn_sub_style"
             android:text="زیرنویس"
-            android:textSize="13sp"
             android:textColor="#fff"
+            android:textSize="11sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/button8"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/button3"
-            app:layout_constraintTop_toBottomOf="@+id/txt_link_quality" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_link_quality"
+            tools:ignore="SmallSp" />
 
         <Button
             android:id="@+id/button8"
             android:layout_width="wrap_content"
-            android:layout_height="30dp"
+            android:layout_height="25dp"
             android:layout_marginStart="4dp"
             android:layout_marginTop="16dp"
             android:layout_marginEnd="4dp"
             android:layout_marginBottom="8dp"
+            android:paddingBottom="4dp"
             android:background="@drawable/btn_more_style"
             android:text="پخش"
-            android:textSize="13sp"
             android:textColor="#fff"
+            android:textSize="11sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/constraintLayout21"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/button2"
-            app:layout_constraintTop_toBottomOf="@+id/txt_link_quality" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_link_quality"
+            tools:ignore="SmallSp" />
 
         <View
             android:id="@+id/season_min"
