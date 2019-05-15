@@ -2,34 +2,22 @@ package ir.mseif.app.com.movie.Pages;
 
 import android.content.Context;
 import android.support.design.widget.NavigationView;
-import android.support.design.widget.TabLayout;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import butterknife.BindView;
 import butterknife.ButterKnife;
 import ir.basalam.rtlnavigationview.RtlNavigationView;
-import ir.mseif.app.com.movie.Adapters.Movie_TabAdapter;
 import ir.mseif.app.com.movie.R;
 import ir.mseif.app.com.movie.Utils.Global;
-import ir.mseif.app.com.movie.Utils.WrapContentViewPager;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class MovieInfo extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 //    @BindView(R.id.btn_menu) ImageView btn_menu;
-
-//    @BindView(R.id.tab_layout) TabLayout tbLayout;
-//    @BindView(R.id.view_pager) WrapContentViewPager vPager;
 
 
 
@@ -58,52 +46,8 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
 
 
 
-
-//        //Adding the tabs using addTab() method
-//        tbLayout.addTab(tbLayout.newTab().setText("نظـرات"));
-//        tbLayout.addTab(tbLayout.newTab().setText("عوامل"));
-//        tbLayout.addTab(tbLayout.newTab().setText("بخش دانلـود"));
-//        tbLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-//
-////        TabLayout.Tab tab = tbLayout.getTabAt(2);
-////        tab.select();
-//
-//        for (int i = 0; i < tbLayout.getTabCount(); i++) {
-//            //noinspection ConstantConditions
-//            TextView tv = (TextView) LayoutInflater.from(this).inflate(R.layout.text_tab_layout,null);
-//            tv.setTypeface(Global.ira);
-//            tbLayout.getTabAt(i).setCustomView(tv);
-//        }
-//
-//
-//
-//        //Creating our pager adapter
-//        Movie_TabAdapter movieTabAdapter = new Movie_TabAdapter(getSupportFragmentManager(), tbLayout.getTabCount());
-//
-//        //Adding adapter to pager
-//        vPager.setAdapter(movieTabAdapter);
-//
-//        //Adding onTabSelectedListener to swipe views
-//        tbLayout.addOnTabSelectedListener(this);
-
-
-
-
     }
-//
-//    @Override
-//    public void onTabSelected(TabLayout.Tab tab) {
-//        vPager.setCurrentItem(tab.getPosition());
-//        Log.i("mseif",tab.getPosition() + "");
-//    }
-//
-//    @Override
-//    public void onTabUnselected(TabLayout.Tab tab) {
-//    }
-//
-//    @Override
-//    public void onTabReselected(TabLayout.Tab tab) {
-//    }
+
 
     // Font Calligraphy
     @Override

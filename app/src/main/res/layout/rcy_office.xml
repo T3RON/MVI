@@ -81,7 +81,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="8dp"
                 android:background="@color/colorBack"
                 android:orientation="vertical"
@@ -91,7 +91,7 @@
 
                 <android.support.constraint.ConstraintLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_height="wrap_content">
 
                     <TextView
                         android:id="@+id/textView37"
@@ -101,6 +101,8 @@
                         android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
                         android:text="هفته : ۱ "
+                        android:textSize="11sp"
+                        tools:ignore="SmallSp"
                         android:textColor="#fff"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -110,8 +112,12 @@
                         android:id="@+id/textView38"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
                         android:text="فروش :"
+                        android:textSize="11sp"
+                        tools:ignore="SmallSp"
                         android:textColor="#fff"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -122,9 +128,13 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="right"
                         android:paddingRight="8dp"
                         android:text="$۴.۳ M"
-                        android:gravity="right"
+                        android:textSize="11sp"
+                        tools:ignore="SmallSp"
                         android:textColor="@color/episode_number"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/textView38"

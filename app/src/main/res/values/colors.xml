@@ -10,8 +10,8 @@
 
     <color name="season_back">#1f1e23</color>
     <color name="episode_number">#fe9201</color>
-    <color name="season_orange_name">#ff9412</color>
-    <color name="season_line">#366c90</color>
+    <color name="season_orange_name">#ff9500</color>
+    <color name="season_line">#366993</color>
     <color name="season_mid">#25262a</color>
 
 
@@ -22,6 +22,7 @@
     <color name="comment_date">#7b7b7b</color>
     <color name="comment_answer_back">#363640</color>
     <color name="comment_etx_hint">#959595</color>
+    <color name="comment_btn_back">#383838</color>
 
     <color name="episode_blue">#3cc6f8</color>
 
@@ -31,4 +32,19 @@
     <color name="request_rcy">#161616</color>
 
     <color name="news_border">#fdfdfd</color>
+
+    <color name="news_back">#444</color>
+
+
+    <color name="vip_back">#f09900</color>
+    <color name="vip_front">#fac100</color>
+
+
+    <color name="vip_back_style">#2d2d2d</color>
+    <color name="vip_btn_style">#1a1a19</color>
+
+    <color name="news_head_style">#373737</color>
+
+
+
 </resources>

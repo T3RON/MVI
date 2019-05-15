@@ -1,11 +1,13 @@
 package ir.mseif.app.com.movie.Pages;
 
+import android.content.Context;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 
 import ir.mseif.app.com.movie.R;
+import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class Serial_Episode_Link extends AppCompatActivity {
 
@@ -18,4 +20,11 @@ public class Serial_Episode_Link extends AppCompatActivity {
         Intent intent = new Intent(getApplicationContext(), Serial_Episode_Link.class);
         startActivity(intent);
     }
+
+    // Font Calligraphy
+    @Override
+    protected void attachBaseContext(Context newBase) {
+        super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
+    }
+
 }

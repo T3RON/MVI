@@ -32,7 +32,6 @@
         <activity android:name=".Pages.Trailer" />
         <activity android:name=".Pages.Serial_Episode_Link" />
         <activity android:name=".Pages.Serial_Episodes" />
-        <activity android:name=".m" />
         <activity android:name=".Pages.SerialInfo" />
         <activity android:name=".Pages.MovieInfo" />
         <activity
