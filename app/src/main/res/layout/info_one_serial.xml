@@ -229,7 +229,7 @@
                 app:cardCornerRadius="3dp">
 
                 <ImageView
-                    android:id="@+id/img_small_poster"
+                    android:id="@+id/img_small_director"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:adjustViewBounds="true"
@@ -373,7 +373,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView21"
+                android:id="@+id/txt_year"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -468,11 +468,11 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/textView15"
+                app:layout_constraintStart_toEndOf="@+id/txt_time"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/textView15"
+                android:id="@+id/txt_time"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -739,7 +739,7 @@
         app:layout_constraintTop_toBottomOf="@+id/constraintLayout4">
 
         <TextView
-            android:id="@+id/textView5"
+            android:id="@+id/txt_story"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"

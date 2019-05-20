@@ -1,6 +1,6 @@
 package ir.mseif.app.com.movie.Model;
 
-public class Movie_List {
+public class Comments_List {
     private int movie_id;
     private String movie_name;
     private String movie_store;
@@ -15,10 +15,11 @@ public class Movie_List {
     private String movie_golden;
     private int movie_topimdb_id;
     private String movie_quality;
-    private String movie_small_image;
-    private String movie_larg_image;
+    private String image_small_url;
+    private String image_larg_url;
 
-    public Movie_List(int movie_id, String movie_name, String movie_store, int movie_age, String movie_imdb, String movie_country, String movie_lang, int movie_year, String movie_time, int category_id, String movie_oscar, String movie_golden, int movie_topimdb_id, String movie_quality, String movie_small_image, String movie_larg_image) {
+
+    public Comments_List(int movie_id, String movie_name, String movie_store, int movie_age, String movie_imdb, String movie_country, String movie_lang, int movie_year, String movie_time, int category_id, String movie_oscar, String movie_golden, int movie_topimdb_id, String movie_quality, String image_small_url, String image_larg_url) {
         this.movie_id = movie_id;
         this.movie_name = movie_name;
         this.movie_store = movie_store;
@@ -33,8 +34,8 @@ public class Movie_List {
         this.movie_golden = movie_golden;
         this.movie_topimdb_id = movie_topimdb_id;
         this.movie_quality = movie_quality;
-        this.movie_small_image = movie_small_image;
-        this.movie_larg_image = movie_larg_image;
+        this.image_small_url = image_small_url;
+        this.image_larg_url = image_larg_url;
     }
 
     public int getMovie_id() {
@@ -149,19 +150,19 @@ public class Movie_List {
         this.movie_quality = movie_quality;
     }
 
-    public String getMovie_small_image() {
-        return movie_small_image;
+    public String getImage_small_url() {
+        return image_small_url;
     }
 
-    public void setMovie_small_image(String movie_small_image) {
-        this.movie_small_image = movie_small_image;
+    public void setImage_small_url(String image_small_url) {
+        this.image_small_url = image_small_url;
     }
 
-    public String getMovie_larg_image() {
-        return movie_larg_image;
+    public String getImage_larg_url() {
+        return image_larg_url;
     }
 
-    public void setMovie_larg_image(String movie_larg_image) {
-        this.movie_larg_image = movie_larg_image;
+    public void setImage_larg_url(String image_larg_url) {
+        this.image_larg_url = image_larg_url;
     }
 }

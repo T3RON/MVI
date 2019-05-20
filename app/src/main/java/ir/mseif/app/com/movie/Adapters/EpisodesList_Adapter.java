@@ -15,19 +15,18 @@ import com.bumptech.glide.Glide;
 
 import java.util.List;
 
-import butterknife.BindView;
 import ir.mseif.app.com.movie.Model.Movie_List;
 import ir.mseif.app.com.movie.Pages.MovieInfo;
 import ir.mseif.app.com.movie.R;
 import ir.mseif.app.com.movie.Utils.Global;
 
 
-public class MovieList_Adapter extends RecyclerView.Adapter<MovieList_Adapter.MyViewHolder> {
+public class EpisodesList_Adapter extends RecyclerView.Adapter<EpisodesList_Adapter.MyViewHolder> {
 
     private List<Movie_List> movie_lists;
     private Intent intent;
 
-    public MovieList_Adapter(List<Movie_List> movie_lists) {
+    public EpisodesList_Adapter(List<Movie_List> movie_lists) {
         this.movie_lists = movie_lists;
     }
 

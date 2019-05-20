@@ -2,7 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout3"
+    android:id="@+id/btn_cast"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -44,7 +44,7 @@
 
 
         <TextView
-            android:id="@+id/textView28"
+            android:id="@+id/txt_director_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1397/02/01"

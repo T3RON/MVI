@@ -172,7 +172,7 @@
                                 app:layout_constraintTop_toTopOf="parent">
 
                                 <ImageView
-                                    android:id="@+id/img_small_poster"
+                                    android:id="@+id/img_small_director"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:adjustViewBounds="true"
@@ -225,7 +225,7 @@
                             app:layout_constraintTop_toBottomOf="@+id/editText">
 
                             <Button
-                                android:id="@+id/button4"
+                                android:id="@+id/btn_send_comment"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"

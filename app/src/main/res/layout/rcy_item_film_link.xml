@@ -2,7 +2,7 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout3"
+    android:id="@+id/btn_cast"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
@@ -64,12 +64,12 @@
             android:textSize="11sp"
             tools:ignore="SmallSp"
             android:textColor="#fff"
-            app:layout_constraintBottom_toBottomOf="@+id/txt_link_encoder"
-            app:layout_constraintStart_toEndOf="@+id/txt_link_encoder"
-            app:layout_constraintTop_toTopOf="@+id/txt_link_encoder" />
+            app:layout_constraintBottom_toBottomOf="@+id/txt_size"
+            app:layout_constraintStart_toEndOf="@+id/txt_size"
+            app:layout_constraintTop_toTopOf="@+id/txt_size" />
 
         <TextView
-            android:id="@+id/txt_link_encoder"
+            android:id="@+id/txt_size"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -92,12 +92,12 @@
             android:textSize="11sp"
             tools:ignore="SmallSp"
             android:textColor="#fff"
-            app:layout_constraintBottom_toBottomOf="@+id/textView9"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_encoder"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/textView9" />
+            app:layout_constraintTop_toTopOf="@+id/txt_encoder" />
 
         <TextView
-            android:id="@+id/textView9"
+            android:id="@+id/txt_encoder"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -106,12 +106,12 @@
             android:textSize="11sp"
             tools:ignore="SmallSp"
             android:textColor="#E09705"
-            app:layout_constraintBottom_toBottomOf="@+id/button2"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_sub"
             app:layout_constraintEnd_toStartOf="@+id/textView8"
-            app:layout_constraintTop_toTopOf="@+id/button2" />
+            app:layout_constraintTop_toTopOf="@+id/btn_sub" />
 
         <Button
-            android:id="@+id/button3"
+            android:id="@+id/btn_download"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
             android:layout_marginStart="8dp"
@@ -119,13 +119,13 @@
             android:text="دانلود"
             android:textColor="#fff"
             android:textSize="11sp"
-            app:layout_constraintBottom_toBottomOf="@+id/button2"
+            app:layout_constraintBottom_toBottomOf="@+id/btn_sub"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/button2"
+            app:layout_constraintTop_toTopOf="@+id/btn_sub"
             tools:ignore="SmallSp" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btn_sub"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
             android:layout_marginStart="4dp"
@@ -137,7 +137,7 @@
             android:textColor="#fff"
             android:textSize="11sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/button3"
+            app:layout_constraintStart_toEndOf="@+id/btn_download"
             app:layout_constraintTop_toBottomOf="@+id/txt_link_quality"
             tools:ignore="SmallSp" />
 

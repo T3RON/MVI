@@ -32,15 +32,10 @@
             android:orientation="vertical"
             app:layout_constraintTop_toBottomOf="@+id/textView87">
 
-            <include layout="@layout/rcy_item_film_link" />
-
-            <include layout="@layout/rcy_item_film_link" />
-
-            <include layout="@layout/rcy_item_film_link" />
-
-            <include layout="@layout/rcy_item_film_link" />
-
-            <include layout="@layout/rcy_item_film_link" />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rcy_movie_link"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
         </LinearLayout>
 
     </android.support.constraint.ConstraintLayout>
