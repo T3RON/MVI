@@ -225,7 +225,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="10dp"
-                android:elevation="1dp"
                 app:cardCornerRadius="3dp">
 
                 <ImageView
@@ -469,11 +468,11 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/txt_time"
+                app:layout_constraintStart_toEndOf="@+id/txt_time_2"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/txt_time"
+                android:id="@+id/txt_time_2"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"

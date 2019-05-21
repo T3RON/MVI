@@ -53,7 +53,7 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
     @BindView(R.id.txt_genre) TextView txt_genre;
     @BindView(R.id.txt_lang) TextView txt_lang;
     @BindView(R.id.txt_year) TextView txt_year;
-    @BindView(R.id.txt_time) TextView txt_time;
+    @BindView(R.id.txt_time_2) TextView txt_time;
     @BindView(R.id.txt_country) TextView txt_country;
     @BindView(R.id.txt_story) TextView txt_story;
     @BindView(R.id.txt_oscar) TextView txt_oscar;

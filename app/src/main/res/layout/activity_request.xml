@@ -34,6 +34,7 @@
                     android:orientation="vertical">
 
                     <android.support.constraint.ConstraintLayout
+                        android:id="@+id/place_tittle"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -54,8 +55,8 @@
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="8dp"
                             android:text="درخواست فیلم و سریال"
-                            android:textSize="12sp"
                             android:textColor="#E09705"
+                            android:textSize="12sp"
                             app:layout_constraintBottom_toBottomOf="@+id/imageView8"
                             app:layout_constraintEnd_toStartOf="@+id/imageView8"
                             app:layout_constraintTop_toTopOf="@+id/imageView8" />
@@ -65,9 +66,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
-                            android:textSize="12sp"
                             android:text="Request"
                             android:textColor="#BFBEC8"
+                            android:textSize="12sp"
                             app:layout_constraintBottom_toBottomOf="@+id/textView46"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="@+id/textView46" />
@@ -85,6 +86,7 @@
                     </android.support.constraint.ConstraintLayout>
 
                     <android.support.constraint.ConstraintLayout
+                        android:id="@+id/place_img"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 
@@ -104,6 +106,7 @@
                             tools:ignore="MissingConstraints" />
 
                         <android.support.constraint.ConstraintLayout
+                            android:id="@+id/place_tittle_center"
                             android:layout_width="match_parent"
                             android:layout_height="0dp"
                             android:background="@drawable/gradient_poster_info"
@@ -113,7 +116,7 @@
                             app:layout_constraintTop_toTopOf="@+id/img_large_poster">
 
                             <ImageView
-                                android:id="@+id/imageView10"
+                                android:id="@+id/img_request"
                                 android:layout_width="250dp"
                                 android:layout_height="120dp"
                                 android:layout_marginStart="8dp"
@@ -126,47 +129,48 @@
                                 tools:ignore="VectorDrawableCompat" />
 
                             <TextView
-                                android:id="@+id/textView50"
+                                android:id="@+id/txt_titlte"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
                                 android:text="درخواست فیلم و سریال"
                                 android:textColor="#E09705"
                                 android:textSize="14sp"
-                                app:layout_constraintEnd_toEndOf="@+id/imageView10"
-                                app:layout_constraintStart_toStartOf="@+id/imageView10"
-                                app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+                                app:layout_constraintEnd_toEndOf="@+id/img_request"
+                                app:layout_constraintStart_toStartOf="@+id/img_request"
+                                app:layout_constraintTop_toBottomOf="@+id/img_request" />
                         </android.support.constraint.ConstraintLayout>
 
                     </android.support.constraint.ConstraintLayout>
 
                     <android.support.constraint.ConstraintLayout
+                        android:id="@+id/place_main"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <EditText
-                            android:id="@+id/editText3"
+                            android:id="@+id/etx_name"
                             android:layout_width="0dp"
                             android:layout_height="45dp"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
                             android:layout_marginEnd="8dp"
-                            android:paddingLeft="8dp"
-                            android:paddingRight="8dp"
                             android:background="@drawable/style_request_etx"
                             android:ems="10"
-                            android:textSize="11sp"
-                            tools:ignore="SmallSp"
                             android:hint="نام اثر درخواستی"
                             android:inputType="textPersonName"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
                             android:textColor="@color/comment_etx_hint"
                             android:textColorHint="@color/comment_etx_hint"
+                            android:textSize="11sp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SmallSp" />
 
                         <Spinner
-                            android:id="@+id/spinner"
+                            android:id="@+id/etx_kind"
                             android:layout_width="0dp"
                             android:layout_height="45dp"
                             android:layout_marginTop="8dp"
@@ -174,45 +178,45 @@
                             android:background="@drawable/style_request_etx"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintHorizontal_bias="0.5"
-                            app:layout_constraintStart_toEndOf="@+id/spinner2"
-                            app:layout_constraintTop_toBottomOf="@+id/editText3" />
+                            app:layout_constraintStart_toEndOf="@+id/etx_genre"
+                            app:layout_constraintTop_toBottomOf="@+id/etx_name" />
 
                         <Spinner
-                            android:id="@+id/spinner2"
+                            android:id="@+id/etx_genre"
                             android:layout_width="129dp"
                             android:layout_height="45dp"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
                             android:layout_marginEnd="8dp"
                             android:background="@drawable/style_request_etx"
-                            app:layout_constraintEnd_toStartOf="@+id/spinner"
+                            app:layout_constraintEnd_toStartOf="@+id/etx_kind"
                             app:layout_constraintHorizontal_bias="0.5"
-                            app:layout_constraintStart_toEndOf="@+id/editText4"
-                            app:layout_constraintTop_toBottomOf="@+id/editText3" />
+                            app:layout_constraintStart_toEndOf="@+id/etx_year"
+                            app:layout_constraintTop_toBottomOf="@+id/etx_name" />
 
                         <EditText
-                            android:id="@+id/editText4"
+                            android:id="@+id/etx_year"
                             android:layout_width="0dp"
                             android:layout_height="45dp"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
-                            android:paddingLeft="8dp"
-                            android:paddingRight="8dp"
                             android:background="@drawable/style_request_etx"
                             android:ems="10"
-                            android:textSize="11sp"
-                            tools:ignore="SmallSp"
                             android:hint="سال انتشار"
                             android:inputType="number"
+                            android:paddingLeft="8dp"
+                            android:paddingRight="8dp"
                             android:textColor="@color/comment_etx_hint"
                             android:textColorHint="@color/comment_etx_hint"
-                            app:layout_constraintEnd_toStartOf="@+id/spinner2"
+                            android:textSize="11sp"
+                            app:layout_constraintEnd_toStartOf="@+id/etx_genre"
                             app:layout_constraintHorizontal_bias="0.5"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/editText3" />
+                            app:layout_constraintTop_toBottomOf="@+id/etx_name"
+                            tools:ignore="SmallSp" />
 
                         <android.support.constraint.ConstraintLayout
-                            android:id="@+id/constraintLayout22"
+                            android:id="@+id/place_imdb"
                             android:layout_width="0dp"
                             android:layout_height="45dp"
                             android:layout_marginStart="8dp"
@@ -221,28 +225,28 @@
                             android:background="@drawable/style_request_etx"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/spinner2">
+                            app:layout_constraintTop_toBottomOf="@+id/etx_genre">
 
                             <EditText
-                                android:id="@+id/editText5"
+                                android:id="@+id/etx_id_imdb"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginEnd="8dp"
+                                android:background="@color/request_etx"
+                                android:ems="10"
+                                android:hint="آیدی اثر درخواستی در IMDB مثال : tt4258963"
+                                android:inputType="textPersonName"
                                 android:paddingLeft="8dp"
                                 android:paddingRight="8dp"
-                                android:ems="10"
-                                android:textSize="11sp"
-                                tools:ignore="SmallSp"
-                                android:hint="آیدی اثر درخواستی در IMDB مثال : tt4258963"
-                                android:background="@color/request_etx"
-                                android:inputType="textPersonName"
                                 android:textColor="@color/comment_etx_hint"
                                 android:textColorHint="@color/comment_etx_hint"
+                                android:textSize="11sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.5"
                                 app:layout_constraintStart_toEndOf="@+id/imageView"
-                                app:layout_constraintTop_toTopOf="parent" />
+                                app:layout_constraintTop_toTopOf="parent"
+                                tools:ignore="SmallSp" />
 
                             <ImageView
                                 android:id="@+id/imageView"
@@ -263,58 +267,58 @@
                         </android.support.constraint.ConstraintLayout>
 
                         <EditText
-                            android:id="@+id/editText6"
+                            android:id="@+id/etx_comment"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
                             android:layout_marginEnd="8dp"
+                            android:background="@drawable/style_request_etx"
                             android:gravity="top"
+                            android:hint="توضیح در مورد اثر درخواستی"
                             android:inputType="textMultiLine"
                             android:minLines="4"
                             android:paddingStart="15dp"
                             android:paddingTop="10dp"
                             android:paddingEnd="15dp"
                             android:paddingBottom="10dp"
-                            android:textSize="11sp"
-                            tools:ignore="SmallSp"
-                            android:hint="توضیح در مورد اثر درخواستی"
-                            android:background="@drawable/style_request_etx"
-                            android:textColorHint="@color/comment_etx_hint"
                             android:textColor="@color/comment_etx_hint"
+                            android:textColorHint="@color/comment_etx_hint"
+                            android:textSize="11sp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout22" />
+                            app:layout_constraintTop_toBottomOf="@+id/place_imdb"
+                            tools:ignore="SmallSp" />
 
                         <Button
-                            android:id="@+id/button9"
+                            android:id="@+id/btn_send"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
                             android:layout_marginBottom="8dp"
-                            android:paddingRight="24dp"
-                            android:paddingLeft="24dp"
                             android:background="@drawable/style_btn_request"
+                            android:paddingLeft="24dp"
+                            android:paddingRight="24dp"
                             android:text="ارسال درخواست"
-                            android:textSize="13sp"
                             android:textColor="#fff"
+                            android:textSize="13sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/editText6" />
+                            app:layout_constraintTop_toBottomOf="@+id/etx_comment" />
 
                         <android.support.constraint.ConstraintLayout
-                            android:id="@+id/constraintLayout15"
+                            android:id="@+id/place_answer"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:layout_marginEnd="8dp"
                             android:background="@drawable/style_request_rcy"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/editText6">
+                            app:layout_constraintTop_toBottomOf="@+id/etx_comment">
 
                             <TextView
-                                android:id="@+id/textView24"
+                                android:id="@+id/txt_number_1"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
@@ -324,13 +328,13 @@
                                 android:text="7"
                                 android:textColor="#FF9200"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toStartOf="@+id/textView25"
+                                app:layout_constraintEnd_toStartOf="@+id/txt_number_plus"
                                 app:layout_constraintHorizontal_bias="0.5"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
-                                android:id="@+id/textView25"
+                                android:id="@+id/txt_number_plus"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
@@ -339,13 +343,13 @@
                                 android:text="+"
                                 android:textColor="#fff"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toStartOf="@+id/textView26"
+                                app:layout_constraintEnd_toStartOf="@+id/txt_number_2"
                                 app:layout_constraintHorizontal_bias="0.5"
-                                app:layout_constraintStart_toEndOf="@+id/textView24"
+                                app:layout_constraintStart_toEndOf="@+id/txt_number_1"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
-                                android:id="@+id/textView26"
+                                android:id="@+id/txt_number_2"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
@@ -354,13 +358,13 @@
                                 android:text="1"
                                 android:textColor="#FF9200"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toStartOf="@+id/textView27"
+                                app:layout_constraintEnd_toStartOf="@+id/txt_number_equal"
                                 app:layout_constraintHorizontal_bias="0.5"
-                                app:layout_constraintStart_toEndOf="@+id/textView25"
+                                app:layout_constraintStart_toEndOf="@+id/txt_number_plus"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <TextView
-                                android:id="@+id/textView27"
+                                android:id="@+id/txt_number_equal"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
@@ -369,13 +373,13 @@
                                 android:text="="
                                 android:textColor="#fff"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toStartOf="@+id/editText2"
+                                app:layout_constraintEnd_toStartOf="@+id/etx_answer"
                                 app:layout_constraintHorizontal_bias="0.5"
-                                app:layout_constraintStart_toEndOf="@+id/textView26"
+                                app:layout_constraintStart_toEndOf="@+id/txt_number_2"
                                 app:layout_constraintTop_toTopOf="parent" />
 
                             <EditText
-                                android:id="@+id/editText2"
+                                android:id="@+id/etx_answer"
                                 android:layout_width="75dp"
                                 android:layout_height="35dp"
                                 android:layout_marginTop="8dp"
@@ -389,14 +393,11 @@
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.5"
-                                app:layout_constraintStart_toEndOf="@+id/textView27"
+                                app:layout_constraintStart_toEndOf="@+id/txt_number_equal"
                                 app:layout_constraintTop_toTopOf="parent" />
                         </android.support.constraint.ConstraintLayout>
                     </android.support.constraint.ConstraintLayout>
 
-                    <android.support.constraint.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
 
                         <LinearLayout
                             android:layout_width="match_parent"
@@ -406,14 +407,13 @@
                             android:orientation="vertical"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent">
+                            app:layout_constraintStart_toStartOf="parent">
+
                             <include layout="@layout/rcy_request"></include>
                             <include layout="@layout/rcy_request"></include>
                             <include layout="@layout/rcy_request"></include>
                         </LinearLayout>
 
-                    </android.support.constraint.ConstraintLayout>
                 </LinearLayout>
 
 
