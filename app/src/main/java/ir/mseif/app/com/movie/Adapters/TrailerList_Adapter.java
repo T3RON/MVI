@@ -2,19 +2,18 @@ package ir.mseif.app.com.movie.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import ir.mseif.app.com.movie.Model.Series_List;
 import ir.mseif.app.com.movie.Model.Trailer_List;
 import ir.mseif.app.com.movie.R;
 import ir.mseif.app.com.movie.Utils.Global;
@@ -43,10 +42,12 @@ public class TrailerList_Adapter extends RecyclerView.Adapter<TrailerList_Adapte
         holder.txt_year.setText(trailer_lists.get(position).getTrailer_year() + "");
         holder.txt_rate.setVisibility(View.GONE);
 
-        Glide.with(holder.context)
-                .asBitmap()
-                .load(Global.BASE_URL_UPLOADS + trailer_lists.get(position).getTrailer_image())
+
+
+        Picasso.with(holder.context).load(Global.BASE_URL_UPLOADS + trailer_lists.get(position).getTrailer_image()).fit().centerCrop()
                 .into(holder.img_poster);
+
+
 //        holder.btn_pick.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {

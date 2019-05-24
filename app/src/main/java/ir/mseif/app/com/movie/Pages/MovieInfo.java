@@ -1,13 +1,13 @@
 package ir.mseif.app.com.movie.Pages;
 
 import android.content.Context;
-import android.support.design.widget.NavigationView;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
+import com.google.android.material.navigation.NavigationView;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -19,7 +19,7 @@ import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.ParsedRequestListener;
-import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -186,13 +186,14 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
                         txt_oscar.setText(movie_single_info.get(0).getMovie_oscar());
                         txt_golden.setText(movie_single_info.get(0).getMovie_golden());
                         txt_top.setText(movie_single_info.get(0).getMovie_topimdb_id() + "");
-                        Glide.with(Global.context)
-                                .asBitmap()
-                                .load(Global.BASE_URL_UPLOADS + movie_single_info.get(0).getMovie_small_image())
+
+
+                        Picasso.with(Global.context)
+                                .load(Global.BASE_URL_UPLOADS + movie_single_info.get(0).getMovie_small_image()).fit().centerCrop()
                                 .into(img_small_poster);
-                        Glide.with(Global.context)
-                                .asBitmap()
-                                .load(Global.BASE_URL_UPLOADS + movie_single_info.get(0).getMovie_larg_image())
+
+                        Picasso.with(Global.context)
+                                .load(Global.BASE_URL_UPLOADS + movie_single_info.get(0).getMovie_larg_image()).fit().centerCrop()
                                 .into(img_large_poster);
                     }
                     @Override

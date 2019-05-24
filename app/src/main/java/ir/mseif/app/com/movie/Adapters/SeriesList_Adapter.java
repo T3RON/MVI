@@ -2,20 +2,22 @@ package ir.mseif.app.com.movie.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
+
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
 import ir.mseif.app.com.movie.Model.Series_List;
 import ir.mseif.app.com.movie.R;
+import ir.mseif.app.com.movie.Utils.Global;
 
 
 public class SeriesList_Adapter extends RecyclerView.Adapter<SeriesList_Adapter.MyViewHolder> {
@@ -41,10 +43,11 @@ public class SeriesList_Adapter extends RecyclerView.Adapter<SeriesList_Adapter.
         holder.txt_year.setText(series_lists.get(position).getSeries_year() + "");
         holder.txt_rate.setText(series_lists.get(position).getSeries_imdb() + "");
 
-        Glide.with(holder.context)
-                .asBitmap()
-                .load("http://10.0.2.2:8080/movie/uploads/" + series_lists.get(position).getImage_small_url())
+
+        Picasso.with(holder.context).load(Global.BASE_URL_UPLOADS + series_lists.get(position).getImage_small_url()).fit().centerCrop()
                 .into(holder.img_poster);
+
+
 //        holder.btn_pick.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {

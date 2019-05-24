@@ -14,14 +14,14 @@ import android.graphics.PorterDuff;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Build;
-import android.support.annotation.ColorInt;
-import android.support.annotation.ColorRes;
-import android.support.annotation.DrawableRes;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
-import android.support.v4.graphics.drawable.RoundedBitmapDrawableFactory;
-import android.support.v4.widget.NestedScrollView;
-import android.support.v7.widget.Toolbar;
+import androidx.annotation.ColorInt;
+import androidx.annotation.ColorRes;
+import androidx.annotation.DrawableRes;
+import androidx.core.content.ContextCompat;
+import androidx.core.graphics.drawable.RoundedBitmapDrawable;
+import androidx.core.graphics.drawable.RoundedBitmapDrawableFactory;
+import androidx.core.widget.NestedScrollView;
+import androidx.appcompat.widget.Toolbar;
 import android.util.TypedValue;
 import android.view.Menu;
 import android.view.View;
@@ -30,9 +30,9 @@ import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.target.BitmapImageViewTarget;
+
 import com.google.android.gms.maps.GoogleMap;
+import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -40,7 +40,6 @@ import java.util.Date;
 
 import ir.mseif.app.com.movie.R;
 
-import static com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions.withCrossFade;
 
 public class Tools {
 
@@ -109,31 +108,18 @@ public class Tools {
 
     public static void displayImageOriginal(Context ctx, ImageView img, @DrawableRes int drawable) {
         try {
-            Glide.with(ctx).load(drawable)
-                    .transition(withCrossFade())
+            Picasso.with(ctx)
+                    .load(drawable).fit().centerCrop()
                     .into(img);
         } catch (Exception e) {
         }
     }
 
-    public static void displayImageRound(final Context ctx, final ImageView img, @DrawableRes int drawable) {
-        try {
-            Glide.with(ctx).asBitmap().load(drawable).into(new BitmapImageViewTarget(img) {
-                @Override
-                protected void setResource(Bitmap resource) {
-                    RoundedBitmapDrawable circularBitmapDrawable = RoundedBitmapDrawableFactory.create(ctx.getResources(), resource);
-                    circularBitmapDrawable.setCircular(true);
-                    img.setImageDrawable(circularBitmapDrawable);
-                }
-            });
-        } catch (Exception e) {
-        }
-    }
 
     public static void displayImageOriginal(Context ctx, ImageView img, String url) {
         try {
-            Glide.with(ctx).load(url)
-                    .transition(withCrossFade())
+            Picasso.with(ctx)
+                    .load(url).fit().centerCrop()
                     .into(img);
         } catch (Exception e) {
         }

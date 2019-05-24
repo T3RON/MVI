@@ -2,25 +2,19 @@ package ir.mseif.app.com.movie.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.bumptech.glide.Glide;
 
 import java.util.List;
 
 import ir.mseif.app.com.movie.Model.Movie_Link_List;
-import ir.mseif.app.com.movie.Model.Movie_List;
-import ir.mseif.app.com.movie.Pages.MovieInfo;
 import ir.mseif.app.com.movie.R;
-import ir.mseif.app.com.movie.Utils.Global;
 
 
 public class MovieLink_Adapter extends RecyclerView.Adapter<MovieLink_Adapter.MyViewHolder> {

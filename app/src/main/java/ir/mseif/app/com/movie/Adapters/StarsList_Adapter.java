@@ -2,15 +2,15 @@ package ir.mseif.app.com.movie.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.bumptech.glide.Glide;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -40,10 +40,10 @@ public class StarsList_Adapter extends RecyclerView.Adapter<StarsList_Adapter.My
 
         holder.txt_stars_name.setText(stars_lists.get(position).getStars_name() + "");
 
-        Glide.with(holder.context)
-                .asBitmap()
-                .load(Global.BASE_URL_UPLOADS + stars_lists.get(position).getStars_image())
+
+        Picasso.with(holder.context).load(Global.BASE_URL_UPLOADS + stars_lists.get(position).getStars_image()).fit().centerCrop()
                 .into(holder.img_small_stars);
+
 //        holder.btn_movie.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {

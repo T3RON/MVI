@@ -5,16 +5,16 @@ import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.os.Handler;
-import android.support.design.widget.NavigationView;
-import android.support.v4.content.ContextCompat;
-import android.support.v4.view.ViewPager;
-import android.support.v4.widget.DrawerLayout;
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.DefaultItemAnimator;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.Toolbar;
-import android.util.Log;
+import com.google.android.material.navigation.NavigationView;
+import androidx.core.content.ContextCompat;
+import androidx.viewpager.widget.ViewPager;
+import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DefaultItemAnimator;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.Toolbar;
+
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
@@ -28,12 +28,7 @@ import android.widget.Toast;
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
-import com.androidnetworking.interfaces.JSONArrayRequestListener;
 import com.androidnetworking.interfaces.ParsedRequestListener;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,10 +48,9 @@ import ir.mseif.app.com.movie.Pages.Cast_Info;
 import ir.mseif.app.com.movie.Pages.Favourite;
 import ir.mseif.app.com.movie.Pages.History_page;
 import ir.mseif.app.com.movie.Pages.MovieInfo;
-import ir.mseif.app.com.movie.Pages.News_Page;
+import ir.mseif.app.com.movie.Pages.Player;
 import ir.mseif.app.com.movie.Pages.Request;
 import ir.mseif.app.com.movie.Pages.SerialInfo;
-import ir.mseif.app.com.movie.Pages.Trailer;
 import ir.mseif.app.com.movie.Pages.VIP;
 import ir.mseif.app.com.movie.Utils.Global;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -148,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), News_Page.class);
+                Intent intent = new Intent(getApplicationContext(), Player.class);
                 startActivity(intent);
             }
         });

@@ -2,8 +2,6 @@
     <string name="app_name">Movie</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
-    <string name="btn_txt_size">12sp</string>
 </resources>

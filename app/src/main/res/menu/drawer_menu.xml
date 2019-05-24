@@ -31,13 +31,11 @@
                 android:title="پشتیـــبانی" />
 
             <item
-                android:id="@+id/nav_share"
                 android:icon="@drawable/ic_share"
                 android:title="به اشتراک گذاری" />
 
 
             <item
-                android:id="@+id/ic_about"
                 android:icon="@drawable/ic_about"
                 android:title="دربـــاره مــا" />
 
