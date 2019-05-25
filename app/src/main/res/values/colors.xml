@@ -6,7 +6,7 @@
     <color name="colorBack">#262525</color>
     <color name="BtnSearch">#D13131</color>
 
-    <color name="season_back">#1f1e23</color>
+    <color name="season_back">#2c2b31</color>
     <color name="episode_number">#fe9201</color>
     <color name="season_orange_name">#ff9500</color>
     <color name="season_mid">#25262a</color>
@@ -42,5 +42,13 @@
     <color name="news_head_style">#373737</color>
 
 
+    <color name="profile_text">#bdbdbd</color>
+    <color name="profile_yellow_color">#fcaf17</color>
+    <color name="profile_orange">#fe9201</color>
+    <color name="profile_btn">#2a2a2a</color>
 
+
+
+    <color name="line_mid_Info_two">#2a292f</color>
+    <color name="info_movie">#242329</color>
 </resources>

@@ -7,11 +7,11 @@
     android:layout_height="wrap_content"
     android:orientation="horizontal">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:onClick="go_to_episode_link"
-        android:background="@color/season_back">
+        android:background="@color/info_movie">
 
         <View
             android:id="@+id/season_circle"
@@ -26,7 +26,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView22"
+            android:id="@+id/txt_epidoe_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -38,6 +38,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <View
+            android:id="@+id/line_mid"
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:layout_marginStart="8dp"
@@ -46,7 +47,7 @@
             android:layout_marginBottom="8dp"
             android:background="@color/season_mid"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/textView22"
+            app:layout_constraintEnd_toStartOf="@+id/txt_epidoe_name"
             app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="@+id/season_number_black"
             app:layout_constraintTop_toTopOf="parent" />
@@ -65,6 +66,7 @@
 
 
         <TextView
+            android:id="@+id/txt_episode_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="۲۳"
@@ -76,6 +78,7 @@
             app:layout_constraintTop_toTopOf="@+id/season_number_black" />
 
         <View
+            android:id="@+id/view"
             android:layout_width="0dp"
             android:layout_height="1dp"
             android:background="@color/season_mid"
@@ -83,6 +86,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </android.support.constraint.ConstraintLayout>
 
 </LinearLayout>

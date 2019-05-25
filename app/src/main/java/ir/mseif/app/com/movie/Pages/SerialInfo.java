@@ -6,11 +6,15 @@ import com.google.android.material.navigation.NavigationView;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import butterknife.BindView;
 import butterknife.ButterKnife;
 import ir.basalam.rtlnavigationview.RtlNavigationView;
 import ir.mseif.app.com.movie.R;
@@ -22,6 +26,7 @@ public class SerialInfo extends AppCompatActivity implements NavigationView.OnNa
 //    @BindView(R.id.btn_menu)
 //    ImageView btn_menu;
 //
+
 
 
 

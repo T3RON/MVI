@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.drawerlayout.widget.DrawerLayout
+<android.support.v4.widget.DrawerLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -20,23 +20,27 @@
             android:layout_height="match_parent"
             android:orientation="vertical">
 
-            <androidx.core.widget.NestedScrollView
+            <android.support.v4.widget.NestedScrollView
+                android:id="@+id/nested_scroll_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scrollbars="none"
                 android:scrollingCache="true">
 
                 <LinearLayout
+                    android:id="@+id/place_main"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:background="@color/season_back"
                     android:orientation="vertical">
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/place_news"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/constraintLayout25"
+                        <android.support.constraint.ConstraintLayout
+                            android:id="@+id/place_img_back"
                             android:layout_width="0dp"
                             android:layout_height="100dp"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -44,7 +48,7 @@
                             app:layout_constraintTop_toTopOf="parent">
 
                             <ImageView
-                                android:id="@+id/imageView11"
+                                android:id="@+id/img_large_poster"
                                 android:layout_width="0dp"
                                 android:layout_height="0dp"
                                 android:adjustViewBounds="true"
@@ -55,42 +59,45 @@
                                 app:layout_constraintTop_toTopOf="parent"
                                 app:srcCompat="@drawable/delete" />
 
-                            <androidx.constraintlayout.widget.ConstraintLayout
+                            <android.support.constraint.ConstraintLayout
+                                android:id="@+id/place_gradiant"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:background="@drawable/gradient_poster_info"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toEndOf="@+id/imageView11"
-                                app:layout_constraintStart_toStartOf="@+id/imageView11"
+                                app:layout_constraintEnd_toEndOf="@+id/img_large_poster"
+                                app:layout_constraintStart_toStartOf="@+id/img_large_poster"
                                 app:layout_constraintTop_toTopOf="parent">
 
-                            </androidx.constraintlayout.widget.ConstraintLayout>
+                            </android.support.constraint.ConstraintLayout>
 
-                        </androidx.constraintlayout.widget.ConstraintLayout>
+                        </android.support.constraint.ConstraintLayout>
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
+                        <android.support.constraint.ConstraintLayout
+                            android:id="@+id/place_main_news"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:background="@color/comment_txt_back"
+                            android:background="@color/season_back"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout25">
+                            app:layout_constraintTop_toBottomOf="@+id/place_img_back">
 
                             <TextView
+                                android:id="@+id/txt_more_info"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
                                 android:text="مشاهده اطلاعات بیشتر"
                                 android:textColor="#E09705"
                                 android:textSize="11sp"
-                                tools:ignore="SmallSp"
-                                app:layout_constraintBottom_toBottomOf="@+id/imageView"
-                                app:layout_constraintStart_toEndOf="@+id/imageView"
-                                app:layout_constraintTop_toTopOf="@+id/imageView" />
+                                app:layout_constraintBottom_toBottomOf="@+id/img_imdb"
+                                app:layout_constraintStart_toEndOf="@+id/img_imdb"
+                                app:layout_constraintTop_toTopOf="@+id/img_imdb"
+                                tools:ignore="SmallSp" />
 
                             <ImageView
-                                android:id="@+id/imageView"
+                                android:id="@+id/img_imdb"
                                 android:layout_width="40dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
@@ -105,7 +112,7 @@
                                 tools:ignore="VectorDrawableCompat" />
 
                             <TextView
-                                android:id="@+id/textView56"
+                                android:id="@+id/txt_tittle"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
@@ -116,45 +123,47 @@
                                 android:textSize="13sp"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+                                app:layout_constraintTop_toBottomOf="@+id/img_imdb" />
 
                             <TextView
-                                android:id="@+id/textView57"
+                                android:id="@+id/txt_date"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
                                 android:text="1397/02/01"
                                 android:textColor="@color/comment_etx_hint"
                                 android:textSize="11sp"
-                                app:layout_constraintEnd_toEndOf="@+id/textView56"
-                                app:layout_constraintTop_toBottomOf="@+id/textView56"
+                                app:layout_constraintEnd_toEndOf="@+id/txt_tittle"
+                                app:layout_constraintTop_toBottomOf="@+id/txt_tittle"
                                 tools:ignore="SmallSp" />
 
                             <TextView
+                                android:id="@+id/txt_info"
                                 android:layout_width="0dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
                                 android:layout_marginTop="8dp"
                                 android:layout_marginEnd="8dp"
                                 android:layout_marginBottom="8dp"
-                                android:textSize="12sp"
-                                android:textColor="@color/comment_etx_hint"
                                 android:text="در اپیزود چهارم از فصل هشتم «بازی تاج‌وتخت» (Game of Thrones) تحت عنوان «آخرین استارک‌ها» (The Last of the Starks) سرانجام به پایان بازی نزدیک شدیم و دانستیم که منازعاتی که در دل دو اپیزود آخر سریال گنجانده می‌شود میان مردگان و زندگان نخواهد بود، هرچند که در روزهای گذشته فرضیات جالبی در این باره شنیده بودیم. اما «نایت کینگ» بر خلاف پیش‌بینی‌های برخی از هواداران در این اپیزود ظاهر نشد و شورانرهای سریال تصمیم گرفتند بیش از این بر روی وایت‌واکرها، انگیزه‌ها و تهدید اگزیستانسیال آنان برای وستروس وقت صرف نکنند و این‌گونه «نایت کینگ» در میانه‌ی فصل پایانی تسلیم شد. پس از هفت فصل مقدمه‌چینی برای «نبرد بزرگ»، «بازی تاج‌وتخت» اکنون پافشاری می‌کند که این «نبرد آخر» دنریس است که اهمیت دارد. با برطرف شدن تهدید وایت واکرها، سریال نیمی از فصل را به درگیری‌هایی که میان انسان‌ها به وجود می‌آید، خیانت‌های آن‌ها و دیگر روایت‌هایی اختصاص خواهد داد که ربطی به مشتی زامبی گرافیکی ندارد. یا همان‌گونه که تیریون لنیستر می‌گوید: «شاید آن‌ها را شکست داده باشیم، اما ستیزه‌جویی‌های خود ما هنوز ادامه دارد.»  اشتباهات دور از انتظار تیریون در اپیزودهای اخیر به اعتقاد بسیاری برای ایجاد توازن میان نبرد سرسی و دنریس به داستان اضافه شده بود. او در «نبرد وینترفل» به جز گفتگویی کوتاه با سانسا فرقی با دیگر افرادی که دلواپسانه انتظار می‌کشیدند نداشت. اما با نیست شدن «نایت کینگ» فرصتی دست داد تا دوباره پس از چند فصل هنر سخن‌وری او را شاهد باشیم. در گفتگوی تیریون با واریس در راه دراگون‌استون و قلعه، به سؤالاتی کلیدی پرداخته شد که سریال مدت‌ها بود از طرح کردنشان طفره می‌رفت. اینکه یک حاکم چه دینی به مردمش دارد و مردم چه انتظاری از او باید داشته باشند؟ آیا رهبری یک زن را تنها در خیال باید تصور کرد؟  اگرچه نبرد برای «تخت آهنین» میان سرسی و دنریس شکل می‌گیرد و در کانون توجه قرار دارد، اما نه این مواجهه پایان ماجرا خواهد بود و نه تنشی که میان جان و دنریس به وجود آمده. در دل تمامی این کشمکش‌ها، ناسازگاری مهم‌تری وجود دارد که بخش‌های پایانی «بازی تاج‌وتخت» را تعریف می‌کند: دنریس علیه همه."
+                                android:textColor="@color/comment_etx_hint"
+                                android:textSize="12sp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toBottomOf="@+id/textView57" />
-                        </androidx.constraintlayout.widget.ConstraintLayout>
+                                app:layout_constraintTop_toBottomOf="@+id/txt_date" />
+                        </android.support.constraint.ConstraintLayout>
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
+                        <android.support.constraint.ConstraintLayout
+                            android:id="@+id/place_img_small"
                             android:layout_width="125dp"
                             android:layout_height="125dp"
                             android:layout_marginTop="32dp"
                             android:layout_marginEnd="16dp"
-                            app:layout_constraintEnd_toEndOf="@+id/constraintLayout25"
-                            app:layout_constraintTop_toTopOf="@+id/constraintLayout25">
+                            app:layout_constraintEnd_toEndOf="@+id/place_img_back"
+                            app:layout_constraintTop_toTopOf="@+id/place_img_back">
 
-                            <androidx.cardview.widget.CardView
+                            <android.support.v7.widget.CardView
                                 android:id="@+id/cardview22"
                                 android:layout_width="0dp"
                                 android:layout_height="0dp"
@@ -167,7 +176,7 @@
                                 app:layout_constraintTop_toTopOf="parent">
 
                                 <ImageView
-                                    android:id="@+id/img_small_director"
+                                    android:id="@+id/img_small"
                                     android:layout_width="match_parent"
                                     android:layout_height="match_parent"
                                     android:adjustViewBounds="true"
@@ -176,16 +185,22 @@
                                     android:src="@drawable/a"
                                     app:srcCompat="@drawable/delete" />
 
-                            </androidx.cardview.widget.CardView>
+                            </android.support.v7.widget.CardView>
 
-                        </androidx.constraintlayout.widget.ConstraintLayout>
-                    </androidx.constraintlayout.widget.ConstraintLayout>
+                        </android.support.constraint.ConstraintLayout>
+                    </android.support.constraint.ConstraintLayout>
 
 
-                    <androidx.constraintlayout.widget.ConstraintLayout
+                    <android.support.constraint.ConstraintLayout
+                        android:id="@+id/place_send_answer"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@color/colorBack">
+                        android:layout_marginTop="8dp"
+                        android:background="@color/season_back"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/place_nazarat">
 
                         <EditText
                             android:id="@+id/editText"
@@ -194,7 +209,7 @@
                             android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
                             android:layout_marginEnd="8dp"
-                            android:background="@color/season_back"
+                            android:background="@color/comment_etx"
                             android:gravity="top"
                             android:inputType="textMultiLine"
                             android:minLines="4"
@@ -205,148 +220,139 @@
                             android:text="نظر خود را بیان کنید . . ."
                             android:textColor="@color/comment_etx_hint"
                             android:textColorHint="@color/comment_etx_hint"
-                            android:textSize="12sp"
+                            android:textSize="11sp"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent" />
+                            app:layout_constraintTop_toTopOf="parent"
+                            tools:ignore="SmallSp" />
 
-                        <androidx.constraintlayout.widget.ConstraintLayout
-                            android:id="@+id/constraintLayout14"
+                        <Button
+                            android:id="@+id/btn_send_comment"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
                             android:layout_marginTop="8dp"
-                            app:layout_constraintEnd_toEndOf="parent"
+                            android:background="@drawable/style_btn_comment"
+                            android:text="ارسال نظر"
+                            android:textColor="#fff"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/place_answer"
                             app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+                        <android.support.constraint.ConstraintLayout
+                            android:id="@+id/place_answer"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginEnd="8dp"
+                            android:layout_marginBottom="8dp"
+                            android:background="@drawable/style_rcy_comment"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintTop_toBottomOf="@+id/editText">
 
-                            <Button
-                                android:layout_width="0dp"
+                            <TextView
+                                android:id="@+id/txt_number_1"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
-                                android:background="@drawable/style_btn_comment"
-                                android:onClick="comment"
-                                android:text="ارسال نظر"
-                                android:textSize="12sp"
-                                android:textColor="#fff"
-                                app:layout_constraintBottom_toBottomOf="@+id/constraintLayout15"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:text="7"
+                                android:textColor="#FF9200"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/txt_number_plus"
+                                app:layout_constraintHorizontal_bias="0.5"
                                 app:layout_constraintStart_toStartOf="parent"
-                                app:layout_constraintTop_toTopOf="@+id/constraintLayout15" />
+                                app:layout_constraintTop_toTopOf="parent" />
 
-                            <androidx.constraintlayout.widget.ConstraintLayout
-                                android:id="@+id/constraintLayout15"
+                            <TextView
+                                android:id="@+id/txt_number_plus"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginTop="8dp"
                                 android:layout_marginEnd="8dp"
                                 android:layout_marginBottom="8dp"
-                                android:background="@drawable/style_rcy_comment"
+                                android:text="+"
+                                android:textColor="#fff"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/txt_number_2"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/txt_number_1"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/txt_number_2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:text="1"
+                                android:textColor="#FF9200"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/txt_number_equal"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/txt_number_plus"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <TextView
+                                android:id="@+id/txt_number_equal"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:text="="
+                                android:textColor="#fff"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintEnd_toStartOf="@+id/etx_answer"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/txt_number_2"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <EditText
+                                android:id="@+id/etx_answer"
+                                android:layout_width="75dp"
+                                android:layout_height="35dp"
+                                android:layout_marginTop="8dp"
+                                android:layout_marginEnd="8dp"
+                                android:layout_marginBottom="8dp"
+                                android:background="@drawable/style_answer_comment"
+                                android:ems="10"
+                                android:gravity="center"
+                                android:inputType="number"
+                                android:textColor="@color/comment_answer"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
-                                app:layout_constraintTop_toTopOf="parent">
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/txt_number_equal"
+                                app:layout_constraintTop_toTopOf="parent" />
+                        </android.support.constraint.ConstraintLayout>
+                    </android.support.constraint.ConstraintLayout>
 
-                                <TextView
-                                    android:id="@+id/textView24"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginStart="8dp"
-                                    android:layout_marginTop="8dp"
-                                    android:layout_marginEnd="8dp"
-                                    android:layout_marginBottom="8dp"
-                                    android:text="7"
-                                    android:textColor="#FF9200"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toStartOf="@+id/textView25"
-                                    app:layout_constraintHorizontal_bias="0.5"
-                                    app:layout_constraintStart_toStartOf="parent"
-                                    app:layout_constraintTop_toTopOf="parent" />
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@+id/place_send_answer">
 
-                                <TextView
-                                    android:id="@+id/textView25"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="8dp"
-                                    android:layout_marginEnd="8dp"
-                                    android:layout_marginBottom="8dp"
-                                    android:text="+"
-                                    android:textColor="#fff"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toStartOf="@+id/textView26"
-                                    app:layout_constraintHorizontal_bias="0.5"
-                                    app:layout_constraintStart_toEndOf="@+id/textView24"
-                                    app:layout_constraintTop_toTopOf="parent" />
+                        <include layout="@layout/rcy_comment" />
 
-                                <TextView
-                                    android:id="@+id/textView26"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="8dp"
-                                    android:layout_marginEnd="8dp"
-                                    android:layout_marginBottom="8dp"
-                                    android:text="1"
-                                    android:textColor="#FF9200"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toStartOf="@+id/textView27"
-                                    app:layout_constraintHorizontal_bias="0.5"
-                                    app:layout_constraintStart_toEndOf="@+id/textView25"
-                                    app:layout_constraintTop_toTopOf="parent" />
+                        <include layout="@layout/rcy_comment" />
 
-                                <TextView
-                                    android:id="@+id/textView27"
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginTop="8dp"
-                                    android:layout_marginEnd="8dp"
-                                    android:layout_marginBottom="8dp"
-                                    android:text="="
-                                    android:textColor="#fff"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toStartOf="@+id/editText2"
-                                    app:layout_constraintHorizontal_bias="0.5"
-                                    app:layout_constraintStart_toEndOf="@+id/textView26"
-                                    app:layout_constraintTop_toTopOf="parent" />
+                        <include layout="@layout/rcy_comment" />
 
-                                <EditText
-                                    android:id="@+id/editText2"
-                                    android:layout_width="75dp"
-                                    android:layout_height="35dp"
-                                    android:layout_marginTop="8dp"
-                                    android:layout_marginEnd="8dp"
-                                    android:layout_marginBottom="8dp"
-                                    android:background="@drawable/style_answer_comment"
-                                    android:ems="10"
-                                    android:gravity="center"
-                                    android:inputType="number"
-                                    android:textColor="@color/comment_answer"
-                                    app:layout_constraintBottom_toBottomOf="parent"
-                                    app:layout_constraintEnd_toEndOf="parent"
-                                    app:layout_constraintHorizontal_bias="0.5"
-                                    app:layout_constraintStart_toEndOf="@+id/textView27"
-                                    app:layout_constraintTop_toTopOf="parent" />
-                            </androidx.constraintlayout.widget.ConstraintLayout>
-                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </LinearLayout>
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginTop="8dp"
-                            android:layout_marginEnd="8dp"
-                            android:layout_marginBottom="8dp"
-                            android:orientation="vertical"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/constraintLayout14">
-
-                            <include layout="@layout/rcy_comment" />
-
-                            <include layout="@layout/rcy_comment" />
-
-                            <include layout="@layout/rcy_comment" />
-
-                        </LinearLayout>
-
-                    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
                 </LinearLayout>
@@ -355,7 +361,7 @@
 
 
 
-            </androidx.core.widget.NestedScrollView>
+            </android.support.v4.widget.NestedScrollView>
 
         </LinearLayout>
 
@@ -375,4 +381,4 @@
         app:rtl_menu="@menu/drawer_menu"
         tools:ignore="RtlHardcoded" />
 
-</androidx.drawerlayout.widget.DrawerLayout>
+</android.support.v4.widget.DrawerLayout>

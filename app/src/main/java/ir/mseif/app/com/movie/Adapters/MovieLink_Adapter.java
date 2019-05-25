@@ -2,9 +2,8 @@ package ir.mseif.app.com.movie.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
-
+import android.support.annotation.NonNull;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,7 +69,7 @@ public class MovieLink_Adapter extends RecyclerView.Adapter<MovieLink_Adapter.My
             super(itemView);
             context = itemView.getContext();
             txt_link_quality = itemView.findViewById(R.id.txt_link_quality);
-            txt_size = itemView.findViewById(R.id.txt_size);
+            txt_size = itemView.findViewById(R.id.txt_size_number);
             txt_encoder = itemView.findViewById(R.id.txt_encoder);
             btn_download = itemView.findViewById(R.id.btn_download);
             btn_sub = itemView.findViewById(R.id.btn_sub);

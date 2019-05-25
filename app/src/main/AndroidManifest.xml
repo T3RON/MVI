@@ -22,8 +22,8 @@
         android:supportsRtl="false"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,InnerclassSeparator"
-        tools:targetApi="p">
-        <!--<activity android:name=".Pages.Player"/>-->
+        tools:replace="android:supportsRtl">
+        <activity android:name=".Pages.Profile"></activity>
         <activity android:name=".Pages.VIP" />
         <activity android:name=".Pages.News_Page" />
         <activity android:name=".Pages.Request" />
