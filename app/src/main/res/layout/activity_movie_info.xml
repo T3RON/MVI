@@ -37,8 +37,6 @@
                     <include
                         layout="@layout/info_two" />
                     <include
-                        layout="@layout/info_three" />
-                    <include
                         layout="@layout/fragment_link" />
                     <include
                         layout="@layout/fragment_cast" />

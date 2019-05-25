@@ -662,11 +662,11 @@
                     android:textSize="13sp"
                     app:layout_constraintEnd_toStartOf="@+id/txt_wallet"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/textView62"
+                    app:layout_constraintStart_toEndOf="@+id/txt_toman"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView62"
+                    android:id="@+id/txt_toman"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -705,7 +705,7 @@
                     tools:ignore="SmallSp" />
 
                 <Button
-                    android:id="@+id/btn_send"
+                    android:id="@+id/btn_send_comment"
                     android:layout_width="100dp"
                     android:layout_height="40dp"
                     android:layout_marginStart="8dp"

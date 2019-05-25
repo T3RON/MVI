@@ -47,6 +47,7 @@ import ir.mseif.app.com.movie.Pages.Favourite;
 import ir.mseif.app.com.movie.Pages.History_page;
 import ir.mseif.app.com.movie.Pages.MovieInfo;
 import ir.mseif.app.com.movie.Pages.News_Page;
+import ir.mseif.app.com.movie.Pages.Profile;
 import ir.mseif.app.com.movie.Pages.Request;
 import ir.mseif.app.com.movie.Pages.SerialInfo;
 import ir.mseif.app.com.movie.Pages.VIP;
@@ -237,7 +238,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent intent = new Intent(getApplicationContext(), MovieInfo.class);
             startActivity(intent);
         } else if (id == R.id.nav_category) {
-            Toast.makeText(this, "GALLERY", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getApplicationContext(), Profile.class);
+            startActivity(intent);
         } else if (id == R.id.nav_tv_show) {
             Toast.makeText(this, "SLIDESHOW", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_download) {

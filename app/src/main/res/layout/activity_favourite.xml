@@ -29,6 +29,7 @@
                 android:scrollingCache="true">
 
                 <android.support.constraint.ConstraintLayout
+                    android:id="@+id/place_main_news"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 

@@ -1,8 +1,9 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/place_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:background="@color/colorBack"
     android:orientation="vertical">
 
@@ -45,7 +46,7 @@
             android:textColor="#BFBEC8"
             android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="@+id/txt_tittle_pre"
-            app:layout_constraintStart_toStartOf="@+id/view9"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/txt_tittle_pre" />
 
 

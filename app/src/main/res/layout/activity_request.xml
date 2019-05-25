@@ -29,6 +29,7 @@
                 android:scrollingCache="true">
 
                 <LinearLayout
+                    android:id="@+id/place_main"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
@@ -39,7 +40,7 @@
                         android:layout_height="match_parent">
 
                         <ImageView
-                            android:id="@+id/imageView8"
+                            android:id="@+id/img_tittle_request"
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_marginTop="8dp"
@@ -50,28 +51,28 @@
                             tools:ignore="VectorDrawableCompat" />
 
                         <TextView
-                            android:id="@+id/textView46"
+                            android:id="@+id/txt_tittle_pre"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="8dp"
                             android:text="درخواست فیلم و سریال"
                             android:textColor="#E09705"
                             android:textSize="12sp"
-                            app:layout_constraintBottom_toBottomOf="@+id/imageView8"
-                            app:layout_constraintEnd_toStartOf="@+id/imageView8"
-                            app:layout_constraintTop_toTopOf="@+id/imageView8" />
+                            app:layout_constraintBottom_toBottomOf="@+id/img_tittle_request"
+                            app:layout_constraintEnd_toStartOf="@+id/img_tittle_request"
+                            app:layout_constraintTop_toTopOf="@+id/img_tittle_request" />
 
                         <TextView
-                            android:id="@+id/textView47"
+                            android:id="@+id/txt_tittle_eng"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
                             android:text="Request"
                             android:textColor="#BFBEC8"
                             android:textSize="12sp"
-                            app:layout_constraintBottom_toBottomOf="@+id/textView46"
+                            app:layout_constraintBottom_toBottomOf="@+id/txt_tittle_pre"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="@+id/textView46" />
+                            app:layout_constraintTop_toTopOf="@+id/txt_tittle_pre" />
 
                         <View
                             android:id="@+id/view8"
@@ -81,7 +82,7 @@
                             android:background="@color/episode_number"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toBottomOf="@+id/imageView8" />
+                            app:layout_constraintTop_toBottomOf="@+id/img_tittle_request" />
 
                     </android.support.constraint.ConstraintLayout>
 
@@ -144,7 +145,7 @@
                     </android.support.constraint.ConstraintLayout>
 
                     <android.support.constraint.ConstraintLayout
-                        android:id="@+id/place_main"
+                        android:id="@+id/place_main_news"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
@@ -244,12 +245,12 @@
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintHorizontal_bias="0.5"
-                                app:layout_constraintStart_toEndOf="@+id/imageView"
+                                app:layout_constraintStart_toEndOf="@+id/img_imdb"
                                 app:layout_constraintTop_toTopOf="parent"
                                 tools:ignore="SmallSp" />
 
                             <ImageView
-                                android:id="@+id/imageView"
+                                android:id="@+id/img_imdb"
                                 android:layout_width="40dp"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="8dp"
@@ -258,7 +259,7 @@
                                 android:cropToPadding="true"
                                 android:scaleType="centerCrop"
                                 app:layout_constraintBottom_toBottomOf="parent"
-                                app:layout_constraintEnd_toStartOf="@+id/editText5"
+                                app:layout_constraintEnd_toStartOf="@+id/etx_id_imdb"
                                 app:layout_constraintHorizontal_bias="0.5"
                                 app:layout_constraintStart_toStartOf="parent"
                                 app:layout_constraintTop_toTopOf="parent"
@@ -291,7 +292,7 @@
                             tools:ignore="SmallSp" />
 
                         <Button
-                            android:id="@+id/btn_send"
+                            android:id="@+id/btn_send_comment"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
@@ -399,20 +400,22 @@
                     </android.support.constraint.ConstraintLayout>
 
 
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_marginStart="8dp"
-                            android:layout_marginEnd="8dp"
-                            android:orientation="vertical"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
+                        android:orientation="vertical"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent">
 
-                            <include layout="@layout/rcy_request"></include>
-                            <include layout="@layout/rcy_request"></include>
-                            <include layout="@layout/rcy_request"></include>
-                        </LinearLayout>
+                        <include layout="@layout/rcy_request"></include>
+
+                        <include layout="@layout/rcy_request"></include>
+
+                        <include layout="@layout/rcy_request"></include>
+                    </LinearLayout>
 
                 </LinearLayout>
 

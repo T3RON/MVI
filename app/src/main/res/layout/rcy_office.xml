@@ -94,7 +94,7 @@
                     android:layout_height="wrap_content">
 
                     <TextView
-                        android:id="@+id/textView37"
+                        android:id="@+id/txt_week"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -109,7 +109,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/textView38"
+                        android:id="@+id/txt_sell"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -121,10 +121,10 @@
                         android:textColor="#fff"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView37" />
+                        app:layout_constraintTop_toBottomOf="@+id/txt_week" />
 
                     <TextView
-                        android:id="@+id/textView39"
+                        android:id="@+id/txt_sell_number"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -137,9 +137,9 @@
                         tools:ignore="SmallSp"
                         android:textColor="@color/episode_number"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/textView38"
+                        app:layout_constraintEnd_toStartOf="@+id/txt_sell"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView37" />
+                        app:layout_constraintTop_toBottomOf="@+id/txt_week" />
                 </android.support.constraint.ConstraintLayout>
 
             </LinearLayout>
