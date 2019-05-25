@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v4.widget.NestedScrollView
+<androidx.core.widget.NestedScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -11,7 +11,6 @@
 
 
     <LinearLayout
-        android:id="@+id/container_place"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -25,7 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <android.support.constraint.ConstraintLayout
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:background="@color/colorPrimaryDark">
@@ -43,7 +42,6 @@
                         tools:ignore="VectorDrawableCompat" />
 
                     <ImageView
-                        android:id="@+id/btn_profile"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="24dp"
@@ -67,7 +65,7 @@
                         tools:ignore="VectorDrawableCompat" />
 
 
-                </android.support.constraint.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
             </RelativeLayout>
 
@@ -80,7 +78,6 @@
                 android:background="@color/colorBack">
 
                 <LinearLayout
-                    android:id="@+id/ss"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
                     android:layout_width="match_parent"
@@ -144,8 +141,7 @@
             </RelativeLayout>
 
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/slider_place"
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 app:cardCornerRadius="5dp"
@@ -161,7 +157,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <android.support.v7.widget.CardView
+                    <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layoutDirection="rtl"
@@ -174,14 +170,14 @@
                             android:orientation="vertical">
 
 
-                            <android.support.v4.view.ViewPager
+                            <androidx.viewpager.widget.ViewPager
                                 android:id="@+id/pager"
                                 android:layout_width="match_parent"
                                 android:layout_height="250dp" />
 
                         </LinearLayout>
 
-                    </android.support.v7.widget.CardView>
+                    </androidx.cardview.widget.CardView>
 
 
                 </LinearLayout>
@@ -189,7 +185,7 @@
 
 
 
-            </android.support.v7.widget.CardView>
+            </androidx.cardview.widget.CardView>
 
 
 
@@ -208,8 +204,7 @@
                 android:background="@color/colorPrimaryDark" />
 
 
-            <android.support.constraint.ConstraintLayout
-                android:id="@+id/place_new_film"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -220,9 +215,9 @@
                     android:layout_marginEnd="8dp"
                     android:text="فیــلم های جدید "
                     android:textSize="12sp"
+                    app:layout_constraintHorizontal_weight="1"
                     app:layout_constraintBaseline_toBaselineOf="@+id/btn_more_newFilm"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_weight="1"
                     app:layout_constraintStart_toEndOf="@+id/btn_more_newFilm"
                     tools:ignore="MissingConstraints" />
 
@@ -232,8 +227,8 @@
                     android:layout_height="25dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
-                    android:background="@drawable/btn_more_style_orange"
                     android:paddingBottom="4dp"
+                    android:background="@drawable/btn_more_style_orange"
                     android:text="مشــاهده همه"
                     android:textColor="#fff"
                     android:textSize="11sp"
@@ -241,7 +236,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="MissingConstraints,SmallSp" />
 
-                <android.support.v7.widget.RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rcy_movie"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -253,7 +248,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/txt_newFilm" />
 
                 <LinearLayout
-                    android:id="@+id/line_newFilm"
                     android:layout_width="match_parent"
                     android:layout_height="3dp"
                     android:layout_marginStart="8dp"
@@ -267,12 +261,11 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/rcy_movie"
-                    tools:ignore="MissingConstraints,Orientation" />
+                    tools:ignore="MissingConstraints,Orientation"/>
 
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <android.support.constraint.ConstraintLayout
-                android:id="@+id/place_new_serial"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -296,17 +289,17 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:background="@drawable/btn_more_style"
                     android:paddingBottom="4dp"
+                    android:background="@drawable/btn_more_style"
                     android:text="مشــاهده همه"
                     android:textColor="#fff"
                     android:textSize="11sp"
+                    tools:ignore="SmallSp"
                     app:layout_constraintEnd_toStartOf="@+id/txt_newSerial"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="SmallSp" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <android.support.v7.widget.RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rcy_serial"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -318,7 +311,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/txt_newSerial" />
 
                 <LinearLayout
-                    android:id="@+id/line_newSerial"
                     android:layout_width="match_parent"
                     android:layout_height="3dp"
                     android:layout_marginStart="8dp"
@@ -332,13 +324,12 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/rcy_serial"
-                    tools:ignore="MissingConstraints,Orientation" />
+                    tools:ignore="MissingConstraints,Orientation"/>
 
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-            <android.support.constraint.ConstraintLayout
-                android:id="@+id/place_trailer"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -362,18 +353,18 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:background="@drawable/btn_more_style_orange"
                     android:paddingBottom="4dp"
+                    android:background="@drawable/btn_more_style_orange"
                     android:text="مشــاهده همه"
                     android:textColor="#fff"
                     android:textSize="11sp"
+                    tools:ignore="SmallSp"
                     app:layout_constraintEnd_toStartOf="@+id/txt_newTrailer"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="SmallSp" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <android.support.v7.widget.RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rcy_trailer"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -387,7 +378,6 @@
                     app:layout_constraintTop_toBottomOf="@+id/txt_newTrailer" />
 
                 <LinearLayout
-                    android:id="@+id/line_newTrailer"
                     android:layout_width="match_parent"
                     android:layout_height="3dp"
                     android:layout_marginStart="8dp"
@@ -401,17 +391,16 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/rcy_trailer"
-                    tools:ignore="MissingConstraints,Orientation" />
+                    tools:ignore="MissingConstraints,Orientation"/>
 
-            </android.support.constraint.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <android.support.constraint.ConstraintLayout
-                android:id="@+id/place_box_office"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/txt_NewBoxOffice"
+                    android:id="@+id/textView36"
                     android:layout_width="0dp"
                     android:layout_height="30dp"
                     android:layout_marginTop="16dp"
@@ -421,36 +410,35 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintHorizontal_weight="1"
-                    app:layout_constraintStart_toEndOf="@+id/btn_more_newBoxOffice"
+                    app:layout_constraintStart_toEndOf="@+id/button5"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <Button
-                    android:id="@+id/btn_more_newBoxOffice"
+                    android:id="@+id/button5"
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
-                    android:background="@drawable/btn_more_style"
                     android:paddingBottom="4dp"
+                    android:background="@drawable/btn_more_style"
                     android:text="مشــاهده همه"
                     android:textColor="#fff"
                     android:textSize="11sp"
-                    app:layout_constraintEnd_toStartOf="@+id/txt_NewBoxOffice"
+                    tools:ignore="SmallSp"
+                    app:layout_constraintEnd_toStartOf="@+id/textView36"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="SmallSp" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <android.support.v7.widget.RecyclerView
+                <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/rcy_office"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_NewBoxOffice"
+                    app:layout_constraintTop_toBottomOf="@+id/textView36"
                     tools:layout_editor_absoluteX="8dp" />
 
                 <LinearLayout
-                    android:id="@+id/line_newOffice"
                     android:layout_width="match_parent"
                     android:layout_height="3dp"
                     android:layout_marginStart="8dp"
@@ -464,16 +452,15 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/rcy_office"
-                    tools:ignore="MissingConstraints,Orientation" />
-            </android.support.constraint.ConstraintLayout>
+                    tools:ignore="MissingConstraints,Orientation"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <android.support.constraint.ConstraintLayout
-                android:id="@+id/place_news"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <android.support.constraint.ConstraintLayout
-                    android:id="@+id/news_tittle"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout100"
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
                     android:layout_marginTop="16dp"
@@ -483,7 +470,7 @@
                     app:layout_constraintTop_toTopOf="parent">
 
                     <ImageView
-                        android:id="@+id/img_news"
+                        android:id="@+id/imageView14"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
@@ -494,7 +481,6 @@
                         tools:ignore="VectorDrawableCompat" />
 
                     <TextView
-                        android:id="@+id/txt_news"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -504,62 +490,57 @@
                         android:textColor="#E09705"
                         android:textSize="12sp"
                         app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toStartOf="@+id/img_news"
+                        app:layout_constraintEnd_toStartOf="@+id/imageView14"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
-                </android.support.constraint.ConstraintLayout>
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <Button
-                    android:id="@+id/btn_more_news"
+                    android:id="@+id/button6"
                     android:layout_width="wrap_content"
                     android:layout_height="25dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
-                    android:background="@drawable/btn_more_style_orange"
                     android:paddingBottom="4dp"
+                    android:background="@drawable/btn_more_style_orange"
                     android:text="مشــاهده همه"
                     android:textColor="#fff"
                     android:textSize="11sp"
+                    tools:ignore="SmallSp"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    tools:ignore="SmallSp" />
+                    app:layout_constraintTop_toTopOf="parent" />
 
                 <LinearLayout
-                    android:id="@+id/rcy_news_demo"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginTop="8dp"
-                    android:orientation="vertical"
-                    app:layout_constraintTop_toBottomOf="@+id/news_tittle"
-                    tools:layout_editor_absoluteX="8dp">
-
+                    android:layout_marginLeft="8dp"
+                    android:layout_marginRight="8dp"
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout100"
+                    android:orientation="vertical">
                     <include layout="@layout/rcy_news"></include>
-
                     <include layout="@layout/rcy_news"></include>
-
                     <include layout="@layout/rcy_news"></include>
                 </LinearLayout>
 
-                <android.support.v7.widget.RecyclerView
-                    android:id="@+id/rcy_news"
+                <androidx.recyclerview.widget.RecyclerView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
-                    app:layout_constraintTop_toBottomOf="@+id/news_tittle"
-                    tools:layout_editor_absoluteX="8dp" />
-            </android.support.constraint.ConstraintLayout>
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout100"
+                    tools:layout_editor_absoluteX="8dp"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <android.support.constraint.ConstraintLayout
-                android:id="@+id/place_vip"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="8dp"
                 android:layout_marginTop="24dp"
+                android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:background="@drawable/style_vip">
 
                 <TextView
-                    android:id="@+id/txt_request"
+                    android:id="@+id/textView41"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -571,8 +552,8 @@
                     android:paddingStart="8dp"
                     android:paddingEnd="8dp"
                     android:text="درخواست فیلم و سریال"
-                    android:textColor="#fff"
                     android:textSize="13sp"
+                    android:textColor="#fff"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -585,10 +566,10 @@
                     android:background="#E09705"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/txt_request" />
+                    app:layout_constraintTop_toBottomOf="@+id/textView41" />
 
-                <android.support.constraint.ConstraintLayout
-                    android:id="@+id/place_GoToVip"
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/constraintLayout20"
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_marginStart="8dp"
@@ -598,7 +579,7 @@
                     app:layout_constraintTop_toBottomOf="@+id/view7">
 
                     <ImageView
-                        android:id="@+id/img_vip"
+                        android:id="@+id/imageView3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -611,7 +592,6 @@
                         tools:ignore="VectorDrawableCompat" />
 
                     <TextView
-                        android:id="@+id/txt_vip"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -626,22 +606,21 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/img_vip" />
-                </android.support.constraint.ConstraintLayout>
+                        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
-                <android.support.constraint.ConstraintLayout
-                    android:id="@+id/place_txt_vip"
+                <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="0dp"
                     android:layout_height="100dp"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toEndOf="@+id/place_GoToVip"
+                    app:layout_constraintStart_toEndOf="@+id/constraintLayout20"
                     app:layout_constraintTop_toBottomOf="@+id/view7">
 
                     <TextView
-                        android:id="@+id/txt_tittle"
+                        android:id="@+id/textView44"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
@@ -656,7 +635,6 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/txt_description"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
@@ -668,11 +646,10 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/txt_tittle" />
-                </android.support.constraint.ConstraintLayout>
+                        app:layout_constraintTop_toBottomOf="@+id/textView44" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
 
                 <View
-                    android:id="@+id/view10"
                     android:layout_width="match_parent"
                     android:layout_height="8dp"
                     android:layout_marginTop="16dp"
@@ -680,8 +657,8 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/place_GoToVip" />
-            </android.support.constraint.ConstraintLayout>
+                    app:layout_constraintTop_toBottomOf="@+id/constraintLayout20" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         </LinearLayout>
@@ -695,5 +672,5 @@
 
 
 
-</android.support.v4.widget.NestedScrollView>
+</androidx.core.widget.NestedScrollView>
 

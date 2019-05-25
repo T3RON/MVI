@@ -14,7 +14,7 @@ public class Serial_Episode_Link extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_serial_episode);
+        setContentView(R.layout.activity_serial__episode);
     }
     public void view_2(View view) {
         Intent intent = new Intent(getApplicationContext(), Serial_Episode_Link.class);

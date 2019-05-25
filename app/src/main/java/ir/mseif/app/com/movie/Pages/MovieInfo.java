@@ -48,10 +48,12 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
     @BindView(R.id.txt_movie_age) TextView txt_movie_age;
     @BindView(R.id.txt_title_movie) TextView txt_title_movie;
     @BindView(R.id.txt_quality) TextView txt_quality;
+    @BindView(R.id.txt_kargardan) TextView txt_kargardan;
     @BindView(R.id.txt_rate) TextView txt_rate;
     @BindView(R.id.txt_genre) TextView txt_genre;
     @BindView(R.id.txt_lang) TextView txt_lang;
-    @BindView(R.id.txt_time_2) TextView txt_time;
+    @BindView(R.id.txt_year) TextView txt_year;
+    @BindView(R.id.txt_time) TextView txt_time;
     @BindView(R.id.txt_country) TextView txt_country;
     @BindView(R.id.txt_story) TextView txt_story;
     @BindView(R.id.txt_oscar) TextView txt_oscar;
@@ -177,6 +179,7 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
                         txt_quality.setText(movie_single_info.get(0).getMovie_quality());
                         txt_rate.setText(movie_single_info.get(0).getMovie_imdb());
                         txt_lang.setText(movie_single_info.get(0).getMovie_lang());
+                        txt_year.setText(movie_single_info.get(0).getMovie_year() + "");
                         txt_time.setText(movie_single_info.get(0).getMovie_time());
                         txt_country.setText(movie_single_info.get(0).getMovie_country());
                         txt_story.setText(movie_single_info.get(0).getMovie_store());
@@ -211,6 +214,7 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
                         for (Director_List director_name : director_lists) {
                             director.append(director_name.getDirector_name() + " , ");
                         }
+                        txt_kargardan.setText(director);
 
                         LinearLayoutManager linearLayoutManager_movie = new LinearLayoutManager(Global.context,LinearLayoutManager.HORIZONTAL,true);
                         rcy_director.setLayoutManager(linearLayoutManager_movie);
