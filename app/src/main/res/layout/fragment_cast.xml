@@ -8,7 +8,7 @@
 
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout20"
+        android:id="@+id/place_tittle"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
@@ -16,7 +16,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView87"
+            android:id="@+id/txt_tittle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -36,21 +36,21 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView87" />
+            app:layout_constraintTop_toBottomOf="@+id/txt_tittle" />
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/place_actor"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintHorizontal_weight="1"
 
-        app:layout_constraintEnd_toStartOf="@+id/constraintLayout16"
+        app:layout_constraintEnd_toStartOf="@+id/place_director"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout20">
+        app:layout_constraintTop_toBottomOf="@+id/place_tittle">
 
         <TextView
-            android:id="@+id/textView31"
+            android:id="@+id/txt_actor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -64,7 +64,7 @@
 
 
         <LinearLayout
-            android:id="@+id/constraintLayout19"
+            android:id="@+id/place_rcy_actor"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -77,7 +77,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.6"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView31">
+            app:layout_constraintTop_toBottomOf="@+id/txt_actor">
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rcy_stars"
@@ -89,13 +89,13 @@
     </android.support.constraint.ConstraintLayout>
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout16"
+        android:id="@+id/place_director"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintHorizontal_weight="0.4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/constraintLayout"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout20">
+        app:layout_constraintStart_toEndOf="@+id/place_actor"
+        app:layout_constraintTop_toBottomOf="@+id/place_tittle">
 
         <View
             android:id="@+id/view4"
@@ -103,12 +103,12 @@
             android:layout_height="0dp"
             android:layout_marginEnd="8dp"
             android:background="@color/episode_number"
-            app:layout_constraintBottom_toBottomOf="@+id/constraintLayout191"
-            app:layout_constraintEnd_toStartOf="@+id/constraintLayout191"
-            app:layout_constraintTop_toTopOf="@+id/constraintLayout191" />
+            app:layout_constraintBottom_toBottomOf="@+id/place_rcy_director"
+            app:layout_constraintEnd_toStartOf="@+id/place_rcy_director"
+            app:layout_constraintTop_toTopOf="@+id/place_rcy_director" />
 
         <TextView
-            android:id="@+id/textView30"
+            android:id="@+id/txt_director"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -122,7 +122,7 @@
 
 
         <LinearLayout
-            android:id="@+id/constraintLayout191"
+            android:id="@+id/place_rcy_director"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -135,7 +135,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.6"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView30">
+            app:layout_constraintTop_toBottomOf="@+id/txt_director">
 
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rcy_director"

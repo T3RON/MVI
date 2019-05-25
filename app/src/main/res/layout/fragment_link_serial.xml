@@ -5,20 +5,20 @@
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:background="#f4f4f4">
+    android:background="@color/info_movie">
 
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout20"
+        android:id="@+id/place_main"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/season_back"
+        android:background="@color/info_movie"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/textView87"
+            android:id="@+id/txt_tittle_pre"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -30,7 +30,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/textView49"
+            android:id="@+id/txt_tittle_eng"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -38,7 +38,7 @@
             android:text="Game Of Thrones"
             android:textColor="#BFBEC8"
             android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView87"
+            app:layout_constraintBottom_toBottomOf="@+id/txt_tittle_pre"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -52,7 +52,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView87" />
+        app:layout_constraintTop_toBottomOf="@+id/txt_tittle_pre" />
     </android.support.constraint.ConstraintLayout>
 
     <include layout="@layout/rcy_season_link"/>

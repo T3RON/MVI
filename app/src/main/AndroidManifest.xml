@@ -23,7 +23,8 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,InnerclassSeparator"
         tools:replace="android:supportsRtl">
-        <activity android:name=".Pages.VIP"></activity>
+        <activity android:name=".Pages.Profile"></activity>
+        <activity android:name=".Pages.VIP" />
         <activity android:name=".Pages.News_Page" />
         <activity android:name=".Pages.Request" />
         <activity android:name=".Pages.Favourite" />

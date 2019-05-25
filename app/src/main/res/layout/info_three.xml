@@ -9,10 +9,10 @@
 
 
     <android.support.constraint.ConstraintLayout
-        android:id="@+id/constraintLayout"
+        android:id="@+id/place_payment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#E09705"
+        android:background="#fff"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="264dp"
         tools:layout_editor_absoluteY="0dp">
@@ -38,7 +38,7 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+        app:layout_constraintTop_toBottomOf="@+id/place_payment">
 
         <ImageView
             android:id="@+id/imageView5"
@@ -56,18 +56,20 @@
 
         <ImageView
             android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="420dp"
+            android:layout_height="204dp"
             android:adjustViewBounds="true"
             android:alpha="0.4"
             android:scaleType="fitCenter"
             app:srcCompat="@drawable/delete"
-            tools:ignore="MissingConstraints" />
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="-9dp"
+            tools:layout_editor_absoluteY="31dp" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="4dp"
-            android:background="#E09705"
+            android:background="#fff"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

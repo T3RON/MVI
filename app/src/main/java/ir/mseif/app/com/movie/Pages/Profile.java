@@ -7,12 +7,12 @@ import android.os.Bundle;
 import ir.mseif.app.com.movie.R;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class Cast_Info extends AppCompatActivity {
+public class Profile extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cast_info);
+        setContentView(R.layout.activity_profile);
     }
 
 
@@ -21,4 +21,5 @@ public class Cast_Info extends AppCompatActivity {
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
+
 }
