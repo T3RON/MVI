@@ -18,19 +18,19 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,InnerclassSeparator"
         tools:replace="android:supportsRtl">
-
+        <activity android:name=".Pages.Profile"></activity>
         <activity android:name=".Pages.VIP" />
-        <activity android:name=".Pages.News_Page" />
+        <activity android:name=".Pages.News" />
         <activity android:name=".Pages.Request" />
         <activity android:name=".Pages.Favourite" />
-        <activity android:name=".Pages.History_page" />
-        <activity android:name=".Pages.Cast_Info" />
+        <activity android:name=".Pages.History" />
+        <activity android:name=".Pages.PersonInfo" />
         <activity android:name=".Pages.Trailer" />
         <activity android:name=".Pages.Serial_Episode_Link" />
         <activity android:name=".Pages.Serial_Episodes" />
