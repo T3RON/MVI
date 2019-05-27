@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/btn_cast"
+    android:orientation="vertical"
+    android:background="@color/info_movie"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#232329"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,10 +23,25 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/textView6"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:srcCompat="@drawable/ic_download"
             tools:ignore="VectorDrawableCompat" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:gravity="right"
+            android:text="کیفیت : "
+            android:textColor="#fff"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@+id/imageView6"
+            app:layout_constraintEnd_toStartOf="@+id/imageView6"
+            app:layout_constraintTop_toTopOf="@+id/imageView6"
+            tools:ignore="SmallSp" />
 
         <TextView
             android:id="@+id/txt_link_quality"
@@ -34,136 +50,143 @@
             android:layout_marginEnd="8dp"
             android:gravity="right"
             android:text="720 P Bluray"
-            android:textColor="#fff"
+            android:textColor="#E09705"
             android:textSize="14sp"
             app:layout_constraintBottom_toBottomOf="@+id/imageView6"
-            app:layout_constraintEnd_toStartOf="@+id/imageView6"
+            app:layout_constraintEnd_toStartOf="@+id/textView3"
             app:layout_constraintTop_toTopOf="@+id/imageView6" />
 
         <TextView
+            android:id="@+id/textView6"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
             android:gravity="right"
-            android:text="shAaning"
+            android:text="حجم : "
+            android:textColor="#fff"
             android:textSize="11sp"
-            tools:ignore="SmallSp"
-            android:textColor="#E09705"
-            app:layout_constraintBottom_toBottomOf="@+id/txt_size"
-            app:layout_constraintStart_toEndOf="@+id/txt_size"
-            app:layout_constraintTop_toTopOf="@+id/txt_size" />
+            app:layout_constraintBottom_toTopOf="@+id/textView8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView6"
+            tools:ignore="SmallSp" />
 
         <TextView
             android:id="@+id/txt_size"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
             android:gravity="right"
-            android:text="Encoder"
-            android:textSize="12sp"
+            android:text="720 MB"
             android:textColor="#fff"
-            app:layout_constraintBottom_toBottomOf="@+id/txt_link_quality"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/txt_link_quality" />
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView6"
+            app:layout_constraintEnd_toStartOf="@+id/textView6"
+            app:layout_constraintTop_toTopOf="@+id/textView6"
+            tools:ignore="SmallSp" />
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout21"
+        <TextView
+            android:id="@+id/textView8"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:layout_marginEnd="4dp"
-            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="right"
+            android:text="انکودر :"
+            android:textColor="#21967e"
+            android:textSize="11sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/button8"
-            app:layout_constraintTop_toBottomOf="@+id/txt_link_quality">
+            app:layout_constraintTop_toBottomOf="@+id/textView6"
+            tools:ignore="SmallSp" />
 
-            <TextView
-                android:id="@+id/txt_encoder"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:gravity="right"
-                android:text="۲۷۰ MB"
-                android:textColor="@color/episode_blue"
-                android:textSize="11sp"
-                tools:ignore="SmallSp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/txt_encoder"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:gravity="right"
+            android:text="MkvCage"
+            android:textColor="#21967e"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@+id/textView8"
+            app:layout_constraintEnd_toStartOf="@+id/textView8"
+            app:layout_constraintTop_toTopOf="@+id/textView8"
+            tools:ignore="SmallSp" />
 
         <Button
             android:id="@+id/btn_download"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
-            android:layout_marginStart="4dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/btn_link_style"
             android:text="دانلود"
             android:textColor="#fff"
             android:textSize="11sp"
-            app:layout_constraintBottom_toBottomOf="@+id/btn_sub"
-            app:layout_constraintEnd_toStartOf="@+id/btn_sub"
-            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintBottom_toTopOf="@+id/btn_sub"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/btn_sub"
+            app:layout_constraintTop_toTopOf="parent"
             tools:ignore="SmallSp" />
 
         <Button
             android:id="@+id/btn_sub"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginBottom="8dp"
-            android:paddingBottom="4dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:background="@drawable/btn_sub_style"
+            android:paddingBottom="4dp"
             android:text="زیرنویس"
             android:textColor="#fff"
             android:textSize="11sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/button8"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btn_download"
-            app:layout_constraintTop_toBottomOf="@+id/txt_link_quality"
+            app:layout_constraintBottom_toTopOf="@+id/btn_pakhsh"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_download"
             tools:ignore="SmallSp" />
 
         <Button
-            android:id="@+id/button8"
+            android:id="@+id/btn_pakhsh"
             android:layout_width="wrap_content"
             android:layout_height="25dp"
-            android:layout_marginStart="4dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="4dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
             android:layout_marginBottom="8dp"
-            android:paddingBottom="4dp"
-            android:background="@drawable/btn_more_style"
-            android:text="پخش"
+            android:background="@drawable/btn_pakhsh_style"
+            android:text="پخش آنلاین"
             android:textColor="#fff"
             android:textSize="11sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/constraintLayout21"
-            app:layout_constraintHorizontal_bias="0.5"
-            app:layout_constraintStart_toEndOf="@+id/btn_sub"
-            app:layout_constraintTop_toBottomOf="@+id/txt_link_quality"
-            tools:ignore="SmallSp" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_sub" />
 
-        <View
-            android:layout_width="0dp"
-            android:layout_height="1dp"
-            android:background="#E09705"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/info_movie"
+        android:orientation="vertical">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="توضیحات :"
+            android:textColor="@color/profile_text"
+            android:textSize="11sp"
+            tools:ignore="SmallSp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="#E09705" />
 
 
+</LinearLayout>

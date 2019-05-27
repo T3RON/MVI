@@ -7,17 +7,18 @@ import android.os.Bundle;
 import ir.mseif.app.com.movie.R;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class History_page extends AppCompatActivity {
+public class PersonInfo extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_history_page);
+        setContentView(R.layout.activity_person_info);
     }
+
+
     // Font Calligraphy
     @Override
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
-
 }

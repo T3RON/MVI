@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.appcompat.widget.Toolbar;
 
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -44,11 +43,12 @@ import ir.mseif.app.com.movie.Model.Movie_List;
 import ir.mseif.app.com.movie.Model.Series_List;
 import ir.mseif.app.com.movie.Model.Slider_List;
 import ir.mseif.app.com.movie.Model.Trailer_List;
-import ir.mseif.app.com.movie.Pages.Cast_Info;
+import ir.mseif.app.com.movie.Pages.PersonInfo;
 import ir.mseif.app.com.movie.Pages.Favourite;
-import ir.mseif.app.com.movie.Pages.History_page;
+import ir.mseif.app.com.movie.Pages.History;
 import ir.mseif.app.com.movie.Pages.MovieInfo;
 import ir.mseif.app.com.movie.Pages.Player;
+import ir.mseif.app.com.movie.Pages.Profile;
 import ir.mseif.app.com.movie.Pages.Request;
 import ir.mseif.app.com.movie.Pages.SerialInfo;
 import ir.mseif.app.com.movie.Pages.VIP;
@@ -124,7 +124,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         button_2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Cast_Info.class);
+                Intent intent = new Intent(getApplicationContext(), PersonInfo.class);
                 startActivity(intent);
             }
         });
@@ -239,11 +239,12 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             Intent intent = new Intent(getApplicationContext(), MovieInfo.class);
             startActivity(intent);
         } else if (id == R.id.nav_category) {
-            Toast.makeText(this, "GALLERY", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(getApplicationContext(), Profile.class);
+            startActivity(intent);
         } else if (id == R.id.nav_tv_show) {
             Toast.makeText(this, "SLIDESHOW", Toast.LENGTH_SHORT).show();
         } else if (id == R.id.nav_download) {
-            Intent intent = new Intent(getApplicationContext(), History_page.class);
+            Intent intent = new Intent(getApplicationContext(), History.class);
             startActivity(intent);
         } else if (id == R.id.nav_fav) {
             Intent intent = new Intent(getApplicationContext(), Favourite.class);

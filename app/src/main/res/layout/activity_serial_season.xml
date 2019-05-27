@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
-            android:text="لینک های دانلود"
+            android:text="فصل اول"
             android:textColor="@color/profile_orange"
             android:textSize="13sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -43,20 +43,19 @@
 
         <View
             android:layout_width="0dp"
-        android:layout_height="1dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="16dp"
             android:textColor="@color/profile_orange"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView87" />
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView87" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
-    <include layout="@layout/rcy_season_link"/>
-    <include layout="@layout/rcy_season_link"/>
-    <include layout="@layout/rcy_season_link"/>
-    <include layout="@layout/rcy_season_link"/>
-    <include layout="@layout/rcy_season_link"/>
+    <include layout="@layout/rcy_episode"/>
+    <include layout="@layout/rcy_episode"/>
+    <include layout="@layout/rcy_episode"/>
+    <include layout="@layout/rcy_episode"/>
 
 </LinearLayout>
