@@ -100,7 +100,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="8dp"
                 android:elevation="1dp"
                 app:cardCornerRadius="3dp">
 
@@ -123,7 +122,7 @@
                 <TextView
                     android:id="@+id/txt_rate"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
@@ -139,7 +138,7 @@
                 <TextView
                     android:id="@+id/txt_ten_rate"
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginEnd="8dp"
                     android:layout_weight="0.4"
                     android:gravity="left"
@@ -180,22 +179,22 @@
                         android:layout_marginEnd="8dp"
                         android:text="مدت زمان : "
                         android:textColor="#fff"
-                        android:textSize="12sp"
+                        android:textSize="11sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toEndOf="@+id/txt_time"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:ignore="SmallSp" />
 
                     <TextView
                         android:id="@+id/txt_time"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:layout_marginEnd="8dp"
                         android:gravity="right"
                         android:text="۱۲۶ دقیقه"
-                        android:textColor="#FF9200"
+                        android:textColor="#FFf"
                         android:textSize="11sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/textView14"

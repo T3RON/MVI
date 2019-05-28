@@ -4,7 +4,7 @@
 
     <corners
         android:radius="5dp"/>
-    <solid android:color="@color/news_back" />
+    <solid android:color="@color/comment_answer_back" />
 
 
 </shape>

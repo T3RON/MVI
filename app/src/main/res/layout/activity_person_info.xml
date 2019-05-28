@@ -1,52 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.drawerlayout.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/season_back"
-    android:fitsSystemWindows="true">
+    android:background="@color/colorBack"
+    android:id="@+id/drawer_person_info"
+    android:orientation="vertical"
+    tools:context=".Pages.PersonInfo"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <RelativeLayout
-        android:id="@+id/container"
+
+    <LinearLayout
+        android:id="@+id/container_place"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
-        <LinearLayout
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
-            <androidx.core.widget.NestedScrollView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scrollbars="none"
-                android:scrollingCache="true">
+                android:layout_height="match_parent">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+
+                <RelativeLayout
+                    android:id="@+id/top_menu"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <ImageView
-                        android:id="@+id/imageView8"
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@color/colorPrimaryDark">
+
+                        <ImageView
+                            android:id="@+id/btn_menu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginRight="16dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_menu"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <ImageView
+                            android:id="@+id/btn_profile"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginLeft="24dp"
+                            android:layout_marginTop="16dp"
+                            app:layout_constraintStart_toEndOf="@+id/btn_logout"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_user"
+                            tools:ignore="MissingConstraints,VectorDrawableCompat" />
+
+                        <ImageView
+                            android:id="@+id/btn_logout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="16dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_logout"
+                            tools:ignore="VectorDrawableCompat" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </RelativeLayout>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/place_main"
+                    android:layout_below="@id/top_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_person"
                         android:layout_width="wrap_content"
-                        android:layout_height="120dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
                         android:layout_marginEnd="16dp"
-                        android:adjustViewBounds="true"
-                        android:cropToPadding="false"
-                        android:scaleType="centerCrop"
+                        android:background="@color/news_border"
+                        android:elevation="1dp"
+                        app:cardCornerRadius="5dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/a"
-                        tools:ignore="VectorDrawableCompat" />
+                        tools:ignore="VectorDrawableCompat">
+
+                        <ImageView
+                            android:id="@+id/img_person"
+                            android:layout_width="match_parent"
+                            android:layout_height="120dp"
+                            android:adjustViewBounds="true"
+                            android:cropToPadding="false"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/a" />
+
+                    </androidx.cardview.widget.CardView>
+
 
                     <TextView
-                        android:id="@+id/textView46"
+                        android:id="@+id/txt_person_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -58,7 +122,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/textView7"
+                        android:id="@+id/txt_person_birth_date"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -67,22 +131,26 @@
                         android:textColor="#BFBEC8"
                         android:textSize="12sp"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView46" />
+                        app:layout_constraintTop_toBottomOf="@+id/txt_person_name" />
 
                     <androidx.constraintlayout.widget.ConstraintLayout
-                        android:id="@+id/constraintLayout2"
+                        android:id="@+id/place_more_info"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="24dp"
                         android:background="@drawable/style_info_cast"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView7">
+                        app:layout_constraintTop_toBottomOf="@+id/txt_person_birth_date">
 
                         <ImageView
-                            android:id="@+id/imageView4"
+                            android:id="@+id/img_imdb"
                             android:layout_width="40dp"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="8dp"
+                            android:layout_weight="0.2"
+                            android:adjustViewBounds="true"
+                            android:cropToPadding="true"
+                            android:scaleType="centerCrop"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent"
@@ -90,19 +158,19 @@
                             tools:ignore="VectorDrawableCompat" />
 
                         <TextView
-                            android:id="@+id/textView9"
+                            android:id="@+id/txt_more_info"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginStart="24dp"
                             android:layout_marginTop="8dp"
                             android:layout_marginEnd="16dp"
                             android:layout_marginBottom="8dp"
-                            android:text="مشاهده"
+                            android:text="اطلاعات بیشتر"
                             android:textColor="#fff"
                             android:textSize="11sp"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toEndOf="@+id/imageView4"
+                            app:layout_constraintStart_toEndOf="@+id/img_imdb"
                             app:layout_constraintTop_toTopOf="parent"
                             tools:ignore="SmallSp" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -117,23 +185,23 @@
                         android:background="@color/episode_number"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/constraintLayout2" />
+                        app:layout_constraintTop_toBottomOf="@+id/place_more_info" />
 
                     <TextView
-                        android:id="@+id/textView11"
+                        android:id="@+id/txt_title_asar"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:layout_marginEnd="8dp"
+                        android:layout_marginEnd="16dp"
                         android:text="مشاهده و دانلود آثار"
                         android:textColor="#fff"
                         android:textSize="13sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/view8" />
 
-                    <androidx.recyclerview.widget.RecyclerView
+                    <androidx.gridlayout.widget.GridLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="300dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="16dp"
                         android:layout_marginEnd="8dp"
@@ -141,18 +209,19 @@
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/textView11" />
+                        app:layout_constraintTop_toBottomOf="@+id/txt_title_asar">
+
+                    </androidx.gridlayout.widget.GridLayout>
+
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
-
-            </androidx.core.widget.NestedScrollView>
-
-        </LinearLayout>
+            </RelativeLayout>
 
 
+        </androidx.core.widget.NestedScrollView>
 
-    </RelativeLayout>
+    </LinearLayout>
 
     <!--navigation drawer menu-->
 
@@ -166,4 +235,6 @@
         app:rtl_menu="@menu/drawer_menu"
         tools:ignore="RtlHardcoded" />
 
+
 </androidx.drawerlayout.widget.DrawerLayout>
+

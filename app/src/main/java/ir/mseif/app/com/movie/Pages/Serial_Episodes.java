@@ -14,7 +14,7 @@ public class Serial_Episodes extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_serial_season);
+        setContentView(R.layout.activity_serial_episodes);
     }
 
 

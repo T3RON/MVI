@@ -6,9 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBack"
-    android:id="@+id/drawer_trailer"
+    android:id="@+id/drawer_history"
     android:orientation="vertical"
-    tools:context=".Pages.Trailer"
+    tools:context=".Pages.History"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 
@@ -80,12 +80,11 @@
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/place_main"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
                     android:layout_below="@id/top_menu"
-                    tools:layout_editor_absoluteY="60dp">
+                    android:layout_height="wrap_content">
 
                     <ImageView
-                        android:id="@+id/img_my_favourite"
+                        android:id="@+id/img_my_history"
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_marginTop="16dp"
@@ -96,28 +95,28 @@
                         tools:ignore="VectorDrawableCompat" />
 
                     <TextView
-                        android:id="@+id/txt_trailer_pre"
+                        android:id="@+id/txt_my_history_pre"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
-                        android:text="تریلر ها"
+                        android:text="لیست دانلود های من"
                         android:textColor="#E09705"
                         android:textSize="13sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/img_my_favourite"
-                        app:layout_constraintEnd_toStartOf="@+id/img_my_favourite"
-                        app:layout_constraintTop_toTopOf="@+id/img_my_favourite" />
+                        app:layout_constraintBottom_toBottomOf="@+id/img_my_history"
+                        app:layout_constraintEnd_toStartOf="@+id/img_my_history"
+                        app:layout_constraintTop_toTopOf="@+id/img_my_history" />
 
                     <TextView
-                        android:id="@+id/txt_trailer_eng"
+                        android:id="@+id/txt_my_history_eng"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:text="trailer"
+                        android:text="Downloads"
                         android:textColor="#BFBEC8"
                         android:textSize="12sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/txt_trailer_pre"
+                        app:layout_constraintBottom_toBottomOf="@+id/txt_my_history_pre"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/txt_trailer_pre" />
+                        app:layout_constraintTop_toTopOf="@+id/txt_my_history_pre" />
 
                     <View
                         android:id="@+id/view8"
@@ -127,10 +126,10 @@
                         android:background="@color/episode_number"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/img_my_favourite" />
+                        app:layout_constraintTop_toBottomOf="@+id/img_my_history" />
 
                     <GridLayout
-                        android:id="@+id/grid_my_favourite"
+                        android:id="@+id/grid_my_history"
                         android:layout_width="0dp"
                         android:layout_height="500dp"
                         android:layout_marginEnd="8dp"
@@ -168,3 +167,6 @@
 
 
 </androidx.drawerlayout.widget.DrawerLayout>
+
+
+

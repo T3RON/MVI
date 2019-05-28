@@ -34,6 +34,7 @@
 
     <color name="news_back">#444</color>
 
+    <color name="news_btn_more">#302a2a</color>
 
     <color name="vip_back">#f09900</color>
     <color name="vip_front">#fac100</color>
@@ -52,6 +53,8 @@
     <color name="profile_orange">#ff9200</color>
     <color name="profile_btn">#282828</color>
     <color name="profile_back">#1b1b1b</color>
+
+    <color name="cast_back">#2b2b31</color>
 
 
 
