@@ -43,6 +43,7 @@ import ir.mseif.app.com.movie.Model.Movie_List;
 import ir.mseif.app.com.movie.Model.Series_List;
 import ir.mseif.app.com.movie.Model.Slider_List;
 import ir.mseif.app.com.movie.Model.Trailer_List;
+import ir.mseif.app.com.movie.Pages.News;
 import ir.mseif.app.com.movie.Pages.PersonInfo;
 import ir.mseif.app.com.movie.Pages.Favourite;
 import ir.mseif.app.com.movie.Pages.History;
@@ -142,7 +143,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         button6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), Player.class);
+                Intent intent = new Intent(getApplicationContext(), News.class);
                 startActivity(intent);
             }
         });

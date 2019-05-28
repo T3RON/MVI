@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/img_small_director"
+            android:id="@+id/img_small_news"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:adjustViewBounds="true"
@@ -33,6 +33,7 @@
 
 
     <TextView
+        android:id="@+id/txt_news_title_main"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
@@ -42,16 +43,16 @@
         android:ellipsize="end"
         android:maxLines="1"
         android:text="مشاهدهمشاهدهمشاهدهمشاهدهمشاهدهمشاهده"
-        android:textSize="11sp"
-        tools:ignore="SmallSp"
         android:textColor="#fff"
+        android:textSize="11sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/cardview22"
-        app:layout_constraintStart_toEndOf="@+id/button7"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintStart_toEndOf="@+id/btn_more_info"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SmallSp" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/btn_more_info"
         android:layout_width="wrap_content"
         android:layout_height="25dp"
         android:layout_marginTop="8dp"

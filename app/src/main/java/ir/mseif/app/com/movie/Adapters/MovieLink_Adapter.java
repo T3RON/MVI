@@ -70,8 +70,8 @@ public class MovieLink_Adapter extends RecyclerView.Adapter<MovieLink_Adapter.My
             super(itemView);
             context = itemView.getContext();
             txt_link_quality = itemView.findViewById(R.id.txt_link_quality);
-            txt_size = itemView.findViewById(R.id.txt_size);
-            txt_encoder = itemView.findViewById(R.id.txt_encoder);
+            txt_size = itemView.findViewById(R.id.txt_size_number);
+            txt_encoder = itemView.findViewById(R.id.txt_encoder_name);
             btn_download = itemView.findViewById(R.id.btn_download);
             btn_sub = itemView.findViewById(R.id.btn_sub);
 

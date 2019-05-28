@@ -5,10 +5,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBack"
-    android:id="@+id/drawer_trailer"
+    android:background="@color/episode_back"
+    android:id="@+id/drawer_serial_season"
     android:orientation="vertical"
-    tools:context=".Pages.Trailer"
+    tools:context=".Pages.Serial_Episodes"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 
@@ -17,6 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
+
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -77,75 +78,79 @@
 
                 </RelativeLayout>
 
-                <androidx.constraintlayout.widget.ConstraintLayout
+                <LinearLayout
                     android:id="@+id/place_main"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:background="@color/episode_back"
                     android:layout_below="@id/top_menu"
-                    tools:layout_editor_absoluteY="60dp">
+                    android:orientation="vertical">
 
-                    <ImageView
-                        android:id="@+id/img_my_favourite"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_marginEnd="16dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:srcCompat="@drawable/ic_my_download"
-                        tools:ignore="VectorDrawableCompat" />
 
-                    <TextView
-                        android:id="@+id/txt_trailer_pre"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="8dp"
-                        android:text="تریلر ها"
-                        android:textColor="#E09705"
-                        android:textSize="13sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/img_my_favourite"
-                        app:layout_constraintEnd_toStartOf="@+id/img_my_favourite"
-                        app:layout_constraintTop_toTopOf="@+id/img_my_favourite" />
-
-                    <TextView
-                        android:id="@+id/txt_trailer_eng"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
-                        android:text="trailer"
-                        android:textColor="#BFBEC8"
-                        android:textSize="12sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/txt_trailer_pre"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/txt_trailer_pre" />
-
-                    <View
-                        android:id="@+id/view8"
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:id="@+id/place_title"
                         android:layout_width="match_parent"
-                        android:layout_height="1dp"
-                        android:layout_marginTop="8dp"
-                        android:background="@color/episode_number"
+                        android:layout_height="wrap_content"
+                        android:background="@color/episode_back"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/img_my_favourite" />
+                        app:layout_constraintTop_toTopOf="parent">
+                        <ImageView
+                            android:id="@+id/img_my_favourite"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_my_download"
+                            tools:ignore="VectorDrawableCompat" />
 
-                    <GridLayout
-                        android:id="@+id/grid_my_favourite"
-                        android:layout_width="0dp"
-                        android:layout_height="500dp"
-                        android:layout_marginEnd="8dp"
-                        android:layout_weight="8"
-                        android:alignmentMode="alignMargins"
-                        android:columnCount="4"
-                        android:columnOrderPreserved="false"
-                        android:padding="10dp"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="@+id/view8"
-                        app:layout_constraintTop_toBottomOf="@+id/view8">
+                        <TextView
+                            android:id="@+id/txt_title"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="16dp"
+                            android:text="فصل اول"
+                            android:textColor="@color/profile_orange"
+                            android:textSize="13sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/img_my_favourite"
+                            app:layout_constraintEnd_toStartOf="@+id/img_my_favourite"
+                            app:layout_constraintTop_toTopOf="@+id/img_my_favourite" />
 
-                    </GridLayout>
+                        <TextView
+                            android:id="@+id/txt_serial_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="Game Of Thrones"
+                            android:textColor="#d5fbff"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/txt_title"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="@+id/txt_title" />
 
-                </androidx.constraintlayout.widget.ConstraintLayout>
+                        <View
+                            android:layout_width="0dp"
+                            android:layout_height="1dp"
+                            android:layout_marginTop="8dp"
+                            android:layout_marginBottom="16dp"
+                            android:background="@color/profile_orange"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/img_my_favourite" />
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <include layout="@layout/rcy_episode" />
+
+                    <include layout="@layout/rcy_episode" />
+
+                    <include layout="@layout/rcy_episode" />
+
+                    <include layout="@layout/rcy_episode" />
+
+                </LinearLayout>
 
             </RelativeLayout>
 

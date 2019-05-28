@@ -26,77 +26,81 @@
 
 
         <TextView
-            android:id="@+id/textView22"
+            android:id="@+id/txt_year"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:text="2019"
             android:textSize="13sp"
-            android:textColor="#E09705"
+            android:textColor="@color/profile_orange"
             app:layout_constraintBottom_toBottomOf="@+id/season_number_black"
             app:layout_constraintEnd_toStartOf="@+id/season_number_black"
             app:layout_constraintTop_toTopOf="@+id/season_number_black" />
 
         <TextView
+            android:id="@+id/txt_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="فیلم"
-            android:textSize="13sp"
             android:textColor="#000"
+            android:textSize="13sp"
             app:layout_constraintBottom_toBottomOf="@+id/season_number_black"
             app:layout_constraintEnd_toEndOf="@+id/season_number_black"
             app:layout_constraintStart_toStartOf="@+id/season_number_black"
             app:layout_constraintTop_toTopOf="@+id/season_number_black" />
 
         <TextView
-            android:id="@+id/textView51"
+            android:id="@+id/txt_vaziat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:text="وضعیت :"
             android:textSize="12sp"
-            android:textColor="#E09705"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView"
+            android:textColor="@color/profile_orange"
+            app:layout_constraintBottom_toBottomOf="@+id/img_imdb"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imageView" />
+            app:layout_constraintTop_toTopOf="@+id/img_imdb" />
 
         <TextView
+            android:id="@+id/txt_type_vaziat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
             android:text="در حال بررسی"
-            android:textSize="11sp"
-            tools:ignore="SmallSp"
             android:textColor="#fff"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView"
-            app:layout_constraintEnd_toStartOf="@+id/textView51"
-            app:layout_constraintTop_toTopOf="@+id/imageView" />
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@+id/img_imdb"
+            app:layout_constraintEnd_toStartOf="@+id/txt_vaziat"
+            app:layout_constraintTop_toTopOf="@+id/img_imdb"
+            tools:ignore="SmallSp" />
 
         <TextView
+            android:id="@+id/txt_movie_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="Project Gutenberg"
-            android:textSize="13sp"
             android:textColor="#fff"
+            android:textSize="13sp"
             app:layout_constraintBottom_toBottomOf="@+id/season_number_black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/season_number_black" />
 
         <TextView
+            android:id="@+id/txt_id_imdb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
             android:text="tt4258963"
+            android:textColor="@color/profile_orange"
             android:textSize="11sp"
-            tools:ignore="SmallSp"
-            android:textColor="#E09705"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView"
-            app:layout_constraintStart_toEndOf="@+id/imageView"
-            app:layout_constraintTop_toTopOf="@+id/imageView" />
+            app:layout_constraintBottom_toBottomOf="@+id/img_imdb"
+            app:layout_constraintStart_toEndOf="@+id/img_imdb"
+            app:layout_constraintTop_toTopOf="@+id/img_imdb"
+            tools:ignore="SmallSp" />
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/img_imdb"
             android:layout_width="40dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -105,7 +109,7 @@
             android:cropToPadding="true"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/editText5"
+            app:layout_constraintEnd_toStartOf="@+id/etx_id_imdb"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/season_number_black"
