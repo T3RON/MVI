@@ -18,14 +18,13 @@
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,InnerclassSeparator"
-        tools:replace="android:supportsRtl"
-        tools:targetApi="m">
-
+        tools:replace="android:label, android:icon, android:theme, android:allowBackup"
+        tools:targetApi="p">
+        <!--<activity android:name=".Pages.Player"/>-->
         <activity android:name=".Pages.VIP" />
         <activity android:name=".Pages.News_Page" />
         <activity android:name=".Pages.Request" />

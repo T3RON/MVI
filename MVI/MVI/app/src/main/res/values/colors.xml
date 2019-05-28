@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#E09705</color>
+    <color name="colorAccent">#E09705</color>
+    <color name="colorBack">#262525</color>
+    <color name="BtnSearch">#D13131</color>
+
+    <color name="season_back">#1f1e23</color>
+    <color name="episode_number">#fe9201</color>
+    <color name="season_orange_name">#ff9500</color>
+    <color name="season_mid">#25262a</color>
+
+
+    <color name="comment_answer">#1b1a19</color>
+    <color name="comment_txt">#cfcfcf</color>
+    <color name="comment_txt_back">#313131</color>
+    <color name="comment_date">#7b7b7b</color>
+    <color name="comment_answer_back">#363640</color>
+    <color name="comment_etx_hint">#959595</color>
+    <color name="comment_btn_back">#383838</color>
+
+    <color name="episode_blue">#3cc6f8</color>
+
+    <color name="info_cast">#1a1a1a</color>
+
+    <color name="request_etx">#18191e</color>
+    <color name="request_rcy">#161616</color>
+
+    <color name="news_border">#fdfdfd</color>
+
+    <color name="news_back">#444</color>
+
+
+    <color name="vip_back">#f09900</color>
+    <color name="vip_front">#fac100</color>
+
+
+    <color name="vip_back_style">#2d2d2d</color>
+    <color name="vip_btn_style">#1a1a19</color>
+
+    <color name="news_head_style">#373737</color>
+
+
+
+</resources>

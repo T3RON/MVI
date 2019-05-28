@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_house"
+        android:title="خــانه" />
+    <item
+        android:id="@+id/nav_category"
+        android:icon="@drawable/ic_list"
+        android:title="دستــه بندی فیلم و ســریال" />
+    <item
+        android:id="@+id/nav_tv_show"
+        android:icon="@drawable/ic_television"
+        android:title="شبکــه های تلویزیونــی" />
+    <item
+        android:id="@+id/nav_download"
+        android:icon="@drawable/ic_download"
+    android:title="دانلـــود های مــن" />
+    <item
+        android:id="@+id/nav_fav"
+        android:icon="@drawable/ic_play_button"
+        android:title="علاقـــه مندی های مــن" />
+    <item
+        android:id="@+id/nav_request"
+        android:icon="@drawable/ic_request"
+        android:title="درخــواست فیلم و ســـریال" />
+
+            <item
+                android:id="@+id/nav_support"
+                android:icon="@drawable/ic_house"
+                android:title="پشتیـــبانی" />
+
+            <item
+                android:icon="@drawable/ic_share"
+                android:title="به اشتراک گذاری" />
+
+
+            <item
+                android:icon="@drawable/ic_about"
+                android:title="دربـــاره مــا" />
+
+            <item
+                android:id="@+id/ic_exit"
+                android:icon="@drawable/ic_logout"
+                android:title="خــــروج" />
+
+</menu>
