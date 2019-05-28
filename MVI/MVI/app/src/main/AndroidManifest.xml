@@ -21,22 +21,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="false"
         android:theme="@style/AppTheme"
-        android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,InnerclassSeparator"
-<<<<<<< HEAD
-        tools:replace="android:supportsRtl"
-        tools:targetApi="m">
-
-=======
-        tools:replace="android:supportsRtl">
-        <activity android:name=".Pages.Profile"></activity>
->>>>>>> c8df38f6c6e87ac2c55fdbdd3b7c2b54b1c4d513
+        tools:replace="android:label, android:icon, android:theme, android:allowBackup"
+        tools:targetApi="p">
+        <!--<activity android:name=".Pages.Player"/>-->
         <activity android:name=".Pages.VIP" />
-        <activity android:name=".Pages.News" />
+        <activity android:name=".Pages.News_Page" />
         <activity android:name=".Pages.Request" />
         <activity android:name=".Pages.Favourite" />
-        <activity android:name=".Pages.History" />
-        <activity android:name=".Pages.PersonInfo" />
+        <activity android:name=".Pages.History_page" />
+        <activity android:name=".Pages.Cast_Info" />
         <activity android:name=".Pages.Trailer" />
         <activity android:name=".Pages.Serial_Episode_Link" />
         <activity android:name=".Pages.Serial_Episodes" />
