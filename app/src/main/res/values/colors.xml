@@ -6,7 +6,7 @@
     <color name="colorBack">#262525</color>
     <color name="BtnSearch">#D13131</color>
 
-    <color name="season_back">#1f1e23</color>
+    <color name="season_back">#1e1e23</color>
     <color name="episode_number">#fe9201</color>
     <color name="season_orange_name">#ff9500</color>
     <color name="season_mid">#25262a</color>
@@ -20,7 +20,10 @@
     <color name="comment_etx_hint">#959595</color>
     <color name="comment_btn_back">#383838</color>
 
+
+
     <color name="episode_blue">#3cc6f8</color>
+    <color name="episode_back">#282830</color>
 
     <color name="info_cast">#1a1a1a</color>
 
@@ -31,15 +34,34 @@
 
     <color name="news_back">#444</color>
 
+    <color name="news_btn_more">#302a2a</color>
 
     <color name="vip_back">#f09900</color>
     <color name="vip_front">#fac100</color>
+    <color name="vip_btn">#1e1e1e</color>
+    <color name="vip_etx">#1e1422</color>
+
 
 
     <color name="vip_back_style">#2d2d2d</color>
-    <color name="vip_btn_style">#1a1a19</color>
+    <color name="vip_btn_style">#1b1a1a</color>
 
-    <color name="news_head_style">#373737</color>
+    <color name="news_head_style">#383838</color>
+
+    <color name="profile_text">#c5c4cc</color>
+    <color name="profile_yellow_color">#fcaf17</color>
+    <color name="profile_orange">#ff9200</color>
+    <color name="profile_btn">#282828</color>
+    <color name="profile_back">#1b1b1b</color>
+
+    <color name="cast_back">#2b2b31</color>
+
+
+
+    <color name="line_mid_Info_two">#2a2b30</color>
+    <color name="info_movie">#232329</color>
+
+    <color name="btn_pakhsh">#7e4444</color>
 
 
 

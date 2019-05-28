@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -48,11 +49,9 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
     @BindView(R.id.txt_movie_age) TextView txt_movie_age;
     @BindView(R.id.txt_title_movie) TextView txt_title_movie;
     @BindView(R.id.txt_quality) TextView txt_quality;
-    @BindView(R.id.txt_kargardan) TextView txt_kargardan;
     @BindView(R.id.txt_rate) TextView txt_rate;
     @BindView(R.id.txt_genre) TextView txt_genre;
     @BindView(R.id.txt_lang) TextView txt_lang;
-    @BindView(R.id.txt_year) TextView txt_year;
     @BindView(R.id.txt_time) TextView txt_time;
     @BindView(R.id.txt_country) TextView txt_country;
     @BindView(R.id.txt_story) TextView txt_story;
@@ -64,6 +63,9 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
     @BindView(R.id.rcy_director) RecyclerView rcy_director;
     @BindView(R.id.rcy_stars) RecyclerView rcy_stars;
     @BindView(R.id.rcy_movie_link) RecyclerView rcy_movie_link;
+    @BindView(R.id.nav_view) RtlNavigationView  nav_view;
+    @BindView(R.id.drawer_movie_info) DrawerLayout  drawer;
+    @BindView(R.id.btn_menu) ImageView btn_menu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +74,6 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
         ButterKnife.bind(this);
 
 
-        RtlNavigationView nav_view = (RtlNavigationView) findViewById(R.id.nav_view);
         nav_view.setNavigationItemSelectedListener(this);
         nav_view.setTypeface(Global.ira);
 
@@ -98,15 +99,12 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
 
 
 
-//        btn_menu.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                DrawerLayout drawer = findViewById(R.id.drawer_layout);
-//
-//                drawer.openDrawer(Gravity.RIGHT);
-//
-//            }
-//        });
+        btn_menu.setOnClickListener(v -> {
+            DrawerLayout drawer = findViewById(R.id.drawer_movie_info);
+
+            drawer.openDrawer(Gravity.RIGHT);
+
+        });
 
 
 
@@ -144,7 +142,7 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
             Toast.makeText(this, "SEND", Toast.LENGTH_SHORT).show();
         }
 
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_movie_info);
         drawer.closeDrawer(Gravity.RIGHT);
 
         return true;
@@ -153,7 +151,7 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = findViewById(R.id.drawer_movie_info);
         if (drawer.isDrawerOpen(Gravity.RIGHT)) {
             drawer.closeDrawer(Gravity.RIGHT);
         } else {
@@ -179,7 +177,6 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
                         txt_quality.setText(movie_single_info.get(0).getMovie_quality());
                         txt_rate.setText(movie_single_info.get(0).getMovie_imdb());
                         txt_lang.setText(movie_single_info.get(0).getMovie_lang());
-                        txt_year.setText(movie_single_info.get(0).getMovie_year() + "");
                         txt_time.setText(movie_single_info.get(0).getMovie_time());
                         txt_country.setText(movie_single_info.get(0).getMovie_country());
                         txt_story.setText(movie_single_info.get(0).getMovie_store());
@@ -214,7 +211,6 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
                         for (Director_List director_name : director_lists) {
                             director.append(director_name.getDirector_name() + " , ");
                         }
-                        txt_kargardan.setText(director);
 
                         LinearLayoutManager linearLayoutManager_movie = new LinearLayoutManager(Global.context,LinearLayoutManager.HORIZONTAL,true);
                         rcy_director.setLayoutManager(linearLayoutManager_movie);

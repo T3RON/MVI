@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorBack"
+    android:background="@color/cast_back"
     android:orientation="vertical">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -11,7 +11,7 @@
         android:layout_height="wrap_content">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout"
+            android:id="@+id/place_day_left_tamdid"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -20,12 +20,12 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:id="@+id/textView87"
+                android:id="@+id/txt_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
                 android:text="نظرات"
-                android:textColor="#E09705"
+                android:textColor="@color/profile_orange"
                 android:textSize="13sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -34,32 +34,31 @@
                 android:layout_width="0dp"
                 android:layout_height="1dp"
                 android:layout_marginTop="8dp"
-                android:layout_marginBottom="8dp"
                 android:background="#E09705"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textView87" />
+                app:layout_constraintTop_toBottomOf="@+id/txt_title" />
         </androidx.constraintlayout.widget.ConstraintLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/constraintLayout14"
+            android:id="@+id/place_send_comment"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+            app:layout_constraintTop_toBottomOf="@+id/place_day_left_tamdid">
 
             <EditText
-                android:id="@+id/editText"
+                android:id="@+id/etx_send_comment"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="8dp"
-                android:background="@color/season_back"
+                android:background="@drawable/style_etx_comment"
                 android:gravity="top"
                 android:inputType="textMultiLine"
                 android:minLines="4"
@@ -77,6 +76,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
+                android:id="@+id/btn_send_comment"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
@@ -85,12 +85,12 @@
                 android:text="ارسال نظر"
                 android:textColor="#fff"
                 android:textSize="12sp"
-                app:layout_constraintBottom_toBottomOf="@+id/constraintLayout15"
+                app:layout_constraintBottom_toBottomOf="@+id/place_answer"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText" />
+                app:layout_constraintTop_toBottomOf="@+id/etx_send_comment" />
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/constraintLayout15"
+                android:id="@+id/place_answer"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -99,10 +99,10 @@
                 android:background="@drawable/style_rcy_comment"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/editText">
+                app:layout_constraintTop_toBottomOf="@+id/etx_send_comment">
 
                 <TextView
-                    android:id="@+id/textView24"
+                    android:id="@+id/txt_number_1"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -112,13 +112,13 @@
                     android:text="7"
                     android:textColor="#FF9200"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/textView25"
+                    app:layout_constraintEnd_toStartOf="@+id/txt_plus"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView25"
+                    android:id="@+id/txt_plus"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -127,13 +127,13 @@
                     android:text="+"
                     android:textColor="#fff"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/textView26"
+                    app:layout_constraintEnd_toStartOf="@+id/txt_number_2"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/textView24"
+                    app:layout_constraintStart_toEndOf="@+id/txt_number_1"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView26"
+                    android:id="@+id/txt_number_2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -142,13 +142,13 @@
                     android:text="1"
                     android:textColor="#FF9200"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/textView27"
+                    app:layout_constraintEnd_toStartOf="@+id/txt_equal"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/textView25"
+                    app:layout_constraintStart_toEndOf="@+id/txt_plus"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <TextView
-                    android:id="@+id/textView27"
+                    android:id="@+id/txt_equal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -157,13 +157,13 @@
                     android:text="="
                     android:textColor="#fff"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/editText2"
+                    app:layout_constraintEnd_toStartOf="@+id/etx_answer"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/textView26"
+                    app:layout_constraintStart_toEndOf="@+id/txt_number_2"
                     app:layout_constraintTop_toTopOf="parent" />
 
                 <EditText
-                    android:id="@+id/editText2"
+                    android:id="@+id/etx_answer"
                     android:layout_width="75dp"
                     android:layout_height="35dp"
                     android:layout_marginTop="8dp"
@@ -177,7 +177,7 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/textView27"
+                    app:layout_constraintStart_toEndOf="@+id/txt_equal"
                     app:layout_constraintTop_toTopOf="parent" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -192,7 +192,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/constraintLayout14">
+            app:layout_constraintTop_toBottomOf="@+id/place_send_comment">
 
             <include layout="@layout/rcy_comment" />
 

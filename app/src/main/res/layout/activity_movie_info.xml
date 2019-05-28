@@ -1,63 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<androidx.drawerlayout.widget.DrawerLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:fitsSystemWindows="true">
+    android:background="@color/colorBack"
+    android:id="@+id/drawer_movie_info"
+    android:orientation="vertical"
+    tools:context=".Pages.MovieInfo"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <RelativeLayout
-        android:id="@+id/container"
+
+    <LinearLayout
+        android:id="@+id/container_place"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-
-
-        <LinearLayout
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:layout_height="wrap_content">
 
-            <androidx.core.widget.NestedScrollView
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:scrollbars="none"
-                android:scrollingCache="true">
+                android:layout_height="match_parent">
+
+
+                <RelativeLayout
+                    android:id="@+id/top_menu"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="60dp"
+                        android:background="@color/colorPrimaryDark">
+
+                        <ImageView
+                            android:id="@+id/btn_menu"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:layout_marginEnd="16dp"
+                            android:layout_marginRight="16dp"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_menu"
+                            tools:ignore="VectorDrawableCompat" />
+
+                        <ImageView
+                            android:id="@+id/btn_profile"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="24dp"
+                            android:layout_marginLeft="24dp"
+                            android:layout_marginTop="16dp"
+                            app:layout_constraintStart_toEndOf="@+id/btn_logout"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_user"
+                            tools:ignore="MissingConstraints,VectorDrawableCompat" />
+
+                        <ImageView
+                            android:id="@+id/btn_logout"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="16dp"
+                            android:layout_marginLeft="16dp"
+                            android:layout_marginTop="16dp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/ic_logout"
+                            tools:ignore="VectorDrawableCompat" />
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+
+                </RelativeLayout>
+
 
                 <LinearLayout
+                    android:id="@+id/place_main"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
+                    android:layout_below="@id/top_menu"
                     android:orientation="vertical">
 
-                    <include
-                        layout="@layout/info_one" />
-                    <include
-                        layout="@layout/info_two" />
-                    <include
-                        layout="@layout/info_three" />
-                    <include
-                        layout="@layout/fragment_link" />
-                    <include
-                        layout="@layout/fragment_cast" />
-                    <include
-                        layout="@layout/fragment_comments" />
+                    <include layout="@layout/info_one" />
+
+                    <include layout="@layout/info_two" />
+
+                    <include layout="@layout/fragment_link" />
+
+                    <include layout="@layout/fragment_cast" />
+
+                    <include layout="@layout/fragment_comments" />
 
 
                 </LinearLayout>
 
+            </RelativeLayout>
 
 
+        </androidx.core.widget.NestedScrollView>
 
-
-            </androidx.core.widget.NestedScrollView>
-
-        </LinearLayout>
-
-
-
-    </RelativeLayout>
+    </LinearLayout>
 
     <!--navigation drawer menu-->
 
@@ -71,4 +117,9 @@
         app:rtl_menu="@menu/drawer_menu"
         tools:ignore="RtlHardcoded" />
 
+
 </androidx.drawerlayout.widget.DrawerLayout>
+
+
+
+
