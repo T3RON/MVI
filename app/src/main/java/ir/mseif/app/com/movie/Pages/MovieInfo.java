@@ -48,7 +48,7 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
 
     @BindView(R.id.txt_movie_age) TextView txt_movie_age;
     @BindView(R.id.txt_title_movie) TextView txt_title_movie;
-    @BindView(R.id.txt_quality) TextView txt_quality;
+    @BindView(R.id.txt_year) TextView txt_year;
     @BindView(R.id.txt_rate) TextView txt_rate;
     @BindView(R.id.txt_genre) TextView txt_genre;
     @BindView(R.id.txt_lang) TextView txt_lang;
@@ -174,7 +174,7 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
 
                         txt_movie_age.setText("PG-" + movie_single_info.get(0).getMovie_age());
                         txt_title_movie.setText(movie_single_info.get(0).getMovie_name());
-                        txt_quality.setText(movie_single_info.get(0).getMovie_quality());
+                        txt_year.setText(movie_single_info.get(0).getMovie_quality());
                         txt_rate.setText(movie_single_info.get(0).getMovie_imdb());
                         txt_lang.setText(movie_single_info.get(0).getMovie_lang());
                         txt_time.setText(movie_single_info.get(0).getMovie_time());
