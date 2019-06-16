@@ -23,9 +23,14 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,InnerclassSeparator"
+<<<<<<< HEAD
+        tools:replace="android:supportsRtl"
+        tools:targetApi="m">
+
+=======
         tools:replace="android:supportsRtl">
-        <activity android:name=".Pages.Downloader"></activity>
-        <activity android:name=".Pages.Profile" />
+        <activity android:name=".Pages.Profile"></activity>
+>>>>>>> c8df38f6c6e87ac2c55fdbdd3b7c2b54b1c4d513
         <activity android:name=".Pages.VIP" />
         <activity android:name=".Pages.News" />
         <activity android:name=".Pages.Request" />
