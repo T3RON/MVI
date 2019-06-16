@@ -1,16 +1,17 @@
 package ir.mseif.app.com.movie.Pages;
 
-import android.content.Context;
-import android.content.Intent;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
-import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
@@ -22,18 +23,24 @@ import ir.mseif.app.com.movie.R;
 import ir.mseif.app.com.movie.Utils.Global;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class Serial_Episode_Link extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
+public class Downloader extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
 
 
     @BindView(R.id.btn_menu) ImageView btn_menu;
     @BindView(R.id.nav_view) RtlNavigationView nav_view;
     @BindView(R.id.drawer_favourite) DrawerLayout drawer;
-    @BindView(R.id.rcy_episode_link) RecyclerView rcy_episode_link;
+    @BindView(R.id.txt_movie_name) TextView movie_name;
+    @BindView(R.id.txt_time_to_end) TextView txt_time_to_end;
+    @BindView(R.id.txt_percentage) TextView txt_percentage;
+    @BindView(R.id.pbar_top_end) ProgressBar pbar_top_end;
+    @BindView(R.id.btn_cancel) Button btn_cancel;
+    @BindView(R.id.btn_play) Button btn_play;
+    @BindView(R.id.rcy_download_left) RecyclerView rcy_download_left;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_serial_episode_link);
+        setContentView(R.layout.activity_downloader);
         ButterKnife.bind(this);
 
 

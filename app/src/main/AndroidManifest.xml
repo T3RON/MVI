@@ -24,7 +24,8 @@
         android:usesCleartextTraffic="true"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,InnerclassSeparator"
         tools:replace="android:supportsRtl">
-        <activity android:name=".Pages.Profile"/>
+        <activity android:name=".Pages.Downloader"></activity>
+        <activity android:name=".Pages.Profile" />
         <activity android:name=".Pages.VIP" />
         <activity android:name=".Pages.News" />
         <activity android:name=".Pages.Request" />
