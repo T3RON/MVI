@@ -144,6 +144,11 @@
                             app:layout_constraintTop_toBottomOf="@+id/img_my_favourite" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
 
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcy_episode_link"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent" />
+
                     <include layout="@layout/rcy_episode_link" />
 
                     <include layout="@layout/rcy_episode_link" />

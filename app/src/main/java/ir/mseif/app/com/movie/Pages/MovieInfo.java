@@ -40,8 +40,6 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class MovieInfo extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-//    @BindView(R.id.btn_menu) ImageView btn_menu;
-
 
     String movie_id;
     StringBuffer director = new StringBuffer();

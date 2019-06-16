@@ -50,7 +50,7 @@
             app:layout_constraintTop_toTopOf="@+id/season_number_black" />
 
         <TextView
-            android:id="@+id/txt_vaziat"
+            android:id="@+id/thd_vaziat"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="8dp"
@@ -70,7 +70,7 @@
             android:textColor="#fff"
             android:textSize="11sp"
             app:layout_constraintBottom_toBottomOf="@+id/img_imdb"
-            app:layout_constraintEnd_toStartOf="@+id/txt_vaziat"
+            app:layout_constraintEnd_toStartOf="@+id/thd_vaziat"
             app:layout_constraintTop_toTopOf="@+id/img_imdb"
             tools:ignore="SmallSp" />
 
