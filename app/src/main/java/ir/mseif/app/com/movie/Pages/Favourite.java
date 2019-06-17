@@ -71,7 +71,6 @@ public class Favourite extends AppCompatActivity implements NavigationView.OnNav
             Toast.makeText(this, "SEND", Toast.LENGTH_SHORT).show();
         }
 
-        DrawerLayout drawer = findViewById(R.id.drawer_movie_info);
         drawer.closeDrawer(Gravity.RIGHT);
 
         return true;
@@ -80,7 +79,6 @@ public class Favourite extends AppCompatActivity implements NavigationView.OnNav
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.drawer_movie_info);
         if (drawer.isDrawerOpen(Gravity.RIGHT)) {
             drawer.closeDrawer(Gravity.RIGHT);
         } else {
