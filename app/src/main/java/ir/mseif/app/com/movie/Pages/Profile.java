@@ -1,6 +1,7 @@
 package ir.mseif.app.com.movie.Pages;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import android.content.Context;
@@ -39,9 +40,9 @@ public class Profile extends AppCompatActivity implements NavigationView.OnNavig
     @BindView(R.id.txt_day_left_number) TextView txt_day_left_number;
     @BindView(R.id.txt_day_left) TextView txt_day_left;
     @BindView(R.id.btn_tamdid) Button drabtn_tamdidwer;
-    @BindView(R.id.place_my_download) Layout place_my_download;
-    @BindView(R.id.place_favorite) Layout place_favorite;
-    @BindView(R.id.place_setting) Layout place_setting;
+    @BindView(R.id.place_my_download) ConstraintLayout place_my_download;
+    @BindView(R.id.place_favorite) ConstraintLayout place_favorite;
+    @BindView(R.id.place_setting) ConstraintLayout place_setting;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
