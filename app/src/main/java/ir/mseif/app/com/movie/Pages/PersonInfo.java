@@ -2,6 +2,7 @@ package ir.mseif.app.com.movie.Pages;
 
 import android.content.Context;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.gridlayout.widget.GridLayout;
 
@@ -32,7 +33,7 @@ public class PersonInfo extends AppCompatActivity implements NavigationView.OnNa
     @BindView(R.id.img_person) ImageView img_person;
     @BindView(R.id.txt_person_name) TextView txt_person_name;
     @BindView(R.id.txt_person_birth_date) TextView txt_person_birth_date;
-    @BindView(R.id.place_more_info) Layout place_more_info;
+    @BindView(R.id.place_more_info) ConstraintLayout place_more_info;
     @BindView(R.id.grid_person_info) GridLayout grid_person_info;
 
 

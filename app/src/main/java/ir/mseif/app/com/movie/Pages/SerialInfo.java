@@ -47,9 +47,8 @@ public class SerialInfo extends AppCompatActivity implements NavigationView.OnNa
     @BindView(R.id.img_large_poster) ImageView img_large_poster;
     @BindView(R.id.rcy_director) RecyclerView rcy_director;
     @BindView(R.id.rcy_stars) RecyclerView rcy_stars;
-    @BindView(R.id.rcy_movie_link) RecyclerView rcy_movie_link;
     @BindView(R.id.nav_view) RtlNavigationView  nav_view;
-    @BindView(R.id.drawer_movie_info) DrawerLayout  drawer;
+    @BindView(R.id.drawer_serial_info) DrawerLayout  drawer;
     @BindView(R.id.btn_menu) ImageView btn_menu;
 
 
