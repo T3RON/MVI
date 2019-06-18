@@ -6,9 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/episode_back"
-    android:id="@+id/drawer_serial_season"
+    android:id="@+id/drawer_serial_episodes"
     android:orientation="vertical"
-    tools:context=".Pages.Serial_Episodes"
+    tools:context="ir.mseif.app.com.movie.Pages.Serial_Episodes"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 

@@ -27,7 +27,7 @@ public class Serial_Episodes extends AppCompatActivity implements NavigationView
 
     @BindView(R.id.btn_menu) ImageView btn_menu;
     @BindView(R.id.nav_view) RtlNavigationView nav_view;
-    @BindView(R.id.drawer_favourite) DrawerLayout drawer;
+    @BindView(R.id.drawer_serial_episodes) DrawerLayout drawer;
     @BindView(R.id.rcy_episodes) RecyclerView rcy_episodes;
 
     @Override
@@ -73,7 +73,6 @@ public class Serial_Episodes extends AppCompatActivity implements NavigationView
             Toast.makeText(this, "SEND", Toast.LENGTH_SHORT).show();
         }
 
-        DrawerLayout drawer = findViewById(R.id.drawer_movie_info);
         drawer.closeDrawer(Gravity.RIGHT);
 
         return true;
@@ -82,7 +81,6 @@ public class Serial_Episodes extends AppCompatActivity implements NavigationView
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.drawer_movie_info);
         if (drawer.isDrawerOpen(Gravity.RIGHT)) {
             drawer.closeDrawer(Gravity.RIGHT);
         } else {

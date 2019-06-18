@@ -28,7 +28,7 @@ public class PersonInfo extends AppCompatActivity implements NavigationView.OnNa
 
     @BindView(R.id.btn_menu) ImageView btn_menu;
     @BindView(R.id.nav_view) RtlNavigationView nav_view;
-    @BindView(R.id.drawer_favourite) DrawerLayout drawer;
+    @BindView(R.id.drawer_person_info) DrawerLayout drawer;
 
     @BindView(R.id.img_person) ImageView img_person;
     @BindView(R.id.txt_person_name) TextView txt_person_name;
@@ -80,7 +80,6 @@ public class PersonInfo extends AppCompatActivity implements NavigationView.OnNa
             Toast.makeText(this, "SEND", Toast.LENGTH_SHORT).show();
         }
 
-        DrawerLayout drawer = findViewById(R.id.drawer_movie_info);
         drawer.closeDrawer(Gravity.RIGHT);
 
         return true;
@@ -89,7 +88,6 @@ public class PersonInfo extends AppCompatActivity implements NavigationView.OnNa
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.drawer_movie_info);
         if (drawer.isDrawerOpen(Gravity.RIGHT)) {
             drawer.closeDrawer(Gravity.RIGHT);
         } else {

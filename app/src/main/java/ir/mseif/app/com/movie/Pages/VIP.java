@@ -27,7 +27,7 @@ public class VIP extends AppCompatActivity implements NavigationView.OnNavigatio
 
     @BindView(R.id.btn_menu) ImageView btn_menu;
     @BindView(R.id.nav_view) RtlNavigationView nav_view;
-    @BindView(R.id.drawer_favourite) DrawerLayout drawer;
+    @BindView(R.id.drawer_vip) DrawerLayout drawer;
 
     @BindView(R.id.txt_kharid_karbari) TextView txt_kharid_karbari;
 
@@ -108,7 +108,6 @@ public class VIP extends AppCompatActivity implements NavigationView.OnNavigatio
             Toast.makeText(this, "SEND", Toast.LENGTH_SHORT).show();
         }
 
-        DrawerLayout drawer = findViewById(R.id.drawer_movie_info);
         drawer.closeDrawer(Gravity.RIGHT);
 
         return true;
@@ -117,7 +116,6 @@ public class VIP extends AppCompatActivity implements NavigationView.OnNavigatio
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.drawer_movie_info);
         if (drawer.isDrawerOpen(Gravity.RIGHT)) {
             drawer.closeDrawer(Gravity.RIGHT);
         } else {

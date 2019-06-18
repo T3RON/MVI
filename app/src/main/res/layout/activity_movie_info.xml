@@ -8,7 +8,7 @@
     android:background="@color/colorBack"
     android:id="@+id/drawer_movie_info"
     android:orientation="vertical"
-    tools:context=".Pages.MovieInfo"
+    tools:context="ir.mseif.app.com.movie.Pages.MovieInfo"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 
