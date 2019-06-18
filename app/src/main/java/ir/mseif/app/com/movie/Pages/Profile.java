@@ -31,7 +31,7 @@ public class Profile extends AppCompatActivity implements NavigationView.OnNavig
     ImageView btn_menu;
     @BindView(R.id.nav_view)
     RtlNavigationView nav_view;
-    @BindView(R.id.drawer_favourite) DrawerLayout drawer;
+    @BindView(R.id.drawer_profile) DrawerLayout drawer;
 
     @BindView(R.id.circle_img) CircleImageView circle_img;
     @BindView(R.id.txt_profile_name) TextView txt_profile_name;
@@ -87,7 +87,6 @@ public class Profile extends AppCompatActivity implements NavigationView.OnNavig
             Toast.makeText(this, "SEND", Toast.LENGTH_SHORT).show();
         }
 
-        DrawerLayout drawer = findViewById(R.id.drawer_movie_info);
         drawer.closeDrawer(Gravity.RIGHT);
 
         return true;
@@ -96,7 +95,6 @@ public class Profile extends AppCompatActivity implements NavigationView.OnNavig
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.drawer_movie_info);
         if (drawer.isDrawerOpen(Gravity.RIGHT)) {
             drawer.closeDrawer(Gravity.RIGHT);
         } else {

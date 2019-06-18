@@ -28,7 +28,7 @@ public class History extends AppCompatActivity implements NavigationView.OnNavig
 
     @BindView(R.id.btn_menu) ImageView btn_menu;
     @BindView(R.id.nav_view) RtlNavigationView nav_view;
-    @BindView(R.id.drawer_favourite) DrawerLayout drawer;
+    @BindView(R.id.drawer_history) DrawerLayout drawer;
     @BindView(R.id.grid_my_history) GridLayout grid_my_history;
 
     @Override
@@ -74,7 +74,6 @@ public class History extends AppCompatActivity implements NavigationView.OnNavig
             Toast.makeText(this, "SEND", Toast.LENGTH_SHORT).show();
         }
 
-        DrawerLayout drawer = findViewById(R.id.drawer_movie_info);
         drawer.closeDrawer(Gravity.RIGHT);
 
         return true;
@@ -83,7 +82,6 @@ public class History extends AppCompatActivity implements NavigationView.OnNavig
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.drawer_movie_info);
         if (drawer.isDrawerOpen(Gravity.RIGHT)) {
             drawer.closeDrawer(Gravity.RIGHT);
         } else {

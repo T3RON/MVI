@@ -29,13 +29,13 @@ public class News extends AppCompatActivity implements NavigationView.OnNavigati
 
     @BindView(R.id.btn_menu) ImageView btn_menu;
     @BindView(R.id.nav_view) RtlNavigationView nav_view;
-    @BindView(R.id.drawer_favourite) DrawerLayout drawer;
+    @BindView(R.id.drawer_news) DrawerLayout drawer;
 
     @BindView(R.id.circle_img) CircleImageView circle_img;
     @BindView(R.id.txt_news_title) TextView txt_news_title;
     @BindView(R.id.txt_news_date) TextView txt_news_date;
     @BindView(R.id.txt_news) TextView txt_news;
-    @BindView(R.id.txt_title) DrawerLayout txt_title;
+    @BindView(R.id.txt_title) TextView txt_title;
     @BindView(R.id.etx_send_comment) EditText etx_send_comment;
     @BindView(R.id.btn_send_comment) Button btn_send_comment;
     @BindView(R.id.txt_number_1) TextView txt_number_1;
@@ -86,7 +86,6 @@ public class News extends AppCompatActivity implements NavigationView.OnNavigati
             Toast.makeText(this, "SEND", Toast.LENGTH_SHORT).show();
         }
 
-        DrawerLayout drawer = findViewById(R.id.drawer_movie_info);
         drawer.closeDrawer(Gravity.RIGHT);
 
         return true;
@@ -95,7 +94,6 @@ public class News extends AppCompatActivity implements NavigationView.OnNavigati
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.drawer_movie_info);
         if (drawer.isDrawerOpen(Gravity.RIGHT)) {
             drawer.closeDrawer(Gravity.RIGHT);
         } else {

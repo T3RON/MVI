@@ -27,7 +27,7 @@ public class Serial_Episode_Link extends AppCompatActivity implements Navigation
 
     @BindView(R.id.btn_menu) ImageView btn_menu;
     @BindView(R.id.nav_view) RtlNavigationView nav_view;
-    @BindView(R.id.drawer_favourite) DrawerLayout drawer;
+    @BindView(R.id.drawer_serial_episode_link) DrawerLayout drawer;
     @BindView(R.id.rcy_episode_link) RecyclerView rcy_episode_link;
 
     @Override
@@ -73,7 +73,6 @@ public class Serial_Episode_Link extends AppCompatActivity implements Navigation
             Toast.makeText(this, "SEND", Toast.LENGTH_SHORT).show();
         }
 
-        DrawerLayout drawer = findViewById(R.id.drawer_movie_info);
         drawer.closeDrawer(Gravity.RIGHT);
 
         return true;
@@ -82,7 +81,6 @@ public class Serial_Episode_Link extends AppCompatActivity implements Navigation
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.drawer_movie_info);
         if (drawer.isDrawerOpen(Gravity.RIGHT)) {
             drawer.closeDrawer(Gravity.RIGHT);
         } else {

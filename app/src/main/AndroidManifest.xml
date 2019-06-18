@@ -25,9 +25,7 @@
         tools:ignore="AllowBackup,GoogleAppIndexingWarning,InnerclassSeparator"
         tools:targetApi="m"
         tools:replace="android:supportsRtl">
-
-
-        <activity android:name=".Pages.Profile"></activity>
+        <activity android:name=".Pages.Profile"/>
         <activity android:name=".Pages.VIP" />
         <activity android:name=".Pages.News" />
         <activity android:name=".Pages.Request" />

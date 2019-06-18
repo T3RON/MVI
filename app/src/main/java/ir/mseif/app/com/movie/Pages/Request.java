@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
@@ -28,7 +29,7 @@ public class Request extends AppCompatActivity implements NavigationView.OnNavig
 
     @BindView(R.id.btn_menu) ImageView btn_menu;
     @BindView(R.id.nav_view) RtlNavigationView nav_view;
-    @BindView(R.id.drawer_favourite) DrawerLayout drawer;
+    @BindView(R.id.drawer_request) DrawerLayout drawer;
 
     @BindView(R.id.etx_name) EditText etx_name;
     @BindView(R.id.spn_type) Spinner spn_type;
@@ -36,7 +37,7 @@ public class Request extends AppCompatActivity implements NavigationView.OnNavig
     @BindView(R.id.etx_year) EditText etx_year;
     @BindView(R.id.etx_id_imdb) EditText etx_id_imdb;
     @BindView(R.id.etx_description) EditText etx_description;
-    @BindView(R.id.btn_accept) DrawerLayout btn_accept;
+    @BindView(R.id.btn_accept) Button btn_accept;
     @BindView(R.id.txt_number_1) TextView txt_number_1;
     @BindView(R.id.txt_number_2) TextView txt_number_2;
     @BindView(R.id.etx_answer) EditText etx_answer;
@@ -85,7 +86,6 @@ public class Request extends AppCompatActivity implements NavigationView.OnNavig
             Toast.makeText(this, "SEND", Toast.LENGTH_SHORT).show();
         }
 
-        DrawerLayout drawer = findViewById(R.id.drawer_movie_info);
         drawer.closeDrawer(Gravity.RIGHT);
 
         return true;
@@ -94,7 +94,6 @@ public class Request extends AppCompatActivity implements NavigationView.OnNavig
 
     @Override
     public void onBackPressed() {
-        DrawerLayout drawer = findViewById(R.id.drawer_movie_info);
         if (drawer.isDrawerOpen(Gravity.RIGHT)) {
             drawer.closeDrawer(Gravity.RIGHT);
         } else {

@@ -6,9 +6,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorBack"
-    android:id="@+id/drawer_favourite"
+    android:id="@+id/drawer_vip"
     android:orientation="vertical"
-    tools:context=".Pages.Favourite"
+    tools:context="ir.mseif.app.com.movie.Pages.VIP"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
 
