@@ -11,7 +11,7 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:onClick="go_to_episode"
-        android:background="@color/season_back">
+        android:background="@color/info_movie">
 
         <View
             android:id="@+id/season_circle"
