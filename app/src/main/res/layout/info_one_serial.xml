@@ -46,7 +46,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/place_top"
         android:layout_width="0dp"
-        android:layout_height="50dp"
+        android:layout_height="100dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -157,20 +157,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
-                <TextView
-                    android:id="@+id/txt_movie_age"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:text="PG-13"
-                    android:textColor="#A1F2FF"
-                    android:textSize="12sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/place_movie_name"
                     android:layout_width="0dp"
@@ -178,8 +164,7 @@
                     android:layout_marginTop="8dp"
                     android:layout_marginBottom="8dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/txt_movie_age"
-                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
@@ -188,6 +173,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
+                        android:layout_marginEnd="8dp"
                         android:text="TRIPLE FRONTIER"
                         android:textColor="#fff"
                         android:textSize="15sp"
@@ -262,22 +248,26 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/place_time_genre"
-                android:layout_width="0dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/place_country_lang"
+                app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/place_score_btn_add">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/place_time"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/place_genre"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toBottomOf="@+id/place_genre">
 
 
                     <TextView
@@ -296,9 +286,8 @@
 
                     <TextView
                         android:id="@+id/txt_time"
-                        android:layout_width="wrap_content"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="8dp"
                         android:gravity="right"
                         android:text="۱۲۶ دقیقه"
                         android:textColor="#FFf"
@@ -313,15 +302,14 @@
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/place_genre"
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/place_time"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
@@ -338,7 +326,7 @@
 
                     <TextView
                         android:id="@+id/txt_genre"
-                        android:layout_width="0dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="8dp"
                         android:text="جنــایی ، کمدی ، خانوادگی"
@@ -356,22 +344,25 @@
                 android:id="@+id/place_country_lang"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/place_time_genre">
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/place_time_genre"
+                app:layout_constraintTop_toBottomOf="@+id/place_score_btn_add">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/place_country"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
+                    android:layout_marginEnd="8dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/place_lang"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/place_lang"
                     tools:ignore="MissingConstraints">
 
                     <TextView
@@ -407,13 +398,12 @@
                     android:id="@+id/place_lang"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
                     android:layout_marginTop="8dp"
                     android:layout_marginEnd="8dp"
-                    android:layout_marginBottom="8dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/place_country"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="MissingConstraints">
 
@@ -445,32 +435,30 @@
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
+
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/place_shabake_vaziat"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/place_country_lang"
                 app:layout_constraintTop_toBottomOf="@+id/place_country_lang">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/place_shabake"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginTop="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/place_vaziat"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
                         android:id="@+id/thd_shabake"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
-                        android:layout_marginBottom="8dp"
                         android:text="شبکه : "
                         android:textColor="#fff"
                         android:textSize="12sp"
@@ -483,9 +471,7 @@
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
-                        android:layout_marginBottom="8dp"
                         android:gravity="right"
                         android:text="CBS"
                         android:textColor="#FF9200"
@@ -501,20 +487,20 @@
                     android:id="@+id/place_vaziat"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/place_shabake"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toBottomOf="@+id/place_shabake">
 
                     <TextView
                         android:id="@+id/txt_vaziat"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
-                        android:layout_marginBottom="8dp"
                         android:gravity="right"
                         android:text="در حال پخش"
                         android:textColor="#FF9200"
@@ -529,8 +515,6 @@
                         android:id="@+id/thd_vaziat"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
                         android:text="وضعیت  : "
                         android:textColor="#fff"
                         android:textSize="12sp"
@@ -545,31 +529,27 @@
                 android:id="@+id/place_season_episode"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/place_time_genre"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/place_shabake_vaziat">
+                app:layout_constraintTop_toBottomOf="@+id/place_time_genre">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:id="@+id/place_season"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    app:layout_constraintBottom_toBottomOf="parent"
+                    android:layout_marginTop="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintStart_toEndOf="@+id/place_episode"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="1.0">
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
                     <TextView
                         android:id="@+id/txt_season"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
-                        android:layout_marginBottom="8dp"
                         android:gravity="right"
                         android:text="۲"
                         android:textColor="#FF9200"
@@ -584,9 +564,7 @@
                         android:id="@+id/thd_season"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
-                        android:layout_marginBottom="8dp"
                         android:text="فصل : "
                         android:textColor="#fff"
                         android:textSize="12sp"
@@ -599,26 +577,27 @@
                     android:id="@+id/place_episode"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
                     app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/place_season"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.5"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
+                    app:layout_constraintTop_toBottomOf="@+id/place_season">
 
                     <TextView
                         android:id="@+id/txt_episode"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
-                        android:layout_marginTop="8dp"
                         android:layout_marginEnd="8dp"
-                        android:layout_marginBottom="8dp"
                         android:gravity="right"
                         android:text="۲۲"
                         android:textColor="#FF9200"
                         android:textSize="11sp"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toStartOf="@+id/thd_episode"
+                        app:layout_constraintHorizontal_bias="0.6"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent"
                         tools:ignore="SmallSp" />
@@ -627,8 +606,6 @@
                         android:id="@+id/thd_episode"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:layout_marginBottom="8dp"
                         android:text="قسمت : "
                         android:textColor="#fff"
                         android:textSize="12sp"
@@ -676,3 +653,6 @@
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
