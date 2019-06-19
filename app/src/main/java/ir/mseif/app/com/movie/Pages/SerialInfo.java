@@ -27,7 +27,7 @@ public class SerialInfo extends AppCompatActivity implements NavigationView.OnNa
     String movie_id;
     StringBuffer director = new StringBuffer();
 
-    @BindView(R.id.txt_movie_age) TextView txt_movie_age;
+//    @BindView(R.id.txt_movie_age) TextView txt_movie_age;
     @BindView(R.id.txt_title_movie) TextView txt_title_movie;
     @BindView(R.id.txt_year) TextView txt_year;
     @BindView(R.id.txt_rate) TextView txt_rate;
