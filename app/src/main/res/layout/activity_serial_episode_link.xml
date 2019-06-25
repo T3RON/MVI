@@ -136,7 +136,6 @@
                             android:layout_width="0dp"
                             android:layout_height="1dp"
                             android:layout_marginTop="8dp"
-                            android:layout_marginBottom="8dp"
                             android:background="@color/profile_orange"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
@@ -148,14 +147,6 @@
                         android:id="@+id/rcy_episode_link"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent" />
-
-                    <include layout="@layout/rcy_episode_link" />
-
-                    <include layout="@layout/rcy_episode_link" />
-
-                    <include layout="@layout/rcy_episode_link" />
-
-                    <include layout="@layout/rcy_episode_link" />
 
                 </LinearLayout>
 
