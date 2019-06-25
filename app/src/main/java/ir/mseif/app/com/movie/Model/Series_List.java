@@ -16,10 +16,10 @@ public class Series_List {
     private String series_topimdb_id;
     private String series_oscar;
     private String series_golden;
-    private String image_small_url;
-    private String image_larg_url;
+    private String series_small_image;
+    private String series_larg_image;
 
-    public Series_List(String series_id, String series_name, String series_store, String series_age, String series_imdb, String series_country, String series_lang, String series_quality, String series_year, String series_time, String category_id, String series_topimdb_id, String series_oscar, String series_golden, String image_small_url, String image_larg_url) {
+    public Series_List(String series_id, String series_name, String series_store, String series_age, String series_imdb, String series_country, String series_lang, String series_quality, String series_year, String series_time, String category_id, String series_topimdb_id, String series_oscar, String series_golden, String series_small_image, String series_larg_image) {
         this.series_id = series_id;
         this.series_name = series_name;
         this.series_store = series_store;
@@ -34,8 +34,8 @@ public class Series_List {
         this.series_topimdb_id = series_topimdb_id;
         this.series_oscar = series_oscar;
         this.series_golden = series_golden;
-        this.image_small_url = image_small_url;
-        this.image_larg_url = image_larg_url;
+        this.series_small_image = series_small_image;
+        this.series_larg_image = series_larg_image;
     }
 
     public String getSeries_id() {
@@ -150,19 +150,19 @@ public class Series_List {
         this.series_golden = series_golden;
     }
 
-    public String getImage_small_url() {
-        return image_small_url;
+    public String getSeries_small_image() {
+        return series_small_image;
     }
 
-    public void setImage_small_url(String image_small_url) {
-        this.image_small_url = image_small_url;
+    public void setSeries_small_image(String series_small_image) {
+        this.series_small_image = series_small_image;
     }
 
-    public String getImage_larg_url() {
-        return image_larg_url;
+    public String getSeries_larg_image() {
+        return series_larg_image;
     }
 
-    public void setImage_larg_url(String image_larg_url) {
-        this.image_larg_url = image_larg_url;
+    public void setSeries_larg_image(String series_larg_image) {
+        this.series_larg_image = series_larg_image;
     }
 }

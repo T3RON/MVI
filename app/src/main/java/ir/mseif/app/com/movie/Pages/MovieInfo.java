@@ -1,5 +1,6 @@
 package ir.mseif.app.com.movie.Pages;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import com.google.android.material.navigation.NavigationView;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -12,6 +13,8 @@ import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,9 +30,11 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ir.basalam.rtlnavigationview.RtlNavigationView;
+import ir.mseif.app.com.movie.Adapters.CommentsList_Adapter;
 import ir.mseif.app.com.movie.Adapters.DirectorList_Adapter;
 import ir.mseif.app.com.movie.Adapters.MovieLink_Adapter;
 import ir.mseif.app.com.movie.Adapters.StarsList_Adapter;
+import ir.mseif.app.com.movie.Model.Comments_List;
 import ir.mseif.app.com.movie.Model.Director_List;
 import ir.mseif.app.com.movie.Model.Movie_Link_List;
 import ir.mseif.app.com.movie.Model.Movie_List;
@@ -40,9 +45,8 @@ import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
 public class MovieInfo extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
-
+    String currentTime;
     String movie_id;
-    StringBuffer director = new StringBuffer();
 
 //    @BindView(R.id.txt_movie_age) TextView txt_movie_age;
     @BindView(R.id.txt_title_movie) TextView txt_title_movie;
@@ -60,16 +64,21 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
     @BindView(R.id.img_large_poster) ImageView img_large_poster;
     @BindView(R.id.rcy_director) RecyclerView rcy_director;
     @BindView(R.id.rcy_stars) RecyclerView rcy_stars;
-    @BindView(R.id.rcy_movie_link) RecyclerView rcy_movie_link;
+    @BindView(R.id.rcy_link_list) RecyclerView rcy_movie_link;
+    @BindView(R.id.rcy_comment_list) RecyclerView rcy_comment_list;
     @BindView(R.id.nav_view) RtlNavigationView  nav_view;
     @BindView(R.id.drawer_movie_info) DrawerLayout  drawer;
     @BindView(R.id.btn_menu) ImageView btn_menu;
+    @BindView(R.id.btn_send_comment) Button btn_send_comment;
+    @BindView(R.id.etx_send_comment) EditText etx_send_comment;
+    @BindView(R.id.etx_answer) EditText etx_answer;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_info);
         ButterKnife.bind(this);
+        currentTime = System.currentTimeMillis()/1000 + "";
 
 
         nav_view.setNavigationItemSelectedListener(this);
@@ -85,6 +94,17 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
             getDirector(movie_id);
             getStars(movie_id);
             getLinks(movie_id);
+            getComment(movie_id);
+
+
+            btn_send_comment.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    InsertComment(movie_id,etx_send_comment.getText().toString());
+                }
+            });
+
+
         }
 
 
@@ -160,7 +180,7 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
 
     public void getMovieInfo(String movie_id) {
         AndroidNetworking.post(Global.BASE_URL+"Apimovie/single")
-                .addBodyParameter("movie_id", movie_id)
+                .addBodyParameter("value_id", movie_id)
                 .setTag(this)
                 .setPriority(Priority.LOW)
                 .build()
@@ -170,7 +190,7 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
 
 //                        txt_movie_age.setText("PG-" + movie_single_info.get(0).getMovie_age());
                         txt_title_movie.setText(movie_single_info.get(0).getMovie_name());
-                        txt_year.setText(movie_single_info.get(0).getMovie_quality());
+                        txt_year.setText(movie_single_info.get(0).getMovie_year() + "");
                         txt_rate.setText(movie_single_info.get(0).getMovie_imdb());
                         txt_lang.setText(movie_single_info.get(0).getMovie_lang());
                         txt_time.setText(movie_single_info.get(0).getMovie_time());
@@ -196,21 +216,18 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
                 });
     }
     public void getDirector(String movie_id) {
-        AndroidNetworking.post(Global.BASE_URL+"Apidirector/single")
-                .addBodyParameter("movie_id", movie_id)
+        AndroidNetworking.post(Global.BASE_URL+"Apidirector/moviesingle")
+                .addBodyParameter("value_id", movie_id)
                 .setTag(this)
                 .setPriority(Priority.LOW)
                 .build()
                 .getAsObjectList(Director_List.class, new ParsedRequestListener<List<Director_List>>() {
                     @Override
                     public void onResponse(List<Director_List> director_lists) {
-                        for (Director_List director_name : director_lists) {
-                            director.append(director_name.getDirector_name() + " , ");
-                        }
-
                         LinearLayoutManager linearLayoutManager_movie = new LinearLayoutManager(Global.context,LinearLayoutManager.HORIZONTAL,true);
                         rcy_director.setLayoutManager(linearLayoutManager_movie);
                         rcy_director.setItemAnimator(new DefaultItemAnimator());
+                        rcy_director.setHasFixedSize(true);
                         DirectorList_Adapter adapter = new DirectorList_Adapter(director_lists);
                         rcy_director.setAdapter(adapter);
 
@@ -221,22 +238,22 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
                     }
                 });
     }
+
     public void getStars(String movie_id) {
-        AndroidNetworking.post(Global.BASE_URL+"Apistars/single")
-                .addBodyParameter("movie_id", movie_id)
+        AndroidNetworking.post(Global.BASE_URL+"Apistars/moviesingle")
+                .addBodyParameter("value_id", movie_id)
                 .setTag(this)
                 .setPriority(Priority.LOW)
                 .build()
                 .getAsObjectList(Stars_List.class, new ParsedRequestListener<List<Stars_List>>() {
                     @Override
                     public void onResponse(List<Stars_List> stars_lists) {
-
                         LinearLayoutManager linearLayoutManager_movie = new LinearLayoutManager(Global.context,LinearLayoutManager.HORIZONTAL,true);
                         rcy_stars.setLayoutManager(linearLayoutManager_movie);
                         rcy_stars.setItemAnimator(new DefaultItemAnimator());
                         StarsList_Adapter adapter = new StarsList_Adapter(stars_lists);
                         rcy_stars.setAdapter(adapter);
-
+                        Log.i("Sadasdsdsdsd" , adapter.getItemCount() + "");
                     }
                     @Override
                     public void onError(ANError anError) {
@@ -246,7 +263,7 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
     }
     public void getLinks(String movie_id) {
         AndroidNetworking.post(Global.BASE_URL+"Apimovielink/movielink")
-                .addBodyParameter("movie_id", movie_id)
+                .addBodyParameter("value_id", movie_id)
                 .setTag(this)
                 .setPriority(Priority.LOW)
                 .build()
@@ -259,6 +276,54 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
                         rcy_movie_link.setItemAnimator(new DefaultItemAnimator());
                         MovieLink_Adapter adapter = new MovieLink_Adapter(starsMovie_link_lists);
                         rcy_movie_link.setAdapter(adapter);
+
+                    }
+                    @Override
+                    public void onError(ANError anError) {
+                        // handle error
+                    }
+                });
+    }
+    public void getComment(String movie_id) {
+        AndroidNetworking.post(Global.BASE_URL+"Apicomment/getcomment")
+                .addBodyParameter("value_id", movie_id)
+                .setTag(this)
+                .setPriority(Priority.LOW)
+                .build()
+                .getAsObjectList(Comments_List.class, new ParsedRequestListener<List<Comments_List>>() {
+                    @Override
+                    public void onResponse(List<Comments_List> comments_lists) {
+
+                        @SuppressLint("WrongConstant") LinearLayoutManager linearLayoutManager_movie = new LinearLayoutManager(Global.context,LinearLayoutManager.VERTICAL,true);
+                        rcy_comment_list.setLayoutManager(linearLayoutManager_movie);
+                        rcy_comment_list.setItemAnimator(new DefaultItemAnimator());
+                        CommentsList_Adapter adapter = new CommentsList_Adapter(comments_lists);
+                        rcy_comment_list.setAdapter(adapter);
+
+                    }
+                    @Override
+                    public void onError(ANError anError) {
+                        // handle error
+                    }
+                });
+    }
+    public void InsertComment(String movie_id , String comments_text) {
+        AndroidNetworking.post(Global.BASE_URL+"Apicomment/comment")
+                .addBodyParameter("comments_text", comments_text)
+                .addBodyParameter("comments_date", String.valueOf(currentTime))
+                .addBodyParameter("user_id", "1")
+                .addBodyParameter("comment_state_id", "3")
+                .addBodyParameter("movie_id", movie_id)
+                .addBodyParameter("series_id", "0")
+                .addBodyParameter("trailer_id", "0")
+                .addBodyParameter("news_id", "0")
+                .addBodyParameter("boxofice_id", "0")
+                .setTag(this)
+                .setPriority(Priority.LOW)
+                .build()
+                .getAsObjectList(Comments_List.class, new ParsedRequestListener<List<Comments_List>>() {
+                    @Override
+                    public void onResponse(List<Comments_List> starsMovie_link_lists) {
 
                     }
                     @Override

@@ -2,54 +2,43 @@ package ir.mseif.app.com.movie.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.squareup.picasso.Picasso;
-
 import java.util.List;
 
-import ir.mseif.app.com.movie.Model.Stars_List;
-import ir.mseif.app.com.movie.Pages.MovieInfo;
+import ir.mseif.app.com.movie.Model.Comments_List;
 import ir.mseif.app.com.movie.R;
-import ir.mseif.app.com.movie.Utils.Global;
 
 
-public class StarsList_Adapter extends RecyclerView.Adapter<StarsList_Adapter.MyViewHolder> {
+public class CommentsList_Adapter extends RecyclerView.Adapter<CommentsList_Adapter.MyViewHolder> {
 
-    private List<Stars_List> starsLists;
+    private List<Comments_List> comments_lists;
     private Intent intent;
 
-    public StarsList_Adapter(List<Stars_List> starsLists) {
-        this.starsLists = starsLists;
+    public CommentsList_Adapter(List<Comments_List> comments_lists) {
+        this.comments_lists = comments_lists;
     }
 
 
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_stars,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_comment,parent,false);
         return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
 
-        holder.txt_title.setText(starsLists.get(position).getStars_name());
-
-        Log.i("Sdasdsa",starsLists.get(position).getStars_name());
+        holder.txt_comment.setText(comments_lists.get(position).getComments_text() + "");
 
 
-        Picasso.with(holder.context).load(Global.BASE_URL_UPLOADS + starsLists.get(position).getStars_image()).fit().centerCrop()
-                .into(holder.img_poster);
-
-//        holder.btn_stars.setOnClickListener(new View.OnClickListener() {
+//        holder.btn_movie.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View view) {
 //                Intent i = new Intent(holder.context, MovieInfo.class);
@@ -62,13 +51,11 @@ public class StarsList_Adapter extends RecyclerView.Adapter<StarsList_Adapter.My
 
     @Override
     public int getItemCount() {
-        return starsLists.size();
+        return comments_lists.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView txt_title;
-        ImageView img_poster;
-        ViewGroup btn_stars;
+        TextView txt_comment;
 
         Context context;
 
@@ -76,9 +63,7 @@ public class StarsList_Adapter extends RecyclerView.Adapter<StarsList_Adapter.My
             super(itemView);
             context = itemView.getContext();
 
-            txt_title = itemView.findViewById(R.id.txt_title);
-            img_poster = itemView.findViewById(R.id.img_poster);
-            //btn_stars = itemView.findViewById(R.id.btn_stars);
+            txt_comment = itemView.findViewById(R.id.txt_comment);
 
         }
 

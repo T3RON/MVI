@@ -44,8 +44,6 @@ public class MovieList_Adapter extends RecyclerView.Adapter<MovieList_Adapter.My
         holder.txt_year.setText(movie_lists.get(position).getMovie_year() + "");
         holder.txt_rate.setText(movie_lists.get(position).getMovie_imdb() + "");
 
-
-
         Picasso.with(holder.context).load(Global.BASE_URL_UPLOADS + movie_lists.get(position).getMovie_small_image()).fit().centerCrop()
                 .into(holder.img_poster);
 

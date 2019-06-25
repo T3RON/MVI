@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -38,11 +40,12 @@ public class DirectorList_Adapter extends RecyclerView.Adapter<DirectorList_Adap
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
 
-        holder.txt_director_name.setText(director_lists.get(position).getDirector_name() + "");
-
+        holder.txt_director_title.setText(director_lists.get(position).getDirector_name() + "");
 
         Picasso.with(holder.context).load(Global.BASE_URL_UPLOADS + director_lists.get(position).getDirector_image()).fit().centerCrop()
-                .into(holder.img_small_director);
+                .into(holder.img_director_poster);
+
+        Log.i("sdsassssssssssdas",Global.BASE_URL_UPLOADS + director_lists.get(position).getDirector_image() + "");
 
 
 //        holder.btn_movie.setOnClickListener(new View.OnClickListener() {
@@ -62,8 +65,8 @@ public class DirectorList_Adapter extends RecyclerView.Adapter<DirectorList_Adap
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView txt_director_name;
-        ImageView img_small_director;
+        TextView txt_director_title;
+        ImageView img_director_poster;
         ViewGroup btn_director;
 
         Context context;
@@ -72,8 +75,8 @@ public class DirectorList_Adapter extends RecyclerView.Adapter<DirectorList_Adap
             super(itemView);
             context = itemView.getContext();
 
-            txt_director_name = itemView.findViewById(R.id.txt_director_name);
-            img_small_director = itemView.findViewById(R.id.img_small_director);
+            txt_director_title = itemView.findViewById(R.id.txt_director_title);
+            img_director_poster = itemView.findViewById(R.id.img_director_poster);
             btn_director = itemView.findViewById(R.id.btn_cast);
 
         }

@@ -4,6 +4,8 @@ import android.content.Context;
 import android.content.Intent;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +18,8 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import ir.mseif.app.com.movie.Model.Series_List;
+import ir.mseif.app.com.movie.Pages.MovieInfo;
+import ir.mseif.app.com.movie.Pages.SerialInfo;
 import ir.mseif.app.com.movie.R;
 import ir.mseif.app.com.movie.Utils.Global;
 
@@ -44,18 +48,20 @@ public class SeriesList_Adapter extends RecyclerView.Adapter<SeriesList_Adapter.
         holder.txt_rate.setText(series_lists.get(position).getSeries_imdb() + "");
 
 
-        Picasso.with(holder.context).load(Global.BASE_URL_UPLOADS + series_lists.get(position).getImage_small_url()).fit().centerCrop()
+        Picasso.with(holder.context).load(Global.BASE_URL_UPLOADS + series_lists.get(position).getSeries_small_image()).fit().centerCrop()
                 .into(holder.img_poster);
 
+        holder.btn_movie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(holder.context, SerialInfo.class);
+                i.putExtra("series_id", series_lists.get(position).getSeries_id()+"");
+                Global.SERIES_NAME = series_lists.get(position).getSeries_name();
+                holder.context.startActivity(i);
+            }
+        });
 
-//        holder.btn_pick.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(holder.context, Agahi_info.class);
-//                i.putExtra("agahi_id", agahi_models.get(position).getAgahi_id());
-//                holder.context.startActivity(i);
-//            }
-//        });
+
     }
 
     @Override

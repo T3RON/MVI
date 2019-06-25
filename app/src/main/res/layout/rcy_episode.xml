@@ -8,10 +8,11 @@
     android:orientation="horizontal">
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/btn_episode"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:onClick="go_to_episode_link"
-        android:background="@color/season_back">
+        android:background="@color/season_back"
+        android:onClick="go_to_episode_link">
 
         <View
             android:id="@+id/season_circle"
@@ -31,8 +32,8 @@
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
             android:text="قسمت اول"
-            android:textSize="12sp"
             android:textColor="@color/profile_orange"
+            android:textSize="12sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/season_circle"
             app:layout_constraintTop_toTopOf="parent" />

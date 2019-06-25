@@ -16,45 +16,43 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import ir.mseif.app.com.movie.Model.Movie_List;
+import ir.mseif.app.com.movie.Model.Season_List;
 import ir.mseif.app.com.movie.Pages.MovieInfo;
+import ir.mseif.app.com.movie.Pages.Serial_Episodes;
 import ir.mseif.app.com.movie.R;
 import ir.mseif.app.com.movie.Utils.Global;
 
 
 public class SeasonList_Adapter extends RecyclerView.Adapter<SeasonList_Adapter.MyViewHolder> {
 
-    private List<Movie_List> movie_lists;
-    private Intent intent;
+    private List<Season_List> season_lists;
 
-    public SeasonList_Adapter(List<Movie_List> movie_lists) {
-        this.movie_lists = movie_lists;
+    public SeasonList_Adapter(List<Season_List> season_lists) {
+        this.season_lists = season_lists;
     }
 
 
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rcy_item_film,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rcy_season_link,parent,false);
         return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
 
-        holder.txt_title.setText(movie_lists.get(position).getMovie_name() + "");
-        holder.txt_year.setText(movie_lists.get(position).getMovie_year() + "");
-        holder.txt_rate.setText(movie_lists.get(position).getMovie_imdb() + "");
+        holder.txt_season_name.setText(season_lists.get(position).getSeason_name() + "");
+        holder.txt_season_number.setText(season_lists.get(position).getSeason_number() + "");
 
 
-
-        Picasso.with(holder.context).load(Global.BASE_URL_UPLOADS + movie_lists.get(position).getMovie_small_image()).fit().centerCrop()
-                .into(holder.img_poster);
-
-        holder.btn_movie.setOnClickListener(new View.OnClickListener() {
+        holder.btn_season.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(holder.context, MovieInfo.class);
-                Log.i("adapssss" , movie_lists.get(position).getMovie_id() + "");
-                i.putExtra("movie_id", movie_lists.get(position).getMovie_id()+"");
+                Intent i = new Intent(holder.context, Serial_Episodes.class);
+                i.putExtra("series_id", season_lists.get(position).getSeries_id()+"");
+                i.putExtra("season_id", season_lists.get(position).getSeason_id()+"");
+                i.putExtra("season_name", season_lists.get(position).getSeason_name()+"");
+                Global.SEASON_NAME = season_lists.get(position).getSeason_name();
                 holder.context.startActivity(i);
             }
         });
@@ -62,15 +60,12 @@ public class SeasonList_Adapter extends RecyclerView.Adapter<SeasonList_Adapter.
 
     @Override
     public int getItemCount() {
-        return movie_lists.size();
+        return season_lists.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView txt_year;
-        TextView txt_title;
-        TextView txt_rate;
-        ImageView img_poster;
-        ViewGroup btn_movie;
+        TextView txt_season_name , txt_season_number;
+        ViewGroup btn_season;
 
         Context context;
 
@@ -78,11 +73,9 @@ public class SeasonList_Adapter extends RecyclerView.Adapter<SeasonList_Adapter.
             super(itemView);
             context = itemView.getContext();
 
-            txt_year = itemView.findViewById(R.id.txt_year);
-            txt_title = itemView.findViewById(R.id.txt_title);
-            txt_rate = itemView.findViewById(R.id.txt_rate);
-            img_poster = itemView.findViewById(R.id.img_poster);
-            btn_movie = itemView.findViewById(R.id.btn_movie);
+            txt_season_name = itemView.findViewById(R.id.txt_season_name);
+            txt_season_number = itemView.findViewById(R.id.txt_season_number);
+            btn_season = itemView.findViewById(R.id.btn_season);
 
         }
 

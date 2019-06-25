@@ -15,46 +15,44 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import ir.mseif.app.com.movie.Model.Episodes_List;
 import ir.mseif.app.com.movie.Model.Movie_List;
 import ir.mseif.app.com.movie.Pages.MovieInfo;
+import ir.mseif.app.com.movie.Pages.Serial_Episode_Link;
 import ir.mseif.app.com.movie.R;
 import ir.mseif.app.com.movie.Utils.Global;
 
 
 public class EpisodesList_Adapter extends RecyclerView.Adapter<EpisodesList_Adapter.MyViewHolder> {
 
-    private List<Movie_List> movie_lists;
+    private List<Episodes_List> episodes_lists;
     private Intent intent;
 
-    public EpisodesList_Adapter(List<Movie_List> movie_lists) {
-        this.movie_lists = movie_lists;
+    public EpisodesList_Adapter(List<Episodes_List> episodes_lists) {
+        this.episodes_lists = episodes_lists;
     }
 
 
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rcy_item_film,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rcy_episode,parent,false);
         return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
 
-        holder.txt_title.setText(movie_lists.get(position).getMovie_name() + "");
-        holder.txt_year.setText(movie_lists.get(position).getMovie_year() + "");
-        holder.txt_rate.setText(movie_lists.get(position).getMovie_imdb() + "");
+        holder.txt_episode_name.setText(episodes_lists.get(position).getEpisodes_name() + "");
+        holder.txt_episode_number.setText(episodes_lists.get(position).getEpisodes_number() + "");
 
 
 
-        Picasso.with(holder.context).load(Global.BASE_URL_UPLOADS + movie_lists.get(position).getMovie_small_image()).fit().centerCrop()
-                .into(holder.img_poster);
-
-        holder.btn_movie.setOnClickListener(new View.OnClickListener() {
+        holder.btn_episode.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(holder.context, MovieInfo.class);
-                Log.i("adapssss" , movie_lists.get(position).getMovie_id() + "");
-                i.putExtra("movie_id", movie_lists.get(position).getMovie_id()+"");
+                Intent i = new Intent(holder.context, Serial_Episode_Link.class);
+                i.putExtra("episode_id", episodes_lists.get(position).getEpisodes_id()+"");
+                Global.EPISODE_NAME = episodes_lists.get(position).getEpisodes_name();
                 holder.context.startActivity(i);
             }
         });
@@ -62,15 +60,12 @@ public class EpisodesList_Adapter extends RecyclerView.Adapter<EpisodesList_Adap
 
     @Override
     public int getItemCount() {
-        return movie_lists.size();
+        return episodes_lists.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView txt_year;
-        TextView txt_title;
-        TextView txt_rate;
-        ImageView img_poster;
-        ViewGroup btn_movie;
+        TextView txt_episode_name , txt_episode_number;
+        ViewGroup btn_episode;
 
         Context context;
 
@@ -78,11 +73,9 @@ public class EpisodesList_Adapter extends RecyclerView.Adapter<EpisodesList_Adap
             super(itemView);
             context = itemView.getContext();
 
-            txt_year = itemView.findViewById(R.id.txt_year);
-            txt_title = itemView.findViewById(R.id.txt_title);
-            txt_rate = itemView.findViewById(R.id.txt_rate);
-            img_poster = itemView.findViewById(R.id.img_poster);
-            btn_movie = itemView.findViewById(R.id.btn_movie);
+            txt_episode_name = itemView.findViewById(R.id.txt_episode_name);
+            txt_episode_number = itemView.findViewById(R.id.txt_episode_number);
+            btn_episode = itemView.findViewById(R.id.btn_episode);
 
         }
 
