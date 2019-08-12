@@ -32,8 +32,10 @@ public class Global extends Application {
     @SuppressLint("StaticFieldLeak")
     public static Context context;
     public static Typeface ira ;
-    public static String BASE_URL = "http://10.0.2.2:8080/movie/api/";
-    public static String BASE_URL_UPLOADS = "http://10.0.2.2:8080/movie/assets/uploads/files/";
+    public static String BASE_URL = "http://mvi.nahavandflour.com/api/";
+    public static String BASE_URL_UPLOADS = "http://mvi.nahavandflour.com/assets/uploads/files/";
+//    public static String BASE_URL = "http://10.0.2.2:8080/movie/api/";
+//    public static String BASE_URL_UPLOADS = "http://10.0.2.2:8080/movie/assets/uploads/files/";
     public static String SERIES_NAME = "";
     public static String SEASON_NAME = "";
     public static String EPISODE_NAME = "";
