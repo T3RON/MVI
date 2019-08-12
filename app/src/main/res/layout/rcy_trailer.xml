@@ -2,7 +2,7 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginLeft="2dp"
     android:layout_marginRight="2dp">
@@ -21,20 +21,22 @@
 
             <ImageView
                 android:id="@+id/img_poster"
-                android:layout_width="200dp"
-                android:layout_height="280dp"
+                android:layout_width="0dp"
+                android:layout_height="200dp"
                 android:adjustViewBounds="true"
                 android:cropToPadding="false"
                 android:scaleType="centerCrop"
                 android:src="@drawable/a"
-                tools:layout_editor_absoluteX="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
                 tools:layout_editor_absoluteY="0dp" />
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/txt_year_on_image_item"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@+id/img_poster">
 
                 <TextView
                     android:id="@+id/txt_year"
@@ -51,6 +53,19 @@
                     tools:layout_editor_absoluteY="0dp" />
             </LinearLayout>
 
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+                app:layout_constraintEnd_toEndOf="@+id/img_poster"
+                app:layout_constraintStart_toStartOf="@+id/img_poster"
+                app:layout_constraintTop_toTopOf="@+id/img_poster"
+                app:srcCompat="@drawable/ic_play_trailer"
+                tools:ignore="VectorDrawableCompat" />
+
             <LinearLayout
                 android:id="@+id/linearLayout2"
                 android:layout_width="0dp"
@@ -59,8 +74,8 @@
                 android:background="#151410"
                 android:orientation="horizontal"
                 app:layout_constraintBottom_toBottomOf="@+id/img_poster"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
+                app:layout_constraintEnd_toEndOf="@+id/img_poster"
+                app:layout_constraintStart_toStartOf="@+id/img_poster">
 
                 <TextView
                     android:id="@+id/txt_title"
@@ -76,37 +91,39 @@
                     tools:ignore="RtlHardcoded,SmallSp"
                     tools:layout_editor_absoluteX="0dp"
                     tools:layout_editor_absoluteY="0dp" />
+
             </LinearLayout>
 
             <!--<LinearLayout-->
-                <!--android:id="@+id/linearLayout3"-->
-                <!--android:layout_width="35dp"-->
-                <!--android:layout_height="35dp"-->
-                <!--android:layout_marginBottom="8dp"-->
-                <!--android:background="@drawable/rate_round_item"-->
-                <!--android:orientation="horizontal"-->
-                <!--android:gravity="center"-->
-                <!--app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"-->
-                <!--app:layout_constraintStart_toStartOf="parent"-->
-                <!--app:layout_constraintTop_toBottomOf="@+id/linearLayout2">-->
+            <!--android:id="@+id/linearLayout3"-->
+            <!--android:layout_width="35dp"-->
+            <!--android:layout_height="35dp"-->
+            <!--android:layout_marginBottom="8dp"-->
+            <!--android:background="@drawable/rate_round_item"-->
+            <!--android:orientation="horizontal"-->
+            <!--android:gravity="center"-->
+            <!--app:layout_constraintBottom_toBottomOf="@+id/linearLayout2"-->
+            <!--app:layout_constraintStart_toStartOf="parent"-->
+            <!--app:layout_constraintTop_toBottomOf="@+id/linearLayout2">-->
 
-                <!--<TextView-->
-                    <!--android:id="@+id/txt_rate"-->
-                    <!--android:layout_width="wrap_content"-->
-                    <!--android:layout_height="wrap_content"-->
-                    <!--android:padding="9dp"-->
-                    <!--android:paddingLeft="12dp"-->
-                    <!--android:paddingRight="12dp"-->
-                    <!--android:text="7.2"-->
-                    <!--android:gravity="center"-->
-                    <!--android:textColor="#FFBC00"-->
-                    <!--android:textSize="11sp"-->
-                    <!--tools:ignore="HardcodedText,SmallSp"-->
-                    <!--tools:layout_editor_absoluteX="0dp"-->
-                    <!--tools:layout_editor_absoluteY="0dp" />-->
+            <!--<TextView-->
+            <!--android:id="@+id/txt_rate"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:padding="9dp"-->
+            <!--android:paddingLeft="12dp"-->
+            <!--android:paddingRight="12dp"-->
+            <!--android:text="7.2"-->
+            <!--android:gravity="center"-->
+            <!--android:textColor="#FFBC00"-->
+            <!--android:textSize="11sp"-->
+            <!--tools:ignore="HardcodedText,SmallSp"-->
+            <!--tools:layout_editor_absoluteX="0dp"-->
+            <!--tools:layout_editor_absoluteY="0dp" />-->
             <!--</LinearLayout>-->
 
         </androidx.constraintlayout.widget.ConstraintLayout>
+
     </androidx.cardview.widget.CardView>
 
 

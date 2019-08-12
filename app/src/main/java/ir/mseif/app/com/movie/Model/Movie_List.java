@@ -13,12 +13,13 @@ public class Movie_List {
     private int category_id;
     private String movie_oscar;
     private String movie_golden;
-    private int movie_topimdb_id;
+    private String movie_topimdb_id;
     private String movie_quality;
     private String movie_small_image;
     private String movie_larg_image;
+    private String status;
 
-    public Movie_List(int movie_id, String movie_name, String movie_store, int movie_age, String movie_imdb, String movie_country, String movie_lang, int movie_year, String movie_time, int category_id, String movie_oscar, String movie_golden, int movie_topimdb_id, String movie_quality, String movie_small_image, String movie_larg_image) {
+    public Movie_List(int movie_id, String movie_name, String movie_store, int movie_age, String movie_imdb, String movie_country, String movie_lang, int movie_year, String movie_time, int category_id, String movie_oscar, String movie_golden, String movie_topimdb_id, String movie_quality, String movie_small_image, String movie_larg_image, String status) {
         this.movie_id = movie_id;
         this.movie_name = movie_name;
         this.movie_store = movie_store;
@@ -35,6 +36,7 @@ public class Movie_List {
         this.movie_quality = movie_quality;
         this.movie_small_image = movie_small_image;
         this.movie_larg_image = movie_larg_image;
+        this.status = status;
     }
 
     public int getMovie_id() {
@@ -133,11 +135,11 @@ public class Movie_List {
         this.movie_golden = movie_golden;
     }
 
-    public int getMovie_topimdb_id() {
+    public String getMovie_topimdb_id() {
         return movie_topimdb_id;
     }
 
-    public void setMovie_topimdb_id(int movie_topimdb_id) {
+    public void setMovie_topimdb_id(String movie_topimdb_id) {
         this.movie_topimdb_id = movie_topimdb_id;
     }
 
@@ -163,5 +165,13 @@ public class Movie_List {
 
     public void setMovie_larg_image(String movie_larg_image) {
         this.movie_larg_image = movie_larg_image;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

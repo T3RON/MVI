@@ -34,7 +34,6 @@ public class PersonInfo extends AppCompatActivity implements NavigationView.OnNa
     @BindView(R.id.txt_person_name) TextView txt_person_name;
     @BindView(R.id.txt_person_birth_date) TextView txt_person_birth_date;
     @BindView(R.id.place_more_info) ConstraintLayout place_more_info;
-    @BindView(R.id.grid_person_info) GridLayout grid_person_info;
 
 
     @Override

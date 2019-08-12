@@ -2,30 +2,31 @@ package ir.mseif.app.com.movie.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import ir.mseif.app.com.movie.Model.Trailer_List;
+import ir.mseif.app.com.movie.Model.News_List;
 import ir.mseif.app.com.movie.R;
 import ir.mseif.app.com.movie.Utils.Global;
 
 
-public class TrailerList_Adapter extends RecyclerView.Adapter<TrailerList_Adapter.MyViewHolder> {
+public class NewsList_Adapter extends RecyclerView.Adapter<NewsList_Adapter.MyViewHolder> {
 
-    private List<Trailer_List> trailer_lists;
+    private List<News_List> news_lists;
     private Intent intent;
 
-    public TrailerList_Adapter(List<Trailer_List> trailer_lists) {
-        this.trailer_lists = trailer_lists;
+    public NewsList_Adapter(List<News_List> news_lists) {
+        this.news_lists = news_lists;
     }
 
 
@@ -38,12 +39,12 @@ public class TrailerList_Adapter extends RecyclerView.Adapter<TrailerList_Adapte
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
 
-        holder.txt_title.setText(trailer_lists.get(position).getTrailer_name() + "");
-        holder.txt_year.setText(trailer_lists.get(position).getTrailer_year() + "");
+        holder.txt_title.setText(news_lists.get(position).getNews_name() + "");
+//        holder.txt_year.setText(news_lists.get(position).getNews_date() + "");
 
 
 
-        Picasso.with(holder.context).load(Global.BASE_URL_UPLOADS + trailer_lists.get(position).getTrailer_image()).fit().centerCrop()
+        Picasso.with(holder.context).load(Global.BASE_URL_UPLOADS + news_lists.get(position).getNews_image()).fit().centerCrop()
                 .into(holder.img_poster);
 
 
@@ -59,7 +60,7 @@ public class TrailerList_Adapter extends RecyclerView.Adapter<TrailerList_Adapte
 
     @Override
     public int getItemCount() {
-        return trailer_lists.size();
+        return news_lists.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {

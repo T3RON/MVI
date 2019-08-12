@@ -39,6 +39,7 @@ public class MovieLink_Adapter extends RecyclerView.Adapter<MovieLink_Adapter.My
         holder.txt_link_quality.setText(movie_link_lists.get(position).getQuality_name() + "");
         holder.txt_size.setText(movie_link_lists.get(position).getMovie_link_size() + "");
         holder.txt_encoder.setText(movie_link_lists.get(position).getEncoder_name() + "");
+        holder.txt_description.setText(movie_link_lists.get(position).getMovie_link_info() + "");
 
         holder.btn_download.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +62,7 @@ public class MovieLink_Adapter extends RecyclerView.Adapter<MovieLink_Adapter.My
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView txt_link_quality , txt_size , txt_encoder;
+        TextView txt_link_quality , txt_size , txt_encoder , txt_description;
         Button btn_sub , btn_download;
 
         Context context;
@@ -74,6 +75,7 @@ public class MovieLink_Adapter extends RecyclerView.Adapter<MovieLink_Adapter.My
             txt_encoder = itemView.findViewById(R.id.txt_encoder_name);
             btn_download = itemView.findViewById(R.id.btn_download);
             btn_sub = itemView.findViewById(R.id.btn_sub);
+            txt_description = itemView.findViewById(R.id.txt_description);
 
         }
 

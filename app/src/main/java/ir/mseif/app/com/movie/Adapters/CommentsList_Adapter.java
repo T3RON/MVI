@@ -19,7 +19,7 @@ import ir.mseif.app.com.movie.R;
 public class CommentsList_Adapter extends RecyclerView.Adapter<CommentsList_Adapter.MyViewHolder> {
 
     private List<Comments_List> comments_lists;
-    private Intent intent;
+
 
     public CommentsList_Adapter(List<Comments_List> comments_lists) {
         this.comments_lists = comments_lists;

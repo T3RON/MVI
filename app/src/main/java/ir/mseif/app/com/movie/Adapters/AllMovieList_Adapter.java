@@ -2,14 +2,15 @@ package ir.mseif.app.com.movie.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.squareup.picasso.Picasso;
 
@@ -21,19 +22,19 @@ import ir.mseif.app.com.movie.R;
 import ir.mseif.app.com.movie.Utils.Global;
 
 
-public class MovieList_Adapter extends RecyclerView.Adapter<MovieList_Adapter.MyViewHolder> {
+public class AllMovieList_Adapter extends RecyclerView.Adapter<AllMovieList_Adapter.MyViewHolder> {
 
     private List<Movie_List> movie_lists;
     private Intent intent;
 
-    public MovieList_Adapter(List<Movie_List> movie_lists) {
+    public AllMovieList_Adapter(List<Movie_List> movie_lists) {
         this.movie_lists = movie_lists;
     }
 
 
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rcy_item_film,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rcy_item_movies,parent,false);
         return new MyViewHolder(view);
     }
 
@@ -84,6 +85,13 @@ public class MovieList_Adapter extends RecyclerView.Adapter<MovieList_Adapter.My
 
         }
 
+    }
+
+    public void addImages(List<Movie_List> ml) {
+        for (Movie_List im : ml) {
+            movie_lists.add(im);
+        }
+        notifyDataSetChanged();
     }
 
 }

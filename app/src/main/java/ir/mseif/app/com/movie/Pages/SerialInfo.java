@@ -172,6 +172,7 @@ public class SerialInfo extends AppCompatActivity implements NavigationView.OnNa
                         txt_country.setText(movie_single_info.get(0).getSeries_country());
                         txt_story.setText(movie_single_info.get(0).getSeries_store());
                         txt_oscar.setText(movie_single_info.get(0).getSeries_oscar());
+                        txt_vaziat.setText(movie_single_info.get(0).getSeries_status());
                         txt_golden.setText(movie_single_info.get(0).getSeries_golden());
                         txt_top.setText(movie_single_info.get(0).getSeries_topimdb_id() + "");
 

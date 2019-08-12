@@ -2,48 +2,50 @@ package ir.mseif.app.com.movie.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
-import androidx.annotation.NonNull;
-import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import ir.mseif.app.com.movie.Model.Trailer_List;
+import ir.mseif.app.com.movie.Model.Boxoffice_List;
+import ir.mseif.app.com.movie.Model.News_List;
 import ir.mseif.app.com.movie.R;
 import ir.mseif.app.com.movie.Utils.Global;
 
 
-public class TrailerList_Adapter extends RecyclerView.Adapter<TrailerList_Adapter.MyViewHolder> {
+public class BoxofficeList_Adapter extends RecyclerView.Adapter<BoxofficeList_Adapter.MyViewHolder> {
 
-    private List<Trailer_List> trailer_lists;
+    private List<Boxoffice_List> boxoffice_lists;
     private Intent intent;
 
-    public TrailerList_Adapter(List<Trailer_List> trailer_lists) {
-        this.trailer_lists = trailer_lists;
+    public BoxofficeList_Adapter(List<Boxoffice_List> boxoffice_lists) {
+        this.boxoffice_lists = boxoffice_lists;
     }
 
 
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rcy_trailer,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.rcy_item_box_office,parent,false);
         return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(final MyViewHolder holder, final int position) {
 
-        holder.txt_title.setText(trailer_lists.get(position).getTrailer_name() + "");
-        holder.txt_year.setText(trailer_lists.get(position).getTrailer_year() + "");
-
-
-
-        Picasso.with(holder.context).load(Global.BASE_URL_UPLOADS + trailer_lists.get(position).getTrailer_image()).fit().centerCrop()
+        holder.txt_title.setText(boxoffice_lists.get(position).getBoxofice_name() + "");
+        holder.txt_year.setText(boxoffice_lists.get(position).getBoxoffice_year() + "");
+        holder.txt_rate.setText(boxoffice_lists.get(position).getBoxofice_rate() + "");
+        holder.txt_sell.setText(boxoffice_lists.get(position).getBoxofice_gross() + "");
+        holder.txt_week.setText(boxoffice_lists.get(position).getBoxofice_weeks() + "");
+        Picasso.with(holder.context).load(Global.BASE_URL_UPLOADS + boxoffice_lists.get(position).getBoxofice_image()).fit().centerCrop()
                 .into(holder.img_poster);
 
 
@@ -59,12 +61,15 @@ public class TrailerList_Adapter extends RecyclerView.Adapter<TrailerList_Adapte
 
     @Override
     public int getItemCount() {
-        return trailer_lists.size();
+        return boxoffice_lists.size();
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView txt_year;
         TextView txt_title;
+        TextView txt_week;
+        TextView txt_sell;
+        TextView txt_rate;
         ImageView img_poster;
         ViewGroup btn_movie;
 
@@ -76,6 +81,9 @@ public class TrailerList_Adapter extends RecyclerView.Adapter<TrailerList_Adapte
 
             txt_year = itemView.findViewById(R.id.txt_year);
             txt_title = itemView.findViewById(R.id.txt_title);
+            txt_week = itemView.findViewById(R.id.txt_week);
+            txt_sell = itemView.findViewById(R.id.txt_sell);
+            txt_rate = itemView.findViewById(R.id.txt_rate);
             img_poster = itemView.findViewById(R.id.img_poster);
             btn_movie = itemView.findViewById(R.id.btn_movie);
 

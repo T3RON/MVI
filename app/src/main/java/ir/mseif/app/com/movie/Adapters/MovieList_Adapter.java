@@ -86,4 +86,6 @@ public class MovieList_Adapter extends RecyclerView.Adapter<MovieList_Adapter.My
 
     }
 
+
+
 }

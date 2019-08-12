@@ -2,6 +2,8 @@ package ir.mseif.app.com.movie.Pages;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+
+import com.baoyz.widget.PullRefreshLayout;
 import com.google.android.material.navigation.NavigationView;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.appcompat.app.AppCompatActivity;
@@ -36,6 +38,7 @@ import ir.mseif.app.com.movie.Adapters.MovieLink_Adapter;
 import ir.mseif.app.com.movie.Adapters.StarsList_Adapter;
 import ir.mseif.app.com.movie.Model.Comments_List;
 import ir.mseif.app.com.movie.Model.Director_List;
+import ir.mseif.app.com.movie.Model.Genre_List;
 import ir.mseif.app.com.movie.Model.Movie_Link_List;
 import ir.mseif.app.com.movie.Model.Movie_List;
 import ir.mseif.app.com.movie.Model.Stars_List;
@@ -47,6 +50,7 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
 
     String currentTime;
     String movie_id;
+    StringBuilder genre;
 
 //    @BindView(R.id.txt_movie_age) TextView txt_movie_age;
     @BindView(R.id.txt_title_movie) TextView txt_title_movie;
@@ -58,6 +62,9 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
     @BindView(R.id.txt_country) TextView txt_country;
     @BindView(R.id.txt_story) TextView txt_story;
     @BindView(R.id.txt_oscar) TextView txt_oscar;
+    @BindView(R.id.txt_number_1) TextView txt_number_1;
+    @BindView(R.id.txt_number_2) TextView txt_number_2;
+    @BindView(R.id.etx_answer) EditText etx_answer;
     @BindView(R.id.txt_golden) TextView txt_golden;
     @BindView(R.id.txt_top) TextView txt_top;
     @BindView(R.id.img_small_director) ImageView img_small_poster;
@@ -71,7 +78,9 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
     @BindView(R.id.btn_menu) ImageView btn_menu;
     @BindView(R.id.btn_send_comment) Button btn_send_comment;
     @BindView(R.id.etx_send_comment) EditText etx_send_comment;
-    @BindView(R.id.etx_answer) EditText etx_answer;
+    @BindView(R.id.swipeRefreshLayout)
+    PullRefreshLayout swipeRefreshLayout;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -80,10 +89,24 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
         ButterKnife.bind(this);
         currentTime = System.currentTimeMillis()/1000 + "";
 
+        genre = new StringBuilder(100);
 
         nav_view.setNavigationItemSelectedListener(this);
         nav_view.setTypeface(Global.ira);
 
+
+        swipeRefreshLayout.setRefreshStyle(PullRefreshLayout.STYLE_SMARTISAN);
+        swipeRefreshLayout.setOnRefreshListener(new PullRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                getMovieInfo(movie_id);
+                getDirector(movie_id);
+                getStars(movie_id);
+                getLinks(movie_id);
+                getComment(movie_id);
+
+            }
+        });
 
         Bundle extras = getIntent().getExtras();
         if (extras != null) {
@@ -95,12 +118,37 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
             getStars(movie_id);
             getLinks(movie_id);
             getComment(movie_id);
+            getGenre(movie_id);
+
+            int ran_one = Global.getRandomNumber(1,9);
+            int ran_two = Global.getRandomNumber(1,9);
+            txt_number_1.setText(ran_one + "");
+            txt_number_2.setText(ran_two + "");
+
 
 
             btn_send_comment.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    InsertComment(movie_id,etx_send_comment.getText().toString());
+                    try {
+                        int sum = ran_one + ran_two;
+                        int userAnser = Integer.valueOf(etx_answer.getText().toString());
+                        if (sum != userAnser) {
+                            Toast.makeText(getApplicationContext() , "کد امنیتی را صحیح وارد نمایید",Toast.LENGTH_SHORT).show();
+                        }else {
+                            if (etx_send_comment.length()<=0) {
+                                Toast.makeText(getApplicationContext() , "لطفا نظر خود را وارد نمایید",Toast.LENGTH_SHORT).show();
+
+                            }else {
+                                InsertComment(movie_id,etx_send_comment.getText().toString());
+
+                            }
+                        }
+                    }catch (Exception ignored) {
+
+                    }
+
+
                 }
             });
 
@@ -180,7 +228,9 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
 
     public void getMovieInfo(String movie_id) {
         AndroidNetworking.post(Global.BASE_URL+"Apimovie/single")
-                .addBodyParameter("value_id", movie_id)
+                .addBodyParameter("tbl", "mvi_movie")
+                .addBodyParameter("item_id", movie_id)
+                .addBodyParameter("where", "mvi_movie.movie_id")
                 .setTag(this)
                 .setPriority(Priority.LOW)
                 .build()
@@ -198,7 +248,10 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
                         txt_story.setText(movie_single_info.get(0).getMovie_store());
                         txt_oscar.setText(movie_single_info.get(0).getMovie_oscar());
                         txt_golden.setText(movie_single_info.get(0).getMovie_golden());
-                        txt_top.setText(movie_single_info.get(0).getMovie_topimdb_id() + "");
+                        txt_top.setText(movie_single_info.get(0).getMovie_topimdb_id());
+
+
+
 
 
                         Picasso.with(Global.context)
@@ -208,12 +261,15 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
                         Picasso.with(Global.context)
                                 .load(Global.BASE_URL_UPLOADS + movie_single_info.get(0).getMovie_larg_image()).fit().centerCrop()
                                 .into(img_large_poster);
+                        swipeRefreshLayout.setRefreshing(false);
                     }
                     @Override
                     public void onError(ANError anError) {
                         // handle error
                     }
                 });
+
+
     }
     public void getDirector(String movie_id) {
         AndroidNetworking.post(Global.BASE_URL+"Apidirector/moviesingle")
@@ -238,7 +294,6 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
                     }
                 });
     }
-
     public void getStars(String movie_id) {
         AndroidNetworking.post(Global.BASE_URL+"Apistars/moviesingle")
                 .addBodyParameter("value_id", movie_id)
@@ -261,9 +316,34 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
                     }
                 });
     }
+    public void getGenre(String movie_id) {
+        AndroidNetworking.post(Global.BASE_URL+"Apimovie/genre_single")
+                .addBodyParameter("value_id", movie_id)
+                .setTag(this)
+                .setPriority(Priority.LOW)
+                .build()
+                .getAsObjectList(Genre_List.class, new ParsedRequestListener<List<Genre_List>>() {
+                    @Override
+                    public void onResponse(List<Genre_List> genre_lists) {
+
+                        for (int i = 0;i< genre_lists.size();i++) {
+                            genre.append(genre_lists.get(i).getGenre_name() + " " + ",");
+                            txt_genre.setText(genre);
+                            Log.i("sdadsa" , genre_lists.get(i).getGenre_name() + "");
+
+                        }
+
+
+                    }
+                    @Override
+                    public void onError(ANError anError) {
+                        // handle error
+                    }
+                });
+    }
     public void getLinks(String movie_id) {
         AndroidNetworking.post(Global.BASE_URL+"Apimovielink/movielink")
-                .addBodyParameter("value_id", movie_id)
+                .addBodyParameter("movie_id", movie_id)
                 .setTag(this)
                 .setPriority(Priority.LOW)
                 .build()
@@ -299,6 +379,7 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
                         rcy_comment_list.setItemAnimator(new DefaultItemAnimator());
                         CommentsList_Adapter adapter = new CommentsList_Adapter(comments_lists);
                         rcy_comment_list.setAdapter(adapter);
+
 
                     }
                     @Override

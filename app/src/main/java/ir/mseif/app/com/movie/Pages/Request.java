@@ -41,7 +41,6 @@ public class Request extends AppCompatActivity implements NavigationView.OnNavig
     @BindView(R.id.txt_number_1) TextView txt_number_1;
     @BindView(R.id.txt_number_2) TextView txt_number_2;
     @BindView(R.id.etx_answer) EditText etx_answer;
-    @BindView(R.id.rcy_request) RecyclerView rcy_request;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

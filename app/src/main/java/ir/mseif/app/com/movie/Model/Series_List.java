@@ -11,6 +11,7 @@ public class Series_List {
     private String series_lang;
     private String series_quality;
     private String series_year;
+    private String series_status;
     private String series_time;
     private String category_id;
     private String series_topimdb_id;
@@ -19,7 +20,7 @@ public class Series_List {
     private String series_small_image;
     private String series_larg_image;
 
-    public Series_List(String series_id, String series_name, String series_store, String series_age, String series_imdb, String series_country, String series_lang, String series_quality, String series_year, String series_time, String category_id, String series_topimdb_id, String series_oscar, String series_golden, String series_small_image, String series_larg_image) {
+    public Series_List(String series_id, String series_name, String series_store, String series_age, String series_imdb, String series_country, String series_lang, String series_quality, String series_year, String series_status, String series_time, String category_id, String series_topimdb_id, String series_oscar, String series_golden, String series_small_image, String series_larg_image) {
         this.series_id = series_id;
         this.series_name = series_name;
         this.series_store = series_store;
@@ -29,6 +30,7 @@ public class Series_List {
         this.series_lang = series_lang;
         this.series_quality = series_quality;
         this.series_year = series_year;
+        this.series_status = series_status;
         this.series_time = series_time;
         this.category_id = category_id;
         this.series_topimdb_id = series_topimdb_id;
@@ -108,6 +110,14 @@ public class Series_List {
 
     public void setSeries_year(String series_year) {
         this.series_year = series_year;
+    }
+
+    public String getSeries_status() {
+        return series_status;
+    }
+
+    public void setSeries_status(String series_status) {
+        this.series_status = series_status;
     }
 
     public String getSeries_time() {
