@@ -5,7 +5,6 @@ import android.content.Intent;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,7 +17,6 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import ir.mseif.app.com.movie.Model.Series_List;
-import ir.mseif.app.com.movie.Pages.MovieInfo;
 import ir.mseif.app.com.movie.Pages.SerialInfo;
 import ir.mseif.app.com.movie.R;
 import ir.mseif.app.com.movie.Utils.Global;
@@ -51,7 +49,7 @@ public class SeriesList_Adapter extends RecyclerView.Adapter<SeriesList_Adapter.
         Picasso.with(holder.context).load(Global.BASE_URL_UPLOADS + series_lists.get(position).getSeries_small_image()).fit().centerCrop()
                 .into(holder.img_poster);
 
-        holder.btn_movie.setOnClickListener(new View.OnClickListener() {
+        holder.btn_series.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent i = new Intent(holder.context, SerialInfo.class);
@@ -74,7 +72,7 @@ public class SeriesList_Adapter extends RecyclerView.Adapter<SeriesList_Adapter.
         TextView txt_title;
         TextView txt_rate;
         ImageView img_poster;
-        ViewGroup btn_movie;
+        ViewGroup btn_series;
 
         Context context;
 
@@ -86,7 +84,7 @@ public class SeriesList_Adapter extends RecyclerView.Adapter<SeriesList_Adapter.
             txt_title = itemView.findViewById(R.id.txt_title);
             txt_rate = itemView.findViewById(R.id.txt_rate);
             img_poster = itemView.findViewById(R.id.img_poster);
-            btn_movie = itemView.findViewById(R.id.btn_movie);
+            btn_series = itemView.findViewById(R.id.btn_more_info);
 
         }
 

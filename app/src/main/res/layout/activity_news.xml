@@ -103,7 +103,7 @@
                                 app:layout_constraintEnd_toEndOf="parent"
                                 app:layout_constraintStart_toStartOf="@+id/constraintLayout3"
                                 app:layout_constraintTop_toTopOf="parent"
-                                custom:srcCompat="@drawable/delete" />
+                                custom:srcCompat="@drawable/poster" />
 
                             <androidx.constraintlayout.widget.ConstraintLayout
                                 android:id="@+id/constraintLayout3"
@@ -141,8 +141,8 @@
                                 android:layout_width="0dp"
                                 android:layout_height="0dp"
                                 android:layout_marginStart="16dp"
-                                android:src="@drawable/a"
-                                app:civ_border_color="#fff"
+                                android:src="@drawable/small"
+                                app:civ_border_color="@color/colorPrimaryDark"
                                 app:civ_border_width="7dp"
                                 app:layout_constraintBottom_toBottomOf="parent"
                                 app:layout_constraintEnd_toEndOf="parent"

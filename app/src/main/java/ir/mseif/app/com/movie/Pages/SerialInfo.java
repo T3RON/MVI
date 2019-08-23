@@ -156,7 +156,9 @@ public class SerialInfo extends AppCompatActivity implements NavigationView.OnNa
 
     public void getSeriesInfo(String series_id) {
         AndroidNetworking.post(Global.BASE_URL+"Apiseries/single")
-                .addBodyParameter("value_id", series_id)
+                .addBodyParameter("tbl", "mvi_series")
+                .addBodyParameter("item_id", series_id)
+                .addBodyParameter("where", "mvi_series.series_id")
                 .setTag(this)
                 .setPriority(Priority.LOW)
                 .build()

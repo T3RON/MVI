@@ -8,6 +8,7 @@
     android:layout_marginRight="2dp">
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/btn_show_trailer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="5dp"

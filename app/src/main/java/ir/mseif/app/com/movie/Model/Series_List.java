@@ -19,8 +19,9 @@ public class Series_List {
     private String series_golden;
     private String series_small_image;
     private String series_larg_image;
+    private String status;
 
-    public Series_List(String series_id, String series_name, String series_store, String series_age, String series_imdb, String series_country, String series_lang, String series_quality, String series_year, String series_status, String series_time, String category_id, String series_topimdb_id, String series_oscar, String series_golden, String series_small_image, String series_larg_image) {
+    public Series_List(String series_id, String series_name, String series_store, String series_age, String series_imdb, String series_country, String series_lang, String series_quality, String series_year, String series_status, String series_time, String category_id, String series_topimdb_id, String series_oscar, String series_golden, String series_small_image, String series_larg_image, String status) {
         this.series_id = series_id;
         this.series_name = series_name;
         this.series_store = series_store;
@@ -38,6 +39,7 @@ public class Series_List {
         this.series_golden = series_golden;
         this.series_small_image = series_small_image;
         this.series_larg_image = series_larg_image;
+        this.status = status;
     }
 
     public String getSeries_id() {
@@ -174,5 +176,13 @@ public class Series_List {
 
     public void setSeries_larg_image(String series_larg_image) {
         this.series_larg_image = series_larg_image;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

@@ -17,11 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <com.baoyz.widget.PullRefreshLayout
-            android:id="@+id/swipeRefreshLayout"
-            android:layout_width="match_parent"
-            app:refreshColor="@color/colorAccent"
-            android:layout_height="match_parent">
+
         <androidx.core.widget.NestedScrollView
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
@@ -107,7 +103,6 @@
 
 
         </androidx.core.widget.NestedScrollView>
-        </com.baoyz.widget.PullRefreshLayout>
     </LinearLayout>
 
     <!--navigation drawer menu-->

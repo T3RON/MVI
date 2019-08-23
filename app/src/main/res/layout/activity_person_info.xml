@@ -200,7 +200,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/view8" />
 
                     <androidx.recyclerview.widget.RecyclerView
-                        android:id="@+id/recyclerView"
+                        android:id="@+id/rcy_person_movie"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginStart="8dp"
@@ -220,9 +220,10 @@
                         android:textColor="#fff"
                         android:textSize="13sp"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/recyclerView" />
+                        app:layout_constraintTop_toBottomOf="@+id/rcy_person_movie" />
 
                     <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/rcy_person_series"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginStart="8dp"

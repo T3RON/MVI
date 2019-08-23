@@ -3,6 +3,7 @@ package ir.mseif.app.com.movie.Pages;
 import android.annotation.SuppressLint;
 import android.content.Context;
 
+import com.androidnetworking.widget.ANImageView;
 import com.baoyz.widget.PullRefreshLayout;
 import com.google.android.material.navigation.NavigationView;
 import androidx.drawerlayout.widget.DrawerLayout;
@@ -52,7 +53,7 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
     String movie_id;
     StringBuilder genre;
 
-//    @BindView(R.id.txt_movie_age) TextView txt_movie_age;
+    //  @BindView(R.id.txt_movie_age) TextView txt_movie_age;
     @BindView(R.id.txt_title_movie) TextView txt_title_movie;
     @BindView(R.id.txt_year) TextView txt_year;
     @BindView(R.id.txt_rate) TextView txt_rate;
@@ -78,8 +79,6 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
     @BindView(R.id.btn_menu) ImageView btn_menu;
     @BindView(R.id.btn_send_comment) Button btn_send_comment;
     @BindView(R.id.etx_send_comment) EditText etx_send_comment;
-    @BindView(R.id.swipeRefreshLayout)
-    PullRefreshLayout swipeRefreshLayout;
 
 
     @Override
@@ -89,92 +88,54 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
         ButterKnife.bind(this);
         currentTime = System.currentTimeMillis()/1000 + "";
 
-        genre = new StringBuilder(100);
 
+        genre = new StringBuilder(100);
         nav_view.setNavigationItemSelectedListener(this);
         nav_view.setTypeface(Global.ira);
 
 
-        swipeRefreshLayout.setRefreshStyle(PullRefreshLayout.STYLE_SMARTISAN);
-        swipeRefreshLayout.setOnRefreshListener(new PullRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                getMovieInfo(movie_id);
-                getDirector(movie_id);
-                getStars(movie_id);
-                getLinks(movie_id);
-                getComment(movie_id);
-
-            }
-        });
-
-        Bundle extras = getIntent().getExtras();
-        if (extras != null) {
-            movie_id = extras.getString("movie_id");
-            Log.i("movie_idaa" , movie_id + "");
-
-            getMovieInfo(movie_id);
-            getDirector(movie_id);
-            getStars(movie_id);
-            getLinks(movie_id);
-            getComment(movie_id);
-            getGenre(movie_id);
-
-            int ran_one = Global.getRandomNumber(1,9);
-            int ran_two = Global.getRandomNumber(1,9);
-            txt_number_1.setText(ran_one + "");
-            txt_number_2.setText(ran_two + "");
 
 
+//        Bundle extras = getIntent().getExtras();
+//        if (extras != null) {
+//            movie_id = extras.getString("movie_id");
+//            new Thread(() -> {
+//                getMovieInfo(movie_id);
+//                getDirector(movie_id);
+//                getStars(movie_id);
+//                getLinks(movie_id);
+//                getComment(movie_id);
+//                getGenre(movie_id);
+//            }).start();
+//        }
 
-            btn_send_comment.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    try {
-                        int sum = ran_one + ran_two;
-                        int userAnser = Integer.valueOf(etx_answer.getText().toString());
-                        if (sum != userAnser) {
-                            Toast.makeText(getApplicationContext() , "کد امنیتی را صحیح وارد نمایید",Toast.LENGTH_SHORT).show();
-                        }else {
-                            if (etx_send_comment.length()<=0) {
-                                Toast.makeText(getApplicationContext() , "لطفا نظر خود را وارد نمایید",Toast.LENGTH_SHORT).show();
 
-                            }else {
-                                InsertComment(movie_id,etx_send_comment.getText().toString());
+        int ran_one = Global.getRandomNumber(1,9);
+        int ran_two = Global.getRandomNumber(1,9);
+        txt_number_1.setText(ran_one + "");
+        txt_number_2.setText(ran_two + "");
+        btn_send_comment.setOnClickListener(v -> {
+            try {
+                int sum = ran_one + ran_two;
+                int userAnser = Integer.valueOf(etx_answer.getText().toString());
+                if (sum != userAnser) {
+                    Toast.makeText(getApplicationContext() , "کد امنیتی را صحیح وارد نمایید",Toast.LENGTH_SHORT).show();
+                }else {
+                    if (etx_send_comment.length()<=0) {
+                        Toast.makeText(getApplicationContext() , "لطفا نظر خود را وارد نمایید",Toast.LENGTH_SHORT).show();
 
-                            }
-                        }
-                    }catch (Exception ignored) {
-
+                    }else {
+                        InsertComment(movie_id,etx_send_comment.getText().toString());
                     }
-
-
                 }
-            });
-
-
-        }
-
-
-
-
-
-
-
-
-
+            } catch (Exception ignored) { }
+        });
 
 
         btn_menu.setOnClickListener(v -> {
             DrawerLayout drawer = findViewById(R.id.drawer_movie_info);
-
             drawer.openDrawer(Gravity.RIGHT);
-
         });
-
-
-
-
 
     }
 
@@ -184,6 +145,7 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
     protected void attachBaseContext(Context newBase) {
         super.attachBaseContext(CalligraphyContextWrapper.wrap(newBase));
     }
+
 
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
@@ -224,8 +186,6 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
     }
 
 
-
-
     public void getMovieInfo(String movie_id) {
         AndroidNetworking.post(Global.BASE_URL+"Apimovie/single")
                 .addBodyParameter("tbl", "mvi_movie")
@@ -253,7 +213,6 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
 
 
 
-
                         Picasso.with(Global.context)
                                 .load(Global.BASE_URL_UPLOADS + movie_single_info.get(0).getMovie_small_image()).fit().centerCrop()
                                 .into(img_small_poster);
@@ -261,7 +220,6 @@ public class MovieInfo extends AppCompatActivity implements NavigationView.OnNav
                         Picasso.with(Global.context)
                                 .load(Global.BASE_URL_UPLOADS + movie_single_info.get(0).getMovie_larg_image()).fit().centerCrop()
                                 .into(img_large_poster);
-                        swipeRefreshLayout.setRefreshing(false);
                     }
                     @Override
                     public void onError(ANError anError) {

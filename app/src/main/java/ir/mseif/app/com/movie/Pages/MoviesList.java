@@ -1,6 +1,8 @@
 package ir.mseif.app.com.movie.Pages;
 
+import android.app.Activity;
 import android.content.Context;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
@@ -13,18 +15,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.ParsedRequestListener;
-import com.baoyz.widget.PullRefreshLayout;
-import com.github.pwittchen.infinitescroll.library.InfiniteScrollListener;
+import com.bvapp.directionalsnackbar.SnackbarUtil;
 import com.google.android.material.navigation.NavigationView;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -32,15 +31,12 @@ import butterknife.ButterKnife;
 import fr.castorflex.android.smoothprogressbar.SmoothProgressBar;
 import ir.basalam.rtlnavigationview.RtlNavigationView;
 import ir.mseif.app.com.movie.Adapters.AllMovieList_Adapter;
-import ir.mseif.app.com.movie.Adapters.MovieList_Adapter;
-import ir.mseif.app.com.movie.Adapters.SeriesList_Adapter;
 import ir.mseif.app.com.movie.Model.Movie_List;
-import ir.mseif.app.com.movie.Model.Series_List;
 import ir.mseif.app.com.movie.R;
 import ir.mseif.app.com.movie.Utils.Global;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class Movies extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
+public class MoviesList extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
 
     @BindView(R.id.rcy_my_movie_list) RecyclerView rcy_my_movie_list;
     @BindView(R.id.btn_menu) ImageView btn_menu;
@@ -59,7 +55,6 @@ public class Movies extends AppCompatActivity implements NavigationView.OnNaviga
     int view_thereshold = 10;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -69,7 +64,7 @@ public class Movies extends AppCompatActivity implements NavigationView.OnNaviga
         nav_view.setNavigationItemSelectedListener(this);
         nav_view.setTypeface(Global.ira);
 
-        layoutManager = new GridLayoutManager(Global.context, 2);
+        layoutManager = new GridLayoutManager(Global.context, 3);
         rcy_my_movie_list.setHasFixedSize(true);
         rcy_my_movie_list.setLayoutManager(layoutManager);
 
@@ -85,7 +80,6 @@ public class Movies extends AppCompatActivity implements NavigationView.OnNaviga
                 visibleItemCount = layoutManager.getChildCount();
                 totalItemCount = layoutManager.getItemCount();
                 pastVisibleItems = layoutManager.findFirstVisibleItemPosition();
-                Toast.makeText(Global.context,pastVisibleItems + "" ,Toast.LENGTH_SHORT).show();
                 if (dy>0) {
                     if (isLoading) {
                         if (totalItemCount > previous_total) {
@@ -150,7 +144,7 @@ public class Movies extends AppCompatActivity implements NavigationView.OnNaviga
                     @Override
                     public void onResponse(List<Movie_List> movie_lists) {
                         rcy_my_movie_list.setItemAnimator(new DefaultItemAnimator());
-                         allMovieList_adapter = new AllMovieList_Adapter(movie_lists);
+                        allMovieList_adapter = new AllMovieList_Adapter(movie_lists);
                         rcy_my_movie_list.setAdapter(allMovieList_adapter);
 
                     }
@@ -174,7 +168,8 @@ public class Movies extends AppCompatActivity implements NavigationView.OnNaviga
                     public void onResponse(List<Movie_List> movie_lists) {
 
                         if (movie_lists.get(0).getStatus().equals("end")) {
-                            Toast.makeText(Global.context, "موردی وجود ندارد", Toast.LENGTH_SHORT).show();
+                            SnackbarUtil.setSnackBarWithNoActionButton(rcy_my_movie_list,"موردی وجود ندارد",
+                                    Color.GREEN, Color.DKGRAY, SnackbarUtil.RTL_DIRECTION);
                         }else {
 
 

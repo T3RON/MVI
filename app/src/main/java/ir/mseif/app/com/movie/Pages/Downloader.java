@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.Gravity;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
@@ -33,8 +34,8 @@ public class Downloader extends AppCompatActivity implements NavigationView.OnNa
     @BindView(R.id.txt_time_to_end) TextView txt_time_to_end;
     @BindView(R.id.txt_percentage) TextView txt_percentage;
     @BindView(R.id.pbar_top_end) ProgressBar pbar_top_end;
-    @BindView(R.id.btn_cancel) Button btn_cancel;
-    @BindView(R.id.btn_play) Button btn_play;
+    @BindView(R.id.btn_cancel) ImageButton btn_cancel;
+    @BindView(R.id.btn_play) ImageButton btn_play;
     @BindView(R.id.rcy_download_left) RecyclerView rcy_download_left;
 
     @Override

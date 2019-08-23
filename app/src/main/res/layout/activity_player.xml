@@ -7,10 +7,11 @@
     tools:context="ir.mseif.app.com.movie.Pages.Player">
 
 
-    <!--<com.google.android.exoplayer2.ui.SimpleExoPlayerView-->
-        <!--android:id="@+id/player"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="match_parent"/>-->
+    <!-- activity_player.xml-->
+    <com.google.android.exoplayer2.ui.SimpleExoPlayerView
+        android:id="@+id/player_view"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

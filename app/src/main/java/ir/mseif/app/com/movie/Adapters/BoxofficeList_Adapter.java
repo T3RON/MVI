@@ -2,6 +2,7 @@ package ir.mseif.app.com.movie.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import java.util.List;
 
 import ir.mseif.app.com.movie.Model.Boxoffice_List;
 import ir.mseif.app.com.movie.Model.News_List;
+import ir.mseif.app.com.movie.Pages.MovieInfo;
 import ir.mseif.app.com.movie.R;
 import ir.mseif.app.com.movie.Utils.Global;
 
@@ -49,14 +51,15 @@ public class BoxofficeList_Adapter extends RecyclerView.Adapter<BoxofficeList_Ad
                 .into(holder.img_poster);
 
 
-//        holder.btn_pick.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent i = new Intent(holder.context, Agahi_info.class);
-//                i.putExtra("agahi_id", agahi_models.get(position).getAgahi_id());
-//                holder.context.startActivity(i);
-//            }
-//        });
+        holder.btn_movie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(holder.context, MovieInfo.class);
+                Log.i("adapssss" , boxoffice_lists.get(position).getMovie_id() + "");
+                i.putExtra("movie_id", boxoffice_lists.get(position).getMovie_id()+"");
+                holder.context.startActivity(i);
+            }
+        });
     }
 
     @Override

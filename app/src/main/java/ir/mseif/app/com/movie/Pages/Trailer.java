@@ -35,6 +35,9 @@ public class Trailer extends AppCompatActivity implements NavigationView.OnNavig
         ButterKnife.bind(this);
 
 
+
+
+
         nav_view.setNavigationItemSelectedListener(this);
         nav_view.setTypeface(Global.ira);
 

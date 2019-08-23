@@ -3,6 +3,7 @@ package ir.mseif.app.com.movie;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.PorterDuff;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.os.Handler;
 
@@ -49,14 +50,13 @@ import ir.mseif.app.com.movie.Model.News_List;
 import ir.mseif.app.com.movie.Model.Series_List;
 import ir.mseif.app.com.movie.Model.Slider_List;
 import ir.mseif.app.com.movie.Model.Trailer_List;
-import ir.mseif.app.com.movie.Pages.Movies;
+import ir.mseif.app.com.movie.Pages.MoviesList;
 import ir.mseif.app.com.movie.Pages.Downloader;
 import ir.mseif.app.com.movie.Pages.News;
-import ir.mseif.app.com.movie.Pages.PersonInfo;
 import ir.mseif.app.com.movie.Pages.Favourite;
 import ir.mseif.app.com.movie.Pages.Profile;
 import ir.mseif.app.com.movie.Pages.Request;
-import ir.mseif.app.com.movie.Pages.SerialInfo;
+import ir.mseif.app.com.movie.Pages.SeriesList;
 import ir.mseif.app.com.movie.Pages.VIP;
 import ir.mseif.app.com.movie.Utils.Global;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
@@ -72,19 +72,19 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
 
 
     @BindView(R.id.btn_menu) ImageView btn_menu;
-    @BindView(R.id.rcy_movie) RecyclerView  rcy_movie;
-    @BindView(R.id.rcy_serial) RecyclerView  rcy_serial;
-    @BindView(R.id.rcy_trailer) RecyclerView  rcy_trailer;
-    @BindView(R.id.rcy_office) RecyclerView  rcy_office;
-    @BindView(R.id.rcy_news_list) RecyclerView  rcy_news_list;
-    @BindView(R.id.nav_view) RtlNavigationView  nav_view;
-    @BindView(R.id.drawer_layout) DrawerLayout  drawer;
-    @BindView(R.id.btn_more_movie) Button  btn_more_movie;
-    @BindView(R.id.btn_more_newSerial) Button  button_1;
-    @BindView(R.id.btn_more_newTrailer) Button  button_2;
-    @BindView(R.id.button5) Button  button5;
-    @BindView(R.id.button6) Button  button6;
-    @BindView(R.id.layout_dots) LinearLayout  layout_dots;
+    @BindView(R.id.rcy_movie) RecyclerView rcy_movie;
+    @BindView(R.id.rcy_serial) RecyclerView rcy_serial;
+    @BindView(R.id.rcy_trailer) RecyclerView rcy_trailer;
+    @BindView(R.id.rcy_office) RecyclerView rcy_office;
+    @BindView(R.id.rcy_news_list) RecyclerView rcy_news_list;
+    @BindView(R.id.nav_view) RtlNavigationView nav_view;
+    @BindView(R.id.drawer_layout) DrawerLayout drawer;
+    @BindView(R.id.btn_more_movie) Button btn_more_movie;
+    @BindView(R.id.btn_more_newSerial) Button btn_more_newSerial;
+    @BindView(R.id.btn_more_newTrailer) Button btn_more_newTrailer;
+    @BindView(R.id.button5) Button button5;
+    @BindView(R.id.button6) Button button6;
+    @BindView(R.id.layout_dots) LinearLayout layout_dots;
     @BindView(R.id.pager) ViewPager viewPager;
     @BindView(R.id.swipeRefreshLayout) PullRefreshLayout swipeRefreshLayout;
 
@@ -105,6 +105,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 getNews();
                 getBoxoffice();
                 initComponent();
+                final MediaPlayer mp = MediaPlayer.create(Global.context, R.raw.pop);
+                mp.start();
             }
         });
 
@@ -127,28 +129,20 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         btn_more_movie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, Movies.class);
+                Intent intent = new Intent(MainActivity.this, MoviesList.class);
                 startActivity(intent);
             }
         });
 
-
-        button_1.setOnClickListener(new View.OnClickListener() {
+        btn_more_newSerial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), SerialInfo.class);
+                Intent intent = new Intent(MainActivity.this, SeriesList.class);
                 startActivity(intent);
             }
         });
 
 
-        button_2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), PersonInfo.class);
-                startActivity(intent);
-            }
-        });
 
 
         button5.setOnClickListener(new View.OnClickListener() {

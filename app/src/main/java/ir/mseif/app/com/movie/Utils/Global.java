@@ -4,6 +4,9 @@ import android.annotation.SuppressLint;
 import android.app.Application;
 import android.content.Context;
 import android.graphics.Typeface;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.provider.Settings;
 import android.util.Log;
 
@@ -11,6 +14,19 @@ import com.androidnetworking.AndroidNetworking;
 import com.androidnetworking.common.Priority;
 import com.androidnetworking.error.ANError;
 import com.androidnetworking.interfaces.ParsedRequestListener;
+import com.google.android.exoplayer2.ExoPlayerFactory;
+import com.google.android.exoplayer2.SimpleExoPlayer;
+import com.google.android.exoplayer2.extractor.DefaultExtractorsFactory;
+import com.google.android.exoplayer2.extractor.ExtractorsFactory;
+import com.google.android.exoplayer2.source.ExtractorMediaSource;
+import com.google.android.exoplayer2.source.MediaSource;
+import com.google.android.exoplayer2.trackselection.AdaptiveTrackSelection;
+import com.google.android.exoplayer2.trackselection.DefaultTrackSelector;
+import com.google.android.exoplayer2.trackselection.TrackSelector;
+import com.google.android.exoplayer2.ui.SimpleExoPlayerView;
+import com.google.android.exoplayer2.upstream.BandwidthMeter;
+import com.google.android.exoplayer2.upstream.DefaultBandwidthMeter;
+import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,6 +41,7 @@ import io.jsonwebtoken.security.Keys;
 import ir.mseif.app.com.movie.Model.AppUsers_List;
 import ir.mseif.app.com.movie.Model.Comments_List;
 import ir.mseif.app.com.movie.Model.TokenModel;
+import ir.mseif.app.com.movie.Pages.Player;
 import ir.mseif.app.com.movie.R;
 import uk.co.chrisjenx.calligraphy.CalligraphyConfig;
 
@@ -32,10 +49,10 @@ public class Global extends Application {
     @SuppressLint("StaticFieldLeak")
     public static Context context;
     public static Typeface ira ;
-    public static String BASE_URL = "http://mvi.nahavandflour.com/api/";
-    public static String BASE_URL_UPLOADS = "http://mvi.nahavandflour.com/assets/uploads/files/";
-//    public static String BASE_URL = "http://10.0.2.2:8080/movie/api/";
-//    public static String BASE_URL_UPLOADS = "http://10.0.2.2:8080/movie/assets/uploads/files/";
+//    public static String BASE_URL = "http://mvi.nahavandflour.com/api/";
+//    public static String BASE_URL_UPLOADS = "http://mvi.nahavandflour.com/assets/uploads/files/";
+    public static String BASE_URL = "http://10.0.2.2:8080/movie/api/";
+    public static String BASE_URL_UPLOADS = "http://10.0.2.2:8080/movie/assets/uploads/files/";
     public static String SERIES_NAME = "";
     public static String SEASON_NAME = "";
     public static String EPISODE_NAME = "";
@@ -124,6 +141,23 @@ public class Global extends Application {
 
     public static int getRandomNumber(int min, int max) {
         return (new Random()).nextInt((max - min) + 1) + min;
+    }
+
+    public static void PlayVideo(SimpleExoPlayer exoPlayer , SimpleExoPlayerView exoPlayerView , String videoURL) {
+        try {
+            BandwidthMeter bandwidthMeter = new DefaultBandwidthMeter();
+            TrackSelector trackSelector = new DefaultTrackSelector(new AdaptiveTrackSelection.Factory(bandwidthMeter));
+            exoPlayer = ExoPlayerFactory.newSimpleInstance(context,trackSelector);
+            Uri videouri = Uri.parse(videoURL);
+            DefaultHttpDataSourceFactory defaultHttpDataSourceFactory = new DefaultHttpDataSourceFactory("exoplayer_video");
+            ExtractorsFactory extractorsFactory = new DefaultExtractorsFactory();
+            MediaSource mediaSource = new ExtractorMediaSource(videouri,defaultHttpDataSourceFactory,extractorsFactory,null,null);
+            exoPlayerView.setPlayer(exoPlayer);
+            exoPlayer.prepare(mediaSource);
+            exoPlayer.setPlayWhenReady(true);
+        }catch (Exception e) {
+
+        }
     }
 
 }

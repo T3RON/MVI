@@ -25,7 +25,7 @@
             app:layout_constraintEnd_toEndOf="@+id/place_gradient"
             app:layout_constraintStart_toStartOf="@+id/place_gradient"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/delete"
+            app:srcCompat="@drawable/poster"
             tools:ignore="MissingConstraints" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -88,12 +88,12 @@
 
                 <ImageView
                     android:id="@+id/img_small_director"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
                     android:adjustViewBounds="true"
                     android:cropToPadding="false"
                     android:scaleType="centerCrop"
-                    android:src="@drawable/a" />
+                    android:src="@drawable/small" />
 
             </androidx.cardview.widget.CardView>
         </androidx.constraintlayout.widget.ConstraintLayout>

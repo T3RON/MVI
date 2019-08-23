@@ -12,6 +12,7 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <permission android:name="android.permission.MEDIA_CONTENT_CONTROL" />
 
     <application
         android:name=".Utils.Global"
@@ -29,13 +30,16 @@
         <activity android:name=".Pages.VIP" />
         <activity android:name=".Pages.News" />
         <activity android:name=".Pages.Request" />
+        <activity android:name=".Pages.Downloader" />
         <activity android:name=".Pages.Favourite" />
         <activity android:name=".Pages.History" />
         <activity android:name=".Pages.PersonInfo" />
         <activity android:name=".Pages.Trailer" />
+        <activity android:name=".Pages.Player" />
         <activity android:name=".Pages.Serial_Episode_Link" />
         <activity android:name=".Pages.Serial_Episodes" />
-        <activity android:name=".Pages.Movies" />
+        <activity android:name=".Pages.MoviesList" />
+        <activity android:name=".Pages.SeriesList" />
         <activity android:name=".Pages.SerialInfo" />
         <activity android:name=".Pages.MovieInfo" />
         <activity
