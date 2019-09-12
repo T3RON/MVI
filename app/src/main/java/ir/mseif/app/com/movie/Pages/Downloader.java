@@ -2,12 +2,15 @@ package ir.mseif.app.com.movie.Pages;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -17,14 +20,25 @@ import android.widget.Toast;
 
 import com.google.android.material.navigation.NavigationView;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.locks.ReadWriteLock;
+import java.util.concurrent.locks.ReentrantLock;
+import java.util.concurrent.locks.ReentrantReadWriteLock;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import ir.basalam.rtlnavigationview.RtlNavigationView;
+import ir.mseif.app.com.movie.Adapters.DownloaderAdapter;
 import ir.mseif.app.com.movie.R;
 import ir.mseif.app.com.movie.Utils.Global;
 import uk.co.chrisjenx.calligraphy.CalligraphyContextWrapper;
 
-public class Downloader extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener  {
+import ir.mseif.app.com.movie.Downloader.*;
+
+public class Downloader extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
 
     @BindView(R.id.btn_menu) ImageView btn_menu;
