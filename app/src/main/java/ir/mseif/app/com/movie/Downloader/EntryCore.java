@@ -11,6 +11,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class EntryCore {
@@ -19,18 +20,38 @@ public class EntryCore {
     public static DownloadCore downloadCore = null;
     public static List<String> downloadWait = new ArrayList<>();
 
-    public static void addEntry(String url){
+    public static boolean downloaderFlag = false;
 
-        if(downloadCore != null)
-        {
-            downloadCore.pause();
+    public static void addEntry(Context context, String url, String title) {
 
-            //should add wait for ending
+        //check if downloads entry list is not loaded (we didn't go to downloader page before this)
+        if (entryMemory == null) {
+            //first attempt to read current list from storage
+            memoryRead(context);
+            // if there isn't any entry list to load create one
+            if (entryMemory == null) {
+                entryMemory = new EntryMemory();
+                memoryWrite(context);
+            }
         }
+
+        // add new download
+        entryMemory.entryList.add(new HashMap<>());
+        entryMemory.entryList.get(entryMemory.entryList.size() - 1).put("status", "wait");
+        entryMemory.entryList.get(entryMemory.entryList.size() - 1).put("url", url);
+        entryMemory.entryList.get(entryMemory.entryList.size() - 1).put("title", title);
+        memoryWrite(context);
+
+        // check if downloader core is running
+        // downloaderFlag is false until we go to downloader page then page loop should do the job
+        if (downloadCore == null && !downloaderFlag) {
+            downloadCore = new DownloadCore(context, url, title);
+        }
+
 
     }
 
-    public static EntryMemory memoryRead(Context context) {
+    public static synchronized EntryMemory memoryRead(Context context) {
 
         File file_memory = new File(context.getFilesDir(), "Entry.obj");
         EntryMemory entry = null;
@@ -69,7 +90,7 @@ public class EntryCore {
 
     }
 
-    public static void memoryWrite(Context context) {
+    public static synchronized void memoryWrite(Context context) {
         FileOutputStream stream = null;
         File file_memory = new File(context.getFilesDir(), "Entry.obj");
 

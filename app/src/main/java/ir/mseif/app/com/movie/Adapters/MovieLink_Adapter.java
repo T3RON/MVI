@@ -16,6 +16,9 @@ import java.util.List;
 import ir.mseif.app.com.movie.Model.Movie_Link_List;
 import ir.mseif.app.com.movie.R;
 
+import ir.mseif.app.com.movie.Downloader.EntryCore;
+import ir.mseif.app.com.movie.Utils.Global;
+
 
 public class MovieLink_Adapter extends RecyclerView.Adapter<MovieLink_Adapter.MyViewHolder> {
 
@@ -44,7 +47,9 @@ public class MovieLink_Adapter extends RecyclerView.Adapter<MovieLink_Adapter.My
         holder.btn_download.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                EntryCore.addEntry(Global.context,
+                        "https://drive.google.com/a/mail.ccsf.edu/uc?authuser=1&id=1H9ifW2dLBUTIW9IxJ2OaOcb8yr_MVanf&export=download",
+                        "breaking bad test video")  ;
             }
         });
 

@@ -11,6 +11,7 @@ public class DownloadMemory implements Serializable {
     public long size = -1;
     public long downloaded = 0;
     public String name = "";
+    public String title = "";
     public String type = "";
     public List<Map<String, Long>> segments = new ArrayList<>();
 

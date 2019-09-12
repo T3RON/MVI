@@ -47,7 +47,7 @@ public class DownloadCore {
 
     AtomicBoolean end_flag = new AtomicBoolean(false);
 
-    public DownloadCore(Context context, String url_name) {
+    public DownloadCore(Context context, String url_name, String title_name) {
 
         try {
             url = new URL(url_name);
@@ -66,6 +66,7 @@ public class DownloadCore {
             memoryRead();
             if (memory == null) {
                 memory = new DownloadMemory();
+                memory.title = (String) pars.get("title");
                 memoryWrite();
                 Log.d("DM", "error in memory");
             } else {
@@ -73,6 +74,7 @@ public class DownloadCore {
             }
         } else {
             memory = new DownloadMemory();
+            memory.title = (String) pars.get("title");
             memoryWrite();
         }
 
@@ -86,6 +88,7 @@ public class DownloadCore {
         pars.put("name", "");
         pars.put("size", (long) 0);
         pars.put("status", "waiting");
+        pars.put("title", title_name);
 
     }
 
@@ -221,6 +224,9 @@ public class DownloadCore {
             pars.put("progress", ((double) memory.downloaded / (double) memory.size));
 
             set_worker_lock = false;
+
+            //if using this line memory will be updated every iteration which cause slow down
+            //memoryWrite();
         }
 
         for (int i = 0; i < segment_size; i++) {
